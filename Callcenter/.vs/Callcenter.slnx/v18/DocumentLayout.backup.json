@@ -1,0 +1,75 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\franc\\OneDrive\\Escritorio\\Integrador progra 3\\TPI-Progra3\\Callcenter\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{D0EABD23-FD6B-44DE-A2E6-F50C45123187}|Mainpage\\Mainpage.csproj|c:\\users\\franc\\onedrive\\escritorio\\integrador progra 3\\tpi-progra3\\callcenter\\mainpage\\main.master||{B30AFBFF-D992-43B7-B62D-2642580A2883}",
+      "RelativeMoniker": "D:0:0:{D0EABD23-FD6B-44DE-A2E6-F50C45123187}|Mainpage\\Mainpage.csproj|solutionrelative:mainpage\\main.master||{B30AFBFF-D992-43B7-B62D-2642580A2883}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D0EABD23-FD6B-44DE-A2E6-F50C45123187}|Mainpage\\Mainpage.csproj|c:\\users\\franc\\onedrive\\escritorio\\integrador progra 3\\tpi-progra3\\callcenter\\mainpage\\webform1.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
+      "RelativeMoniker": "D:0:0:{D0EABD23-FD6B-44DE-A2E6-F50C45123187}|Mainpage\\Mainpage.csproj|solutionrelative:mainpage\\webform1.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D0EABD23-FD6B-44DE-A2E6-F50C45123187}|Mainpage\\Mainpage.csproj|c:\\users\\franc\\onedrive\\escritorio\\integrador progra 3\\tpi-progra3\\callcenter\\mainpage\\default.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
+      "RelativeMoniker": "D:0:0:{D0EABD23-FD6B-44DE-A2E6-F50C45123187}|Mainpage\\Mainpage.csproj|solutionrelative:mainpage\\default.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 3,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Default.aspx",
+              "DocumentMoniker": "C:\\Users\\franc\\OneDrive\\Escritorio\\Integrador progra 3\\TPI-Progra3\\Callcenter\\Mainpage\\Default.aspx",
+              "RelativeDocumentMoniker": "Mainpage\\Default.aspx",
+              "ToolTip": "C:\\Users\\franc\\OneDrive\\Escritorio\\Integrador progra 3\\TPI-Progra3\\Callcenter\\Mainpage\\Default.aspx",
+              "RelativeToolTip": "Mainpage\\Default.aspx",
+              "LogicalView": "7651a703-06e5-11d1-8ebd-00a0c90f26ea",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000195|",
+              "WhenOpened": "2026-06-03T23:07:20.031Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "WebForm1.aspx",
+              "DocumentMoniker": "C:\\Users\\franc\\OneDrive\\Escritorio\\Integrador progra 3\\TPI-Progra3\\Callcenter\\Mainpage\\WebForm1.aspx",
+              "RelativeDocumentMoniker": "Mainpage\\WebForm1.aspx",
+              "ToolTip": "C:\\Users\\franc\\OneDrive\\Escritorio\\Integrador progra 3\\TPI-Progra3\\Callcenter\\Mainpage\\WebForm1.aspx",
+              "RelativeToolTip": "Mainpage\\WebForm1.aspx",
+              "LogicalView": "7651a703-06e5-11d1-8ebd-00a0c90f26ea",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000195|",
+              "WhenOpened": "2026-06-03T22:54:09.962Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Main.Master",
+              "DocumentMoniker": "C:\\Users\\franc\\OneDrive\\Escritorio\\Integrador progra 3\\TPI-Progra3\\Callcenter\\Mainpage\\Main.Master",
+              "RelativeDocumentMoniker": "Mainpage\\Main.Master",
+              "ToolTip": "C:\\Users\\franc\\OneDrive\\Escritorio\\Integrador progra 3\\TPI-Progra3\\Callcenter\\Mainpage\\Main.Master*",
+              "RelativeToolTip": "Mainpage\\Main.Master*",
+              "LogicalView": "7651a703-06e5-11d1-8ebd-00a0c90f26ea",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000195|",
+              "WhenOpened": "2026-06-03T22:53:27.684Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
