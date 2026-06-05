@@ -12,6 +12,16 @@ namespace Mainpage
         protected void Page_Load(object sender, EventArgs e)
         {
 
+            if(Request.QueryString["Nombre"] != null)
+            {
+            string user = Request.QueryString["Nombre"].ToString();
+            lblTitulo.Text = user;
+            }
+        }
+
+        protected void test_Click(object sender, EventArgs e)
+        {
+            
         }
     }
 }

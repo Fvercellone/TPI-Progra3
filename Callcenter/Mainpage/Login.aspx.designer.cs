@@ -11,25 +11,34 @@ namespace Mainpage
 {
 
 
-    public partial class Default
+    public partial class Login
     {
 
         /// <summary>
-        /// Control lblTitulo.
+        /// Control NombreUsuario.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblTitulo;
+        protected global::System.Web.UI.WebControls.TextBox NombreUsuario;
 
         /// <summary>
-        /// Control btnCerrarSesion.
+        /// Control ContraseñaUsuario.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnCerrarSesion;
+        protected global::System.Web.UI.WebControls.TextBox ContraseñaUsuario;
+
+        /// <summary>
+        /// Control btnVolver.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnVolver;
     }
 }
