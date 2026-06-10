@@ -5,12 +5,12 @@
 
     <!--Formulario-->
 
-        <div class="container text-center">
+     <div class="container text-center">
       <div class="row">
         <div class="col">
 
         </div>
-        <div class="col-8 border mt-">
+        <div class="col-8 border mt-5">
 
                  
               <div class="mb-3">
@@ -37,6 +37,7 @@
         <div class="col">
         </div>
       </div>
+    </div>
 
 
 

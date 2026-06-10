@@ -27,26 +27,32 @@
                     <a class="nav-link" href="#">Clientes</a>
                 </li>
 
-                <li class="nav-Page">
+<%--                <li class="nav-Page">
                     <a class="nav-link" href="Login.aspx">Login</a>
-                </li>
+                </li>--%>
 
             </ul>
 
              <!-- Usuario abajo -->
                 <div class="mt-auto border-top pt-5">
-                    <asp:Label 
-                        ID="lblTitulo" 
-                        runat="server" 
-                        Text="Usuario" 
-                        CssClass="d-block mb-2 fw-semibold" />
+                <asp:Label 
+                ID="lblTitulo" 
+                runat="server" 
+                CssClass="d-block mb-2 fw-semibold" />
+                    <%if (user == "Logueate")
+                        {%>
+                        <a class="btn btn-outline-primary" href="Login.aspx" role="button">Loggin</a>
+                    <%}
+                        else
+                        {%>
 
-                    <asp:Button 
+                        <asp:Button 
                         ID="btnCerrarSesion"
                         runat="server"
                         Text="Cerrar sesión"
-                        CssClass="btn btn-outline-danger btn-sm w-100" />
-                        <!--OnClick="btnCerrarSesion_Click" -->
+                        CssClass="btn btn-outline-danger btn-sm w-100" 
+                        onclick="btnCerrarSesion_Click" />
+                    <%} %>
                 </div>
 
         </div>

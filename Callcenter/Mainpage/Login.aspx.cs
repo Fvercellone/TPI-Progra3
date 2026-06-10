@@ -22,8 +22,11 @@ namespace Mainpage
                String Nombre = NombreUsuario.Text;
                String Contraseña = ContraseñaUsuario.Text;
 
+                Session.Add("usuario", Nombre);
+                Session.Add("Constraseña", Contraseña);
 
-            Response.Redirect("Default.aspx?Nombre=" + Nombre);
+                //Response.Redirect("Default.aspx?Nombre=" + Nombre);
+                Response.Redirect("Default.aspx", false);
             }
             catch (Exception ex)
             {
