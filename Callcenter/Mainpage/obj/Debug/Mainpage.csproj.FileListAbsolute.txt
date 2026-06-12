@@ -116,3 +116,7 @@ C:\Users\angel\OneDrive\Documentos\GitHub\TPI-Progra3\Callcenter\Mainpage\obj\De
 C:\Users\angel\OneDrive\Documentos\GitHub\TPI-Progra3\Callcenter\Mainpage\obj\Debug\Mainpage.csproj.Up2Date
 C:\Users\angel\OneDrive\Documentos\GitHub\TPI-Progra3\Callcenter\Mainpage\obj\Debug\Mainpage.dll
 C:\Users\angel\OneDrive\Documentos\GitHub\TPI-Progra3\Callcenter\Mainpage\obj\Debug\Mainpage.pdb
+C:\Users\angel\OneDrive\Documentos\GitHub\TPI-Progra3\Callcenter\Mainpage\bin\Conexion.dll
+C:\Users\angel\OneDrive\Documentos\GitHub\TPI-Progra3\Callcenter\Mainpage\bin\Dominio.dll
+C:\Users\angel\OneDrive\Documentos\GitHub\TPI-Progra3\Callcenter\Mainpage\bin\Conexion.pdb
+C:\Users\angel\OneDrive\Documentos\GitHub\TPI-Progra3\Callcenter\Mainpage\bin\Dominio.pdb

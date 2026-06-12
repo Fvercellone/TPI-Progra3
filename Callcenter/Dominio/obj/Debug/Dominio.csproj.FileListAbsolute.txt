@@ -1,0 +1,39 @@
+C:\Users\franc\OneDrive\Escritorio\TP Progra 3\TP-Progra3\Tp1-Progra3\TP1-Comercio\Dominio\bin\Debug\Dominio.dll
+C:\Users\franc\OneDrive\Escritorio\TP Progra 3\TP-Progra3\Tp1-Progra3\TP1-Comercio\Dominio\bin\Debug\Dominio.pdb
+C:\Users\franc\OneDrive\Escritorio\TP Progra 3\TP-Progra3\Tp1-Progra3\TP1-Comercio\Dominio\obj\Debug\Dominio.csproj.AssemblyReference.cache
+C:\Users\franc\OneDrive\Escritorio\TP Progra 3\TP-Progra3\Tp1-Progra3\TP1-Comercio\Dominio\obj\Debug\GeneratedInternalTypeHelper.g.cs
+C:\Users\franc\OneDrive\Escritorio\TP Progra 3\TP-Progra3\Tp1-Progra3\TP1-Comercio\Dominio\obj\Debug\Dominio_MarkupCompile.cache
+C:\Users\franc\OneDrive\Escritorio\TP Progra 3\TP-Progra3\Tp1-Progra3\TP1-Comercio\Dominio\obj\Debug\Dominio_MarkupCompile.lref
+C:\Users\franc\OneDrive\Escritorio\TP Progra 3\TP-Progra3\Tp1-Progra3\TP1-Comercio\Dominio\obj\Debug\Themes\Generic.baml
+C:\Users\franc\OneDrive\Escritorio\TP Progra 3\TP-Progra3\Tp1-Progra3\TP1-Comercio\Dominio\obj\Debug\Dominio.g.resources
+C:\Users\franc\OneDrive\Escritorio\TP Progra 3\TP-Progra3\Tp1-Progra3\TP1-Comercio\Dominio\obj\Debug\Dominio.Properties.Resources.resources
+C:\Users\franc\OneDrive\Escritorio\TP Progra 3\TP-Progra3\Tp1-Progra3\TP1-Comercio\Dominio\obj\Debug\Dominio.csproj.GenerateResource.cache
+C:\Users\franc\OneDrive\Escritorio\TP Progra 3\TP-Progra3\Tp1-Progra3\TP1-Comercio\Dominio\obj\Debug\Dominio.csproj.CoreCompileInputs.cache
+C:\Users\franc\OneDrive\Escritorio\TP Progra 3\TP-Progra3\Tp1-Progra3\TP1-Comercio\Dominio\obj\Debug\Dominio.dll
+C:\Users\franc\OneDrive\Escritorio\TP Progra 3\TP-Progra3\Tp1-Progra3\TP1-Comercio\Dominio\obj\Debug\Dominio.pdb
+C:\Users\angel\OneDrive\Documentos\GitHub\Tp1-Progra3\TP1-Comercio\Dominio\bin\Debug\Dominio.dll
+C:\Users\angel\OneDrive\Documentos\GitHub\Tp1-Progra3\TP1-Comercio\Dominio\bin\Debug\Dominio.pdb
+C:\Users\angel\OneDrive\Documentos\GitHub\Tp1-Progra3\TP1-Comercio\Dominio\obj\Debug\Dominio.csproj.AssemblyReference.cache
+C:\Users\angel\OneDrive\Documentos\GitHub\Tp1-Progra3\TP1-Comercio\Dominio\obj\Debug\GeneratedInternalTypeHelper.g.cs
+C:\Users\angel\OneDrive\Documentos\GitHub\Tp1-Progra3\TP1-Comercio\Dominio\obj\Debug\Dominio_MarkupCompile.cache
+C:\Users\angel\OneDrive\Documentos\GitHub\Tp1-Progra3\TP1-Comercio\Dominio\obj\Debug\Dominio_MarkupCompile.lref
+C:\Users\angel\OneDrive\Documentos\GitHub\Tp1-Progra3\TP1-Comercio\Dominio\obj\Debug\Themes\Generic.baml
+C:\Users\angel\OneDrive\Documentos\GitHub\Tp1-Progra3\TP1-Comercio\Dominio\obj\Debug\Dominio.g.resources
+C:\Users\angel\OneDrive\Documentos\GitHub\Tp1-Progra3\TP1-Comercio\Dominio\obj\Debug\Dominio.Properties.Resources.resources
+C:\Users\angel\OneDrive\Documentos\GitHub\Tp1-Progra3\TP1-Comercio\Dominio\obj\Debug\Dominio.csproj.GenerateResource.cache
+C:\Users\angel\OneDrive\Documentos\GitHub\Tp1-Progra3\TP1-Comercio\Dominio\obj\Debug\Dominio.csproj.CoreCompileInputs.cache
+C:\Users\angel\OneDrive\Documentos\GitHub\Tp1-Progra3\TP1-Comercio\Dominio\obj\Debug\Dominio.dll
+C:\Users\angel\OneDrive\Documentos\GitHub\Tp1-Progra3\TP1-Comercio\Dominio\obj\Debug\Dominio.pdb
+C:\Users\angel\OneDrive\Documentos\GitHub\TPI-Progra3\Callcenter\Dominio\obj\Debug\Dominio.csproj.AssemblyReference.cache
+C:\Users\angel\OneDrive\Documentos\GitHub\TPI-Progra3\Callcenter\Dominio\obj\Debug\GeneratedInternalTypeHelper.g.cs
+C:\Users\angel\OneDrive\Documentos\GitHub\TPI-Progra3\Callcenter\Dominio\obj\Debug\Dominio_MarkupCompile.cache
+C:\Users\angel\OneDrive\Documentos\GitHub\TPI-Progra3\Callcenter\Dominio\obj\Debug\Dominio_MarkupCompile.lref
+C:\Users\angel\OneDrive\Documentos\GitHub\TPI-Progra3\Callcenter\Dominio\obj\Debug\Dominio.dll
+C:\Users\angel\OneDrive\Documentos\GitHub\TPI-Progra3\Callcenter\Dominio\obj\Debug\Dominio.pdb
+C:\Users\angel\OneDrive\Documentos\GitHub\TPI-Progra3\Callcenter\Dominio\bin\Debug\Dominio.dll
+C:\Users\angel\OneDrive\Documentos\GitHub\TPI-Progra3\Callcenter\Dominio\bin\Debug\Dominio.pdb
+C:\Users\angel\OneDrive\Documentos\GitHub\TPI-Progra3\Callcenter\Dominio\obj\Debug\Themes\Generic.baml
+C:\Users\angel\OneDrive\Documentos\GitHub\TPI-Progra3\Callcenter\Dominio\obj\Debug\Dominio.g.resources
+C:\Users\angel\OneDrive\Documentos\GitHub\TPI-Progra3\Callcenter\Dominio\obj\Debug\Dominio.Properties.Resources.resources
+C:\Users\angel\OneDrive\Documentos\GitHub\TPI-Progra3\Callcenter\Dominio\obj\Debug\Dominio.csproj.GenerateResource.cache
+C:\Users\angel\OneDrive\Documentos\GitHub\TPI-Progra3\Callcenter\Dominio\obj\Debug\Dominio.csproj.CoreCompileInputs.cache

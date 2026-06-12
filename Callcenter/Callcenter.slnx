@@ -1,3 +1,5 @@
 <Solution>
+  <Project Path="Conexion/Conexion.csproj" Id="dad9667a-7ac3-4e27-9884-e03703af382a" />
+  <Project Path="Dominio/Dominio.csproj" Id="ca04e517-0363-47e6-8191-b7ff55a1a189" />
   <Project Path="Mainpage/Mainpage.csproj" Id="d0eabd23-fd6b-44de-a2e6-f50c45123187" />
 </Solution>

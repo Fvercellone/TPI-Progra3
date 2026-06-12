@@ -9,9 +9,16 @@ namespace Mainpage
 {
     public partial class Site1 : System.Web.UI.MasterPage
     {
+        public string user { get; set; }
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            user = Session["Usuario"] != null ? Session["Usuario"].ToString() : "Logueate";
+            lblTitulo.Text = user;
+        }
+        protected void btnCerrarSesion_Click(object sender, EventArgs e)
+        {
+            Session.Clear();
+            Response.Redirect("Default.aspx");
         }
     }
 }
