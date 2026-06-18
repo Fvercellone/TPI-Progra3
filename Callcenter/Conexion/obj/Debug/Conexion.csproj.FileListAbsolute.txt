@@ -46,3 +46,19 @@ C:\Users\angel\OneDrive\Documentos\GitHub\TPI-Progra3\Callcenter\Conexion\obj\De
 C:\Users\angel\OneDrive\Documentos\GitHub\TPI-Progra3\Callcenter\Conexion\obj\Debug\Conexion.csproj.GenerateResource.cache
 C:\Users\angel\OneDrive\Documentos\GitHub\TPI-Progra3\Callcenter\Conexion\obj\Debug\Conexion.csproj.CoreCompileInputs.cache
 C:\Users\angel\OneDrive\Documentos\GitHub\TPI-Progra3\Callcenter\Conexion\obj\Debug\Conexion.csproj.Up2Date
+C:\Users\franc\OneDrive\Escritorio\Integrador progra 3\TPI-Progra3\Callcenter\Conexion\bin\Debug\Conexion.dll
+C:\Users\franc\OneDrive\Escritorio\Integrador progra 3\TPI-Progra3\Callcenter\Conexion\bin\Debug\Conexion.pdb
+C:\Users\franc\OneDrive\Escritorio\Integrador progra 3\TPI-Progra3\Callcenter\Conexion\bin\Debug\Dominio.dll
+C:\Users\franc\OneDrive\Escritorio\Integrador progra 3\TPI-Progra3\Callcenter\Conexion\bin\Debug\Dominio.pdb
+C:\Users\franc\OneDrive\Escritorio\Integrador progra 3\TPI-Progra3\Callcenter\Conexion\obj\Debug\Conexion.csproj.AssemblyReference.cache
+C:\Users\franc\OneDrive\Escritorio\Integrador progra 3\TPI-Progra3\Callcenter\Conexion\obj\Debug\GeneratedInternalTypeHelper.g.cs
+C:\Users\franc\OneDrive\Escritorio\Integrador progra 3\TPI-Progra3\Callcenter\Conexion\obj\Debug\Conexion_MarkupCompile.cache
+C:\Users\franc\OneDrive\Escritorio\Integrador progra 3\TPI-Progra3\Callcenter\Conexion\obj\Debug\Conexion_MarkupCompile.lref
+C:\Users\franc\OneDrive\Escritorio\Integrador progra 3\TPI-Progra3\Callcenter\Conexion\obj\Debug\Themes\Generic.baml
+C:\Users\franc\OneDrive\Escritorio\Integrador progra 3\TPI-Progra3\Callcenter\Conexion\obj\Debug\Conexion.g.resources
+C:\Users\franc\OneDrive\Escritorio\Integrador progra 3\TPI-Progra3\Callcenter\Conexion\obj\Debug\Conexion.Properties.Resources.resources
+C:\Users\franc\OneDrive\Escritorio\Integrador progra 3\TPI-Progra3\Callcenter\Conexion\obj\Debug\Conexion.csproj.GenerateResource.cache
+C:\Users\franc\OneDrive\Escritorio\Integrador progra 3\TPI-Progra3\Callcenter\Conexion\obj\Debug\Conexion.csproj.CoreCompileInputs.cache
+C:\Users\franc\OneDrive\Escritorio\Integrador progra 3\TPI-Progra3\Callcenter\Conexion\obj\Debug\Conexion.csproj.Up2Date
+C:\Users\franc\OneDrive\Escritorio\Integrador progra 3\TPI-Progra3\Callcenter\Conexion\obj\Debug\Conexion.dll
+C:\Users\franc\OneDrive\Escritorio\Integrador progra 3\TPI-Progra3\Callcenter\Conexion\obj\Debug\Conexion.pdb

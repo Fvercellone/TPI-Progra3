@@ -8,20 +8,54 @@
 
 
    
-        <asp:GridView ID="DGVPersonas" runat="server" CssClass="table table-striped" AutoGenerateColumns="false">
-            <Columns>
-                <asp:BoundField DataField="ID" HeaderText="ID" SortExpression="ID" />
-                <asp:BoundField DataField="Nombre" HeaderText="Nombre" SortExpression="Nombre" />
-                <asp:BoundField DataField="Apellido" HeaderText="Apellido" SortExpression="Apellido" />
-                <asp:BoundField DataField="Mail" HeaderText="Email" SortExpression="Mail" />
-                <asp:BoundField DataField="Telefono" HeaderText="Telefono" SortExpression="Telefono" />
-                <asp:BoundField DataField="DNI" HeaderText="DNI" SortExpression="DNI" />
-                <asp:BoundField DataField="Activo" HeaderText="Activo" SortExpression="Activo" />
+        <asp:GridView ID="DGVPersonas" runat="server"
+    CssClass="table table-striped"
+    AutoGenerateColumns="false"
+    OnRowCommand="DGVPersonas_RowCommand">
 
-            </Columns>
-        </asp:GridView>
+    <Columns>
+        <asp:BoundField DataField="ID" HeaderText="ID" SortExpression="ID" />
+        <asp:BoundField DataField="Nombre" HeaderText="Nombre" SortExpression="Nombre" />
+        <asp:BoundField DataField="Apellido" HeaderText="Apellido" SortExpression="Apellido" />
+        <asp:BoundField DataField="Mail" HeaderText="Email" SortExpression="Mail" />
+        <asp:BoundField DataField="Telefono" HeaderText="Telefono" SortExpression="Telefono" />
+        <asp:BoundField DataField="DNI" HeaderText="DNI" SortExpression="DNI" />
+        <asp:BoundField DataField="Activo" HeaderText="Activo" SortExpression="Activo" />
 
-        <div id="Delete">
+        <asp:TemplateField HeaderText="Eliminar">
+            <ItemTemplate>
+                <asp:Button ID="BTEliminarFila" runat="server"
+                    Text="Eliminar"
+                    CssClass="btn btn-danger btn-sm"
+                    CommandName="Eliminar"
+                    CommandArgument='<%# Eval("DNI") %>' />
+            </ItemTemplate>
+        </asp:TemplateField>
+
+        <asp:TemplateField HeaderText="Activar">
+            <ItemTemplate>
+                <asp:Button ID="BTActivarFila" runat="server"
+                    Text="Activar"
+                    CssClass="btn btn-success btn-sm"
+                    CommandName="Activar"
+                    CommandArgument='<%# Eval("DNI") %>' />
+            </ItemTemplate>
+        </asp:TemplateField>
+
+        <asp:TemplateField HeaderText="Modificar">
+            <ItemTemplate>
+                <asp:Button ID="BTModificarFila" runat="server"
+                    Text="Modificar"
+                    CssClass="btn btn-warning btn-sm"
+                    CommandName="Modificar"
+                    CommandArgument='<%# Eval("DNI") %>' />
+            </ItemTemplate>
+        </asp:TemplateField>
+
+    </Columns>
+</asp:GridView>
+
+       <%-- <div id="Delete">
         <asp:Button ID="BTDelete" runat="server" Text="Borrar Registro" OnClick="BTDelete_Click" />
         <asp:TextBox ID="TBDNI" runat="server"></asp:TextBox>
         </div>
@@ -29,6 +63,15 @@
         <div id="Add">
         <asp:Button ID="BTADD" runat="server" Text="Activar Registro" OnClick="BTADD_Click" />
         <asp:TextBox ID="TBDNIADD" runat="server"></asp:TextBox>
+        </div>--%>
+
+<%--        <div id="Modify">
+        <asp:Button ID="BTMODIFY" runat="server" Text="Modificar Registro" OnClick="BTMODIFY_Click" />
+        <asp:TextBox ID="TBDNIMODIFY" runat="server"></asp:TextBox>
+        </div>--%>
+
+        <div>
+            <a href="formulario.aspx">agregar</a>
         </div>
 
         <div>

@@ -120,3 +120,7 @@ C:\Users\angel\OneDrive\Documentos\GitHub\TPI-Progra3\Callcenter\Mainpage\bin\Co
 C:\Users\angel\OneDrive\Documentos\GitHub\TPI-Progra3\Callcenter\Mainpage\bin\Dominio.dll
 C:\Users\angel\OneDrive\Documentos\GitHub\TPI-Progra3\Callcenter\Mainpage\bin\Conexion.pdb
 C:\Users\angel\OneDrive\Documentos\GitHub\TPI-Progra3\Callcenter\Mainpage\bin\Dominio.pdb
+C:\Users\franc\OneDrive\Escritorio\Integrador progra 3\TPI-Progra3\Callcenter\Mainpage\bin\Conexion.dll
+C:\Users\franc\OneDrive\Escritorio\Integrador progra 3\TPI-Progra3\Callcenter\Mainpage\bin\Dominio.dll
+C:\Users\franc\OneDrive\Escritorio\Integrador progra 3\TPI-Progra3\Callcenter\Mainpage\bin\Conexion.pdb
+C:\Users\franc\OneDrive\Escritorio\Integrador progra 3\TPI-Progra3\Callcenter\Mainpage\bin\Dominio.pdb

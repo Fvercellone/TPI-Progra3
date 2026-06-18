@@ -103,18 +103,19 @@ namespace Conexion
             }
         }
 
-        public void Modificar(Personas marca)
+        public void Modificar(string DNI)
         {
             ConexionDB conexion = new ConexionDB();
             try
             {
-                conexion.settearConsulta("BEGIN TRANSACTION; UPDATE PERSONAS SET Nombre = @Nombre, Apellido = @Apellido, Email = @Email, Telefono = @Telefono, DNI = @DNI WHERE Id = @Id; COMMIT");
-                conexion.agregarParametro("@Id", marca.ID);
-                conexion.agregarParametro("@Nombre", marca.Nombre);
-                conexion.agregarParametro("@Apellido", marca.Apellido);
-                conexion.agregarParametro("@Email", marca.Mail);
-                conexion.agregarParametro("@Telefono", marca.Telefono);
-                conexion.agregarParametro("@DNI", marca.DNI);
+                Personas persona = new Personas();
+                conexion.settearConsulta("BEGIN TRANSACTION; UPDATE PERSONAS SET Nombre = @Nombre, Apellido = @Apellido, Email = @Email, Telefono = @Telefono, DNI = @DNI WHERE DNI = @DNI; COMMIT");
+                //conexion.agregarParametro("@Id", persona.ID);
+                conexion.agregarParametro("@Nombre", persona.Nombre);
+                conexion.agregarParametro("@Apellido", persona.Apellido);
+                conexion.agregarParametro("@Email", persona.Mail);
+                conexion.agregarParametro("@Telefono", persona.Telefono);
+                conexion.agregarParametro("@DNI", persona.DNI);
                 conexion.ejecutarAccion();
             }
             catch (Exception ex)
