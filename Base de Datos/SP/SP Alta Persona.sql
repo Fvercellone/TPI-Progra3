@@ -14,6 +14,16 @@ BEGIN
             RAISERROR('No existe una persona con ese DNI.', 16, 1);
         END
 
+        IF EXISTS (
+            SELECT 1
+            FROM Personas
+            WHERE DNI = @DNI
+            AND Activo = 1
+        )
+        BEGIN
+            RAISERROR('La persona ya se encuentra dada de baja.', 16, 2);
+        END
+
         UPDATE Personas
         SET Activo = 1
         WHERE DNI = @DNI;

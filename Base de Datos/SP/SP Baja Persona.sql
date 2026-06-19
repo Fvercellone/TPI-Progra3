@@ -1,4 +1,4 @@
-Create PROCEDURE sp_BajaLogicaUsuarioPorDNI
+Alter PROCEDURE sp_BajaLogicaUsuarioPorDNI
     @DNI VARCHAR(20)
 AS
 BEGIN
