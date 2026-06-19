@@ -41,6 +41,38 @@ namespace Conexion
             }
         }
 
+        //public List<Personas> Listar(string DNI_)
+        //{
+        //    List<Personas> lista = new List<Personas>();
+        //    ConexionDB conexion = new ConexionDB();
+        //    try
+        //    {
+        //        conexion.settearConsulta("select P.ID, P.Nombre, P.Apellido, P.Email, P.Telefono, P.DNI, P.Activo from Personas as P where DNI = @DNI_");
+        //        conexion.ejecutarLectura();
+        //        while (conexion._lector.Read())
+        //        {
+        //            Personas aux = new Personas();
+        //            aux.ID = (int)conexion._lector["ID"];
+        //            aux.Nombre = (string)conexion._lector["Nombre"];
+        //            aux.Apellido = (string)conexion._lector["Apellido"];
+        //            aux.Mail = (string)conexion._lector["Email"];
+        //            aux.Telefono = (string)conexion._lector["Telefono"];
+        //            aux.DNI = (string)conexion._lector["DNI"];
+        //            aux.Activo = (bool)conexion._lector["Activo"];
+        //            lista.Add(aux);
+        //        }
+        //        return lista;
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        throw ex;
+        //    }
+        //    finally
+        //    {
+        //        conexion.cerrarConexion();
+        //    }
+        //}
+
         /*AGREGAR, MODIFICAR, ELIMINAR*/
 
         public void agregar(Personas nuevo)

@@ -109,6 +109,15 @@ namespace Mainpage
             if (!IsPostBack)
             {
                 CargarGrilla();
+
+                if (Session["Mensaje"] != null)
+                {
+                    LBMensaje.Text = Session["Mensaje"].ToString();
+                    LBMensaje.CssClass = Session["ClaseMensaje"].ToString();
+
+                    Session.Remove("Mensaje");
+                    Session.Remove("ClaseMensaje");
+                }
             }
         }
 
@@ -139,22 +148,25 @@ namespace Mainpage
                 {
                     conexion.Eliminar(dni);
 
-                    LBMensaje.Text = "Usuario dado de baja correctamente.";
-                    LBMensaje.CssClass = "alert alert-success d-block";
+                    Session["Mensaje"] = "Usuario dado de baja correctamente.";
+                    Session["ClaseMensaje"] = "alert alert-success d-block";
+
+                    Response.Redirect("Personas.aspx");
                 }
                 else if (e.CommandName == "Activar")
                 {
                     conexion.Activar(dni);
 
-                    LBMensaje.Text = "Usuario activado correctamente.";
-                    LBMensaje.CssClass = "alert alert-success d-block";
+                    Session["Mensaje"] = "Usuario activado correctamente.";
+                    Session["ClaseMensaje"] = "alert alert-success d-block";
+
+                    Response.Redirect("Personas.aspx");
                 }
                 else if (e.CommandName == "Modificar")
                 {
-                    Response.Redirect("ModificarPersona.aspx?dni=" + dni);
+                    Session.Add("DNI",dni);
+                    Response.Redirect("formulario.aspx");
                 }
-
-                CargarGrilla();
             }
             catch (Exception ex)
             {
