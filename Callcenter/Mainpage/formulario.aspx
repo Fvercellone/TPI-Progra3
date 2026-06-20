@@ -29,11 +29,11 @@
     
 <div class="mb-3">
   <label for="DNI" class="form-label">DNI</label>
-  <asp:textbox runat="server" type="number" class="form-control" id="DNI" placeholder="123456789"/>
+  <asp:textbox runat="server" type="number" class="form-control" id="DNI_" placeholder="123456789"/>
 </div>
 
     <div>
-        <asp:Button Text="agregar" runat="server" onclick="Agregar_onClick"/>
+        <asp:Button Text="aceptar" runat="server" onclick="Agregar_onClick"/>
     </div>
 
 </asp:Content>

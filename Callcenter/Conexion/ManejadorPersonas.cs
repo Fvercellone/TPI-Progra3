@@ -9,13 +9,19 @@ namespace Conexion
 {
     public class ManejadorPersonas
     {
-        public List<Personas> Listar()
+        public List<Personas> Listar( string DNI_ = "")
         {
             List<Personas> lista = new List<Personas>();
             ConexionDB conexion = new ConexionDB();
             try
             {
-                conexion.settearConsulta("select P.ID, P.Nombre, P.Apellido, P.Email, P.Telefono, P.DNI, P.Activo from Personas as P");
+                conexion.settearConsulta("select P.ID, P.Nombre, P.Apellido, P.Email, P.Telefono, P.DNI, P.Activo from Personas as P ");
+                if(DNI_!= "")
+                {
+                    conexion.agregarParametro("@DNI_", DNI_);
+                    conexion.settearConsulta("select P.ID, P.Nombre, P.Apellido, P.Email, P.Telefono, P.DNI, P.Activo from Personas as P where DNI = @DNI_");
+                }
+
                 conexion.ejecutarLectura();
                 while (conexion._lector.Read())
                 {
@@ -135,12 +141,11 @@ namespace Conexion
             }
         }
 
-        public void Modificar(string DNI)
+        public void Modificar(Personas persona)
         {
             ConexionDB conexion = new ConexionDB();
             try
             {
-                Personas persona = new Personas();
                 conexion.settearConsulta("BEGIN TRANSACTION; UPDATE PERSONAS SET Nombre = @Nombre, Apellido = @Apellido, Email = @Email, Telefono = @Telefono, DNI = @DNI WHERE DNI = @DNI; COMMIT");
                 //conexion.agregarParametro("@Id", persona.ID);
                 conexion.agregarParametro("@Nombre", persona.Nombre);

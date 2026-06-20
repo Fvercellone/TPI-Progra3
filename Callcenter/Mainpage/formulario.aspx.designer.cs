@@ -51,12 +51,12 @@ namespace Mainpage
         protected global::System.Web.UI.WebControls.TextBox Telefono;
 
         /// <summary>
-        /// Control DNI.
+        /// Control DNI_.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox DNI;
+        protected global::System.Web.UI.WebControls.TextBox DNI_;
     }
 }

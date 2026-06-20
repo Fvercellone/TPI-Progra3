@@ -7,6 +7,7 @@ using System.Web.UI.WebControls;
 
 namespace Mainpage
 {
+    //TENEMOS QUE YA AGREGAR EL MODO OSCURO
     public partial class Site1 : System.Web.UI.MasterPage
     {
         public string user { get; set; }

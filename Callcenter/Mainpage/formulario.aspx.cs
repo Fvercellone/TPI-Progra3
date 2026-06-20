@@ -11,60 +11,61 @@ namespace Mainpage
 {
     public partial class formulario : System.Web.UI.Page
     {
-
-        public string DNI_Mod { get; set; }
        
         Personas persona = new Personas();
+        ManejadorPersonas Conexion = new ManejadorPersonas();
 
         protected void Page_Load(object sender, EventArgs e)
         {
-
-            if (!IsPostBack)
+            string DNI = Session["DNI"] != null ? Session["DNI"].ToString() : "";
+            if (DNI != "" && !IsPostBack)
             {
 
-                if (Session["DNI"] != null)
-                {
-                    
-                    ManejadorPersonas conexion = new ManejadorPersonas();
-                    DNI_Mod = Session["DNI"].ToString();
+              ManejadorPersonas conexion = new ManejadorPersonas();
 
-                    conexion.Listar(DNI_Mod);
-                        //{
-                    //    persona.DNI = DNI_Mod;
-                    //    persona.Nombre = Nombre.Text;
-                    //    persona.Apellido = Apellido.Text;
-                    //    persona.Mail = GMAIL.Text;
-                    //    persona.Telefono = Telefono.Text;
-                    //};
-                       
-                    
-                    
+              Personas seleccionada = (conexion.Listar(DNI)[0]);
 
+                Session.Add("DNISeleccionado", seleccionada.DNI);
 
-                }
+                Nombre.Text = seleccionada.Nombre;
+                Apellido.Text = seleccionada.Apellido;
+                GMAIL.Text = seleccionada.Mail;
+                Telefono.Text = seleccionada.Telefono;
+                DNI_.Text = seleccionada.DNI;
+
             }
         }
 
         protected void Agregar_onClick(object sender, EventArgs e)
         {
-            ManejadorPersonas Conexion = new ManejadorPersonas();
-            Conexion.agregar(new Personas()
+            try
             {
-                Nombre = Nombre.Text,
-                Apellido = Apellido.Text,
-                Mail = GMAIL.Text,
-                Telefono = Telefono.Text,
-                DNI = DNI.Text,
-                Activo = true
-            });
-             Response.Redirect("personas.aspx");
-        }
+                
+                Personas persona = new Personas()
 
-        protected void Modificar_onClick(object sender, EventArgs e)
-        {
-            ManejadorPersonas Conexion = new ManejadorPersonas();
-            Conexion.Modificar(DNI_Mod);
-            Response.Redirect("personas.aspx");
+                {
+                    Nombre = Nombre.Text,
+                    Apellido = Apellido.Text,
+                    Mail = GMAIL.Text,
+                    Telefono = Telefono.Text,
+                    DNI = DNI_.Text,
+                    Activo = true
+                };
+
+                if (Session["DNI"] == null)
+                    Conexion.agregar(persona);
+                else
+                    Conexion.Modificar(persona);
+
+                Response.Redirect("personas.aspx");
+
+
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
         }
 }
 }

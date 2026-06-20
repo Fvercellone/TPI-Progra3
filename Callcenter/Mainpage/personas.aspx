@@ -9,19 +9,12 @@
 
    
         <asp:GridView ID="DGVPersonas" runat="server"
-    CssClass="table table-striped"
-    AutoGenerateColumns="false"
-    OnRowCommand="DGVPersonas_RowCommand">
+            CssClass="table table-striped"
+            OnRowCommand="DGVPersonas_RowCommand" 
+
+            DataKeyNames="DNI" >
 
     <Columns>
-        <asp:BoundField DataField="ID" HeaderText="ID" SortExpression="ID" />
-        <asp:BoundField DataField="Nombre" HeaderText="Nombre" SortExpression="Nombre" />
-        <asp:BoundField DataField="Apellido" HeaderText="Apellido" SortExpression="Apellido" />
-        <asp:BoundField DataField="Mail" HeaderText="Email" SortExpression="Mail" />
-        <asp:BoundField DataField="Telefono" HeaderText="Telefono" SortExpression="Telefono" />
-        <asp:BoundField DataField="DNI" HeaderText="DNI" SortExpression="DNI" />
-        <asp:BoundField DataField="Activo" HeaderText="Activo" SortExpression="Activo" />
-
         <asp:TemplateField HeaderText="Eliminar">
             <ItemTemplate>
                 <asp:Button ID="BTEliminarFila" runat="server"
