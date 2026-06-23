@@ -9,19 +9,19 @@ using System.Web.UI.WebControls;
 
 namespace Mainpage
 {
-    public partial class personas : System.Web.UI.Page
+    public partial class usuarios : System.Web.UI.Page
     {
 
-        public List<Personas> ListaDePersonas { get; set; }
+        public List<Usuarios> ListaUsuarios { get; set; }
         protected void Page_Load(object sender, EventArgs e)
         {
-            ManejadorPersonas conexionlista = new ManejadorPersonas();
-            ListaDePersonas = conexionlista.Listar();
+            ManejadorUsuarios conexionlista = new ManejadorUsuarios();
+            ListaUsuarios = conexionlista.Listar();
             
             if(!IsPostBack)
             {
-                DGVPersonas.DataSource = ListaDePersonas;
-                DGVPersonas.DataBind();
+                DGVUsuarios.DataSource = ListaUsuarios;
+                DGVUsuarios.DataBind();
 
                 if (Session["Mensaje"] != null)
                 {
@@ -31,6 +31,7 @@ namespace Mainpage
                     Session.Remove("Mensaje");
                     Session.Remove("ClaseMensaje");
                 }
+               // ocultarColumnas();
 
             }
 
@@ -38,10 +39,10 @@ namespace Mainpage
 
         private void ocultarColumnas()
         {
-            DGVPersonas.Columns[0].Visible = false; // ID
+            DGVUsuarios.Columns[4].Visible = false; // ID
         }
 
-        protected void DGVPersonas_RowCommand(object sender, GridViewCommandEventArgs e)
+        protected void DGVUsuarios_RowCommand(object sender, GridViewCommandEventArgs e)
         {
 
             
@@ -49,30 +50,30 @@ namespace Mainpage
             {
                 string dni = e.CommandArgument.ToString();
 
-                ManejadorPersonas conexion = new ManejadorPersonas();
+                ManejadorUsuarios conexion = new ManejadorUsuarios();
 
                 if (e.CommandName == "Eliminar")
                 {
-                    conexion.Eliminar(dni);
+                    conexion.Eliminar(Convert.ToInt32(e.CommandArgument));
 
                     Session["Mensaje"] = "Usuario dado de baja correctamente.";
                     Session["ClaseMensaje"] = "alert alert-success d-block";
 
-                    Response.Redirect("Personas.aspx");
+                    Response.Redirect("Usuario.aspx");
                 }
                 else if (e.CommandName == "Activar")
                 {
-                    conexion.Activar(dni);
+                    conexion.Activar(Convert.ToInt32(e.CommandArgument));
 
                     Session["Mensaje"] = "Usuario activado correctamente.";
                     Session["ClaseMensaje"] = "alert alert-success d-block";
 
-                    Response.Redirect("Personas.aspx");
+                    Response.Redirect("Usuario.aspx");
                 }
                 else if (e.CommandName == "Modificar")
                 {
-                    Session.Add("DNI",dni);
-                    Response.Redirect("formulario.aspx");
+                    Session.Add("ID", Convert.ToInt32(e.CommandArgument));
+                    Response.Redirect("formularioUsuarios.aspx");
                 }
             }
             catch (Exception ex)

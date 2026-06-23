@@ -84,9 +84,11 @@
     <Content Include="Content\bootstrap.rtl.css" />
     <Content Include="Content\bootstrap.rtl.min.css" />
     <Content Include="Default.aspx" />
-    <Content Include="formulario.aspx" />
+    <Content Include="formularioUsuarios.aspx" />
+    <Content Include="formularioPersonas.aspx" />
     <Content Include="Global.asax" />
     <Content Include="Login.aspx" />
+    <Content Include="Usuario.aspx" />
     <Content Include="personas.aspx" />
     <Content Include="Scripts\bootstrap.bundle.js" />
     <Content Include="Scripts\bootstrap.bundle.min.js" />
@@ -105,12 +107,19 @@
     <Compile Include="Default.aspx.designer.cs">
       <DependentUpon>Default.aspx</DependentUpon>
     </Compile>
-    <Compile Include="formulario.aspx.cs">
-      <DependentUpon>formulario.aspx</DependentUpon>
+    <Compile Include="formularioUsuarios.aspx.cs">
+      <DependentUpon>formularioUsuarios.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="formulario.aspx.designer.cs">
-      <DependentUpon>formulario.aspx</DependentUpon>
+    <Compile Include="formularioUsuarios.aspx.designer.cs">
+      <DependentUpon>formularioUsuarios.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="formularioPersonas.aspx.cs">
+      <DependentUpon>formularioPersonas.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="formularioPersonas.aspx.designer.cs">
+      <DependentUpon>formularioPersonas.aspx</DependentUpon>
     </Compile>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -121,6 +130,13 @@
     </Compile>
     <Compile Include="Login.aspx.designer.cs">
       <DependentUpon>Login.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Usuario.aspx.cs">
+      <DependentUpon>Usuario.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Usuario.aspx.designer.cs">
+      <DependentUpon>Usuario.aspx</DependentUpon>
     </Compile>
     <Compile Include="personas.aspx.cs">
       <DependentUpon>personas.aspx</DependentUpon>

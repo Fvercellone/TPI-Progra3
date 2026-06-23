@@ -9,7 +9,7 @@ using Dominio;
 
 namespace Mainpage
 {
-    public partial class formulario : System.Web.UI.Page
+    public partial class formulario : System.Web.UI.Page 
     {
        
         Personas persona = new Personas();

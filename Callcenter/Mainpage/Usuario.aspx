@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Main.Master" AutoEventWireup="true" CodeBehind="personas.aspx.cs" Inherits="Mainpage.personas" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Main.Master" AutoEventWireup="true" CodeBehind="Usuario.aspx.cs" Inherits="Mainpage.usuarios" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 
@@ -8,11 +8,11 @@
 
 
    
-        <asp:GridView ID="DGVPersonas" runat="server"
+        <asp:GridView ID="DGVUsuarios" runat="server"
             CssClass="table table-striped"
-            OnRowCommand="DGVPersonas_RowCommand" 
+            OnRowCommand="DGVUsuarios_RowCommand" 
 
-            DataKeyNames="DNI" >
+            DataKeyNames="ID" >
 
     <Columns>
         <asp:TemplateField HeaderText="Eliminar">
@@ -21,7 +21,7 @@
                     Text="Eliminar"
                     CssClass="btn btn-danger btn-sm"
                     CommandName="Eliminar"
-                    CommandArgument='<%# Eval("DNI") %>' />
+                    CommandArgument='<%# Eval("ID") %>' />
             </ItemTemplate>
         </asp:TemplateField>
 
@@ -31,7 +31,7 @@
                     Text="Activar"
                     CssClass="btn btn-success btn-sm"
                     CommandName="Activar"
-                    CommandArgument='<%# Eval("DNI") %>' />
+                    CommandArgument='<%# Eval("ID") %>' />
             </ItemTemplate>
         </asp:TemplateField>
 
@@ -41,7 +41,7 @@
                     Text="Modificar"
                     CssClass="btn btn-warning btn-sm"
                     CommandName="Modificar"
-                    CommandArgument='<%# Eval("DNI") %>' />
+                    CommandArgument='<%# Eval("ID") %>' />
             </ItemTemplate>
         </asp:TemplateField>
 
@@ -50,21 +50,21 @@
 
        <%-- <div id="Delete">
         <asp:Button ID="BTDelete" runat="server" Text="Borrar Registro" OnClick="BTDelete_Click" />
-        <asp:TextBox ID="TBDNI" runat="server"></asp:TextBox>
+        <asp:TextBox ID="TBID" runat="server"></asp:TextBox>
         </div>
 
         <div id="Add">
         <asp:Button ID="BTADD" runat="server" Text="Activar Registro" OnClick="BTADD_Click" />
-        <asp:TextBox ID="TBDNIADD" runat="server"></asp:TextBox>
+        <asp:TextBox ID="TBIDADD" runat="server"></asp:TextBox>
         </div>--%>
 
 <%--        <div id="Modify">
         <asp:Button ID="BTMODIFY" runat="server" Text="Modificar Registro" OnClick="BTMODIFY_Click" />
-        <asp:TextBox ID="TBDNIMODIFY" runat="server"></asp:TextBox>
+        <asp:TextBox ID="TBIDMODIFY" runat="server"></asp:TextBox>
         </div>--%>
 
         <div>
-            <a href="formularioPersonas.aspx">agregar</a>
+            <a href="formularioUsuarios.aspx">agregar</a>
         </div>
 
         <div>

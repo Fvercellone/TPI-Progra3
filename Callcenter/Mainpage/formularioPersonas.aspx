@@ -1,10 +1,10 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Main.Master" AutoEventWireup="true" CodeBehind="formulario.aspx.cs" Inherits="Mainpage.formulario" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Main.Master" AutoEventWireup="true" CodeBehind="formularioPersonas.aspx.cs" Inherits="Mainpage.formulario" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
 
 
-    <div class="mb-3">
+<div class="mb-3">
   <label for="Nombre" class="form-label">Nombre</label>
   <asp:textbox runat="server" type="text" class="form-control" id="Nombre" placeholder="Nombre"/>
 </div>

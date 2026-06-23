@@ -21,7 +21,7 @@ BEGIN
             AND Activo = 1
         )
         BEGIN
-            RAISERROR('La persona ya se encuentra dada de baja.', 16, 2);
+            RAISERROR('La persona ya se encuentra dada de Alta.', 16, 2);
         END
 
         UPDATE Personas

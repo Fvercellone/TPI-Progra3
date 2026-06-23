@@ -6,13 +6,19 @@ using System.Threading.Tasks;
 
 namespace Dominio
 {
-    public class Usuario
+    public class Usuarios
     {
-        public int idUsuario { get; set; }
-        public string Nombre { get; set; }
+        public int ID { get; set; }
+        public int IDPersona { get; set; }
+        public string DNI { get; set; }
+        public int IDRol { get; set; }
+        public string Usuario { get; set; }
+        public string Contrasenia { get; set; }
+        public bool Activo { get; set; }
+
         public override string ToString()
         {
-            return Nombre;
+            return IDPersona + " " + Usuario + " " + Contrasenia;
         }
     }
 }

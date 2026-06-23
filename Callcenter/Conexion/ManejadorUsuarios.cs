@@ -9,19 +9,31 @@ namespace Conexion
 {
     public class ManejadorUsuarios
     {
-        public List<Usuario> Listar()
+        public List<Usuarios> Listar(string DNI_ = "")
         {
-            List<Usuario> lista = new List<Usuario>();
+            List<Usuarios> lista = new List<Usuarios>();
             ConexionDB conexion = new ConexionDB();
             try
             {
-                conexion.settearConsulta("SELECT U.Id, U.Nombre FROM dbo.USUARIOS as U");
+                conexion.settearConsulta("select U.ID, U.IDPersona, P.DNI, U.IDRol, U.Usuario, U.Contrasenia, U.Activo from Usuarios as U INNER JOIN Personas P ON U.IDPersona = P.ID");
+                if (DNI_ != "")
+                {
+                    conexion.agregarParametro("@DNI_", DNI_);
+                    conexion.settearConsulta("select U.ID, U.IDPersona, P.DNI, U.IDRol, U.Usuario, U.Contrasenia, U.Activo from Usuarios as U INNER JOIN Personas P ON U.IDPersona = P.ID where U.ID = @DNI_");
+
+                }
+
                 conexion.ejecutarLectura();
                 while (conexion._lector.Read())
                 {
-                    Usuario aux = new Usuario();
-                    aux.idUsuario = (int)conexion._lector["Id"];
-                    aux.Nombre = (string)conexion._lector["Nombre"];
+                    Usuarios aux = new Usuarios();
+                    aux.ID = (int)conexion._lector["ID"];
+                    aux.IDPersona = (int)conexion._lector["IDPersona"];
+                    aux.DNI = (string)conexion._lector["DNI"];
+                    aux.IDRol = (int)conexion._lector["IDRol"];
+                    aux.Usuario = (string)conexion._lector["Usuario"];
+                    aux.Contrasenia = (string)conexion._lector["Contrasenia"];
+                    aux.Activo = (bool)conexion._lector["Activo"];
                     lista.Add(aux);
                 }
                 return lista;
@@ -36,12 +48,21 @@ namespace Conexion
             }
         }
 
-        public void Agregar(Usuario nuevo) {
+
+        /*AGREGAR, MODIFICAR, ELIMINAR*/
+
+        public void agregar(Usuarios nuevo)
+        {
             ConexionDB conexion = new ConexionDB();
             try
             {
-                conexion.settearConsulta("INSERT INTO dbo.USUARIOS (Nombre) VALUES (@nombre);");
-                conexion.agregarParametro("@nombre", nuevo.Nombre);
+                conexion.settearConsulta("EXEC sp_CrearUsuarioPorDNI @DNI, @IDRol, @Usuario, @Contrasenia, @Activo");
+               // conexion.agregarParametro("@DNI", nuevo.ID);
+                conexion.agregarParametro("@DNI", nuevo.IDPersona);
+                conexion.agregarParametro("@IDRol", nuevo.IDRol);
+                conexion.agregarParametro("@Usuario", nuevo.Usuario);
+                conexion.agregarParametro("@Contrasenia", nuevo.Contrasenia);
+                conexion.agregarParametro("@Activo", nuevo.Activo);
                 conexion.ejecutarAccion();
             }
             catch (Exception ex)
@@ -54,18 +75,36 @@ namespace Conexion
             }
         }
 
-        public void Eliminar(int id)
+        public void Eliminar(int ID)
         {
             ConexionDB conexion = new ConexionDB();
             try
             {
-                conexion.settearConsulta("DELETE FROM dbo.USUARIOS WHERE Id = @Id");
-                conexion.agregarParametro("@Id", id);
+                conexion.settearConsulta("EXEC sp_BajaLogicaUsuarioPorID @ID");
+                conexion.agregarParametro("@ID", ID);
                 conexion.ejecutarAccion();
             }
             catch (Exception ex)
             {
                 throw ex;
+            }
+            finally
+            {
+                conexion.cerrarConexion();
+            }
+        }
+        public void Activar(int ID)
+        {
+            ConexionDB conexion = new ConexionDB();
+            try
+            {
+                conexion.settearConsulta("EXEC sp_AltaLogicaUsuarioPorID @ID");
+                conexion.agregarParametro("@ID", ID);
+                conexion.ejecutarAccion();
+            }
+            catch (Exception)
+            {
+                throw;
             }
             finally
             {
@@ -73,24 +112,29 @@ namespace Conexion
             }
         }
 
-        public void Modificar(Usuario usuario)
+        public void Modificar(Usuarios nuevo)
         {
             ConexionDB conexion = new ConexionDB();
             try
             {
-                conexion.settearConsulta("BEGIN TRANSACTION; UPDATE dbo.USUARIOS SET Nombre = @Nombre WHERE Id = @Id; COMMIT");
-                conexion.agregarParametro("@Id", usuario.idUsuario);
-                conexion.agregarParametro("@Nombre", usuario.Nombre);
+                conexion.settearConsulta(
+                    "EXEC sp_ModificarUsuarioPorDNI @ID, @DNI, @IDRol, @Usuario, @Contrasenia, @Activo"
+                );
+
+                conexion.agregarParametro("@ID", nuevo.ID);
+                conexion.agregarParametro("@DNI", nuevo.DNI);
+                conexion.agregarParametro("@IDRol", nuevo.IDRol);
+                conexion.agregarParametro("@Usuario", nuevo.Usuario);
+                conexion.agregarParametro("@Contrasenia", nuevo.Contrasenia);
+                conexion.agregarParametro("@Activo", nuevo.Activo);
+
                 conexion.ejecutarAccion();
-            }
-            catch (Exception ex)
-            {
-                throw ex;
             }
             finally
             {
                 conexion.cerrarConexion();
             }
         }
+
     }
 }
