@@ -48,20 +48,7 @@
     </Columns>
 </asp:GridView>
 
-       <%-- <div id="Delete">
-        <asp:Button ID="BTDelete" runat="server" Text="Borrar Registro" OnClick="BTDelete_Click" />
-        <asp:TextBox ID="TBID" runat="server"></asp:TextBox>
-        </div>
-
-        <div id="Add">
-        <asp:Button ID="BTADD" runat="server" Text="Activar Registro" OnClick="BTADD_Click" />
-        <asp:TextBox ID="TBIDADD" runat="server"></asp:TextBox>
-        </div>--%>
-
-<%--        <div id="Modify">
-        <asp:Button ID="BTMODIFY" runat="server" Text="Modificar Registro" OnClick="BTMODIFY_Click" />
-        <asp:TextBox ID="TBIDMODIFY" runat="server"></asp:TextBox>
-        </div>--%>
+      
 
         <div>
             <a href="formularioUsuarios.aspx">agregar</a>

@@ -9,9 +9,9 @@ using Dominio;
 
 namespace Mainpage
 {
-    public partial class formulario : System.Web.UI.Page 
+    public partial class formulario : System.Web.UI.Page
     {
-       
+
         Personas persona = new Personas();
         ManejadorPersonas Conexion = new ManejadorPersonas();
 
@@ -20,10 +20,10 @@ namespace Mainpage
             string DNI = Session["DNI"] != null ? Session["DNI"].ToString() : "";
             if (DNI != "" && !IsPostBack)
             {
+               
+                ManejadorPersonas conexion = new ManejadorPersonas();
 
-              ManejadorPersonas conexion = new ManejadorPersonas();
-
-              Personas seleccionada = (conexion.Listar(DNI)[0]);
+                Personas seleccionada = (conexion.Listar(DNI)[0]);
 
                 Session.Add("DNISeleccionado", seleccionada.DNI);
 
@@ -36,11 +36,14 @@ namespace Mainpage
             }
         }
 
+
+
         protected void Agregar_onClick(object sender, EventArgs e)
         {
             try
             {
-                
+
+
                 Personas persona = new Personas()
 
                 {
@@ -52,10 +55,17 @@ namespace Mainpage
                     Activo = true
                 };
 
-                if (Session["DNI"] == null)
+                    if (Session["DNI"] == null)
+                {
+
                     Conexion.agregar(persona);
+
+                }
                 else
+                {
                     Conexion.Modificar(persona);
+
+                }
 
                 Response.Redirect("personas.aspx");
 
@@ -67,5 +77,10 @@ namespace Mainpage
                 throw;
             }
         }
-}
+        protected void Cancelar_onClick(object sender, EventArgs e)
+        {
+            Session.Clear();
+            Response.Redirect("personas.aspx");
+        }
+    }
 }

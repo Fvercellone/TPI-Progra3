@@ -58,6 +58,7 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="manejadorincidencias.cs" />
     <Compile Include="ManejadorUsuarios.cs" />
     <Compile Include="ManejadorPersonas.cs" />
     <Compile Include="manjadorProductos.cs" />

@@ -1,4 +1,4 @@
-CREATE OR ALTER PROCEDURE sp_ModificarUsuarioPorDNI
+CREATE PROCEDURE sp_ModificarUsuarioPorDNI
     @ID INT,
     @DNI VARCHAR(20),
     @IDRol INT,

@@ -20,6 +20,7 @@ namespace Mainpage
             
             if(!IsPostBack)
             {
+                //Session.Clear();
                 DGVPersonas.DataSource = ListaDePersonas;
                 DGVPersonas.DataBind();
 
@@ -72,7 +73,7 @@ namespace Mainpage
                 else if (e.CommandName == "Modificar")
                 {
                     Session.Add("DNI",dni);
-                    Response.Redirect("formulario.aspx");
+                    Response.Redirect("formularioPersonas.aspx");
                 }
             }
             catch (Exception ex)

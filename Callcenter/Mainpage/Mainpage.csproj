@@ -84,9 +84,11 @@
     <Content Include="Content\bootstrap.rtl.css" />
     <Content Include="Content\bootstrap.rtl.min.css" />
     <Content Include="Default.aspx" />
+    <Content Include="error.aspx" />
     <Content Include="formularioUsuarios.aspx" />
     <Content Include="formularioPersonas.aspx" />
     <Content Include="Global.asax" />
+    <Content Include="incidencias.aspx" />
     <Content Include="Login.aspx" />
     <Content Include="Usuario.aspx" />
     <Content Include="personas.aspx" />
@@ -107,6 +109,13 @@
     <Compile Include="Default.aspx.designer.cs">
       <DependentUpon>Default.aspx</DependentUpon>
     </Compile>
+    <Compile Include="error.aspx.cs">
+      <DependentUpon>error.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="error.aspx.designer.cs">
+      <DependentUpon>error.aspx</DependentUpon>
+    </Compile>
     <Compile Include="formularioUsuarios.aspx.cs">
       <DependentUpon>formularioUsuarios.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -123,6 +132,13 @@
     </Compile>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="incidencias.aspx.cs">
+      <DependentUpon>incidencias.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="incidencias.aspx.designer.cs">
+      <DependentUpon>incidencias.aspx</DependentUpon>
     </Compile>
     <Compile Include="Login.aspx.cs">
       <DependentUpon>Login.aspx</DependentUpon>
@@ -153,6 +169,7 @@
     <Compile Include="Main.Master.designer.cs">
       <DependentUpon>Main.Master</DependentUpon>
     </Compile>
+    <Compile Include="validar.cs" />
     <Compile Include="WebForm1.aspx.cs">
       <DependentUpon>WebForm1.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>

@@ -28,7 +28,7 @@ namespace Conexion
                 {
                     Usuarios aux = new Usuarios();
                     aux.ID = (int)conexion._lector["ID"];
-                    aux.IDPersona = (int)conexion._lector["IDPersona"];
+                    //aux.IDPersona = (int)conexion._lector["IDPersona"];
                     aux.DNI = (string)conexion._lector["DNI"];
                     aux.IDRol = (int)conexion._lector["IDRol"];
                     aux.Usuario = (string)conexion._lector["Usuario"];
@@ -58,7 +58,7 @@ namespace Conexion
             {
                 conexion.settearConsulta("EXEC sp_CrearUsuarioPorDNI @DNI, @IDRol, @Usuario, @Contrasenia, @Activo");
                // conexion.agregarParametro("@DNI", nuevo.ID);
-                conexion.agregarParametro("@DNI", nuevo.IDPersona);
+                //conexion.agregarParametro("@DNI", nuevo.IDPersona);
                 conexion.agregarParametro("@IDRol", nuevo.IDRol);
                 conexion.agregarParametro("@Usuario", nuevo.Usuario);
                 conexion.agregarParametro("@Contrasenia", nuevo.Contrasenia);

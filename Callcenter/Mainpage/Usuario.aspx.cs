@@ -22,6 +22,7 @@ namespace Mainpage
             {
                 DGVUsuarios.DataSource = ListaUsuarios;
                 DGVUsuarios.DataBind();
+                //DGVUsuarios.Columns["ID"].Visible = false;
 
                 if (Session["Mensaje"] != null)
                 {
@@ -31,7 +32,7 @@ namespace Mainpage
                     Session.Remove("Mensaje");
                     Session.Remove("ClaseMensaje");
                 }
-               // ocultarColumnas();
+               //ocultarColumnas();
 
             }
 

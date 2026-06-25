@@ -33,7 +33,8 @@
 </div>
 
     <div>
-        <asp:Button Text="aceptar" runat="server" onclick="Agregar_onClick"/>
+        <asp:Button Text="aceptar" runat="server" OnClick="Agregar_onClick" ID="btnAceptar" ControlToValidate="Nombre" ErrorMessage="Debe ingresar el nombre." Display="Dynamic" />
+        <a  class="btn btn-primary" role="button" href="Personas.aspx" >cancelar</a>  
     </div>
 
 </asp:Content>

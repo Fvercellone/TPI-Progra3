@@ -20,8 +20,8 @@ namespace Mainpage
             string ID = Session["ID"] != null ? Session["ID"].ToString() : "";
             if (ID != "" && !IsPostBack)
             {
-
-              ManejadorUsuarios conexion = new ManejadorUsuarios();
+                Session.Clear();
+                ManejadorUsuarios conexion = new ManejadorUsuarios();
 
               Usuarios seleccionada = (conexion.Listar(ID)[0]);
 
@@ -48,7 +48,7 @@ namespace Mainpage
                     Contrasenia = Contraseña_.Text,
                     IDRol = Convert.ToInt32(Rol_.Text),
                     DNI = DNIPersona.Text,
-                    IDPersona = Convert.ToInt32(DNIPersona.Text),
+                    //IDPersona = Convert.ToInt32(DNIPersona.Text),
                     Activo = true
                 };
 
@@ -67,5 +67,9 @@ namespace Mainpage
                 throw;
             }
         }
-}
+        protected void Cancelar_onClick(object sender, EventArgs e)
+        {
+            Response.Redirect("usuarios.aspx");
+        }
+    }
 }

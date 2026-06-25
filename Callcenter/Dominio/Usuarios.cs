@@ -9,7 +9,7 @@ namespace Dominio
     public class Usuarios
     {
         public int ID { get; set; }
-        public int IDPersona { get; set; }
+        //public int IDPersona { get; set; }
         public string DNI { get; set; }
         public int IDRol { get; set; }
         public string Usuario { get; set; }
@@ -18,7 +18,7 @@ namespace Dominio
 
         public override string ToString()
         {
-            return IDPersona + " " + Usuario + " " + Contrasenia;
+            return ID + " " + Usuario + " " + Contrasenia;
         }
     }
 }
