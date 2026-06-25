@@ -30,16 +30,16 @@ namespace Conexion
                     aux.id = (int)conexion._lector["ID"];
                     aux.titulo = (string)conexion._lector["Titulo"];
                     aux.descripcion = (string)conexion._lector["Descripcion"];
-                    //aux.idUsuario = (int)conexion._lector["IDUsuario"];
-                    //aux.idempleado = (int)conexion._lector["IDEmpleado"];
-                    //aux.categoria = (int)conexion._lector["Categoria"];
-                    //aux.prioridad = (int)conexion._lector["Prioridad"];
+                    aux.Cliente = (string)conexion._lector["Cliente"];
+                    aux.Empleado= (string)conexion._lector["Empleado"];
+                    aux.categoria = (string)conexion._lector["Categoria"];
+                    aux.prioridad = (string)conexion._lector["Prioridad"];
                     aux.comentario = (string)conexion._lector["Comentario"];
                     aux.comentarioCierre = (string)conexion._lector["ComentarioCierre"];
-                    aux.alta = (DateTime)conexion._lector["Alta"];
-                    aux.cierre = (DateTime)conexion._lector["Cierre"];
-                    aux.resolucion = (DateTime)conexion._lector["Resolucion"];
-                    aux.modificacion = (DateTime)conexion._lector["Modificacion"];
+                    aux.alta = (DateTime)conexion._lector["FechaAlta"];
+                    aux.cierre = (DateTime)conexion._lector["FechaCierre"];
+                    aux.resolucion = (DateTime)conexion._lector["FechaResolucion"];
+                    aux.modificacion = (DateTime)conexion._lector["FechaModificacion"];
                     lista.Add(aux);
                 }
                 return lista;

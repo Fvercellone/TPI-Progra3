@@ -48,6 +48,10 @@
                     <a class="nav-link" href="Usuario.aspx">Usuarios</a>
                 </li>
 
+                <li class="nav-Page">
+                    <a class="nav-link" href="incidencias.aspx">Incidencias</a>
+                </li>
+
 
             </ul>
 

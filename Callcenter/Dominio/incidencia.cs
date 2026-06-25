@@ -12,10 +12,10 @@ namespace Dominio
         public int id { get; set; }
         public string titulo { get; set; }
         public string descripcion { get; set; }
-        public int idUsuario { get; set; }
-        public int idempleado { get; set; }
-        public int categoria { get; set; }
-        public int prioridad { get; set; }
+        public string Cliente { get; set; }
+        public string Empleado { get; set; }
+        public string categoria { get; set; }
+        public string prioridad { get; set; }
         public string comentario { get; set; }
         public string comentarioCierre { get; set; }
         public DateTime alta { get; set; }
