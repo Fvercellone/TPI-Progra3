@@ -20,6 +20,7 @@ namespace Mainpage
             
             if(!IsPostBack)
             {
+                Session.Clear();
                 DGVUsuarios.DataSource = ListaUsuarios;
                 DGVUsuarios.DataBind();
                 //DGVUsuarios.Columns["ID"].Visible = false;

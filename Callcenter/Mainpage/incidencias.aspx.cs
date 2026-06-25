@@ -19,7 +19,7 @@ namespace Mainpage
 
             if (!IsPostBack)
             {
-                //Session.Clear();
+                Session.Clear();
                 DGVIncidencias.DataSource = ListaDeIncidencias;
                 DGVIncidencias.DataBind();
 
@@ -34,5 +34,44 @@ namespace Mainpage
 
             }
         }
+
+        protected void DGVIncidencias_RowCommand(object sender, GridViewCommandEventArgs e)
+{
+    try
+    {
+        int id = int.Parse(e.CommandArgument.ToString());
+
+        if (e.CommandName == "Modificar")
+        {
+            Session["ID"] = id;
+            Session["Accion"] = "Modificar";
+            Response.Redirect("formularioIncidencias.aspx");
+        }
+        else if (e.CommandName == "Reasignar")
+        {
+            Session["ID"] = id;
+            Session["Accion"] = "Reasignar";
+            Response.Redirect("formularioIncidencias.aspx");
+        }
+        else if (e.CommandName == "Resolver")
+        {
+            Session["ID"] = id;
+            Session["Accion"] = "Resolver";
+            Response.Redirect("formularioIncidencias.aspx");
+        }
+        else if (e.CommandName == "Cerrar")
+        {
+            ManejadorIncidencias conexion = new ManejadorIncidencias();
+            conexion.Cerrar(id);
+
+            Response.Redirect("Incidencias.aspx");
+        }
+    }
+    catch (Exception ex)
+    {
+        LBMensaje.Text = ex.Message;
+        LBMensaje.CssClass = "alert alert-danger d-block";
+    }
+}
     }
 }

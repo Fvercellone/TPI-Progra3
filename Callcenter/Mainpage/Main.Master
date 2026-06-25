@@ -52,6 +52,10 @@
                     <a class="nav-link" href="incidencias.aspx">Incidencias</a>
                 </li>
 
+                <li class="nav-Page">
+                    <a class="nav-link" href="Clientes.aspx">Clientes</a>
+                </li>
+
 
             </ul>
 

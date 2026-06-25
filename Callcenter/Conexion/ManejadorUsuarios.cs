@@ -48,7 +48,58 @@ namespace Conexion
             }
         }
 
-
+        public List<Usuarios> ListarCliente()
+        {
+            List<Usuarios> lista = new List<Usuarios>();
+            ConexionDB conexion = new ConexionDB();
+            try
+            {
+                conexion.settearConsulta("exec sp_ListarClientes");
+                conexion.ejecutarLectura();
+                while (conexion._lector.Read())
+                {
+                    Usuarios aux = new Usuarios();
+                    aux.ID = (int)conexion._lector["ID"];
+                    aux.Usuario = (string)conexion._lector["NombreCompleto"];
+                    lista.Add(aux);
+                }
+                return lista;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                conexion.cerrarConexion();
+            }
+        }
+        public List<Usuarios> ListarEmpleados()
+        {
+            List<Usuarios> lista = new List<Usuarios>();
+            ConexionDB conexion = new ConexionDB();
+            try
+            {
+                conexion.settearConsulta("exec sp_ListarEmpleados");
+                conexion.ejecutarLectura();
+                while (conexion._lector.Read())
+                {
+                    Usuarios aux = new Usuarios();
+                    aux.ID = (int)conexion._lector["ID"];
+                    aux.Usuario = (string)conexion._lector["NombreCompleto"];
+                    lista.Add(aux);
+                }
+                return lista;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                conexion.cerrarConexion();
+            }
+        }
         /*AGREGAR, MODIFICAR, ELIMINAR*/
 
         public void agregar(Usuarios nuevo)

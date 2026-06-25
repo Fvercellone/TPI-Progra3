@@ -20,7 +20,7 @@ namespace Mainpage
             
             if(!IsPostBack)
             {
-                //Session.Clear();
+                Session.Clear();
                 DGVPersonas.DataSource = ListaDePersonas;
                 DGVPersonas.DataBind();
 

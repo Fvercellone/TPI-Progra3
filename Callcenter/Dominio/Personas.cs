@@ -16,11 +16,7 @@ namespace Dominio
         public string DNI { get; set; }
         public bool Activo { get; set; }
 
-
-        public override string ToString()
-        {
-            return Nombre + " " + Apellido;
-        }
-
+    
+        public string NombreApellido => Nombre + " " + Apellido;
     }
 }
