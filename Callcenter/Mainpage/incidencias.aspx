@@ -151,7 +151,7 @@
 </div>
 
         <div>
-            <a href="formularioIncidencias.aspx">agregar</a>
+            <a href="vistaIncidencia.aspx">agregar</a>
         </div>
 
         <div>

@@ -98,6 +98,8 @@ namespace Conexion
                 conexion.agregarParametro("@IDPrioridad", nuevo.IDPrioridad);
 
                 conexion.ejecutarAccion();
+
+
             }
             catch (Exception ex)
             {

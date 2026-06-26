@@ -135,7 +135,11 @@ namespace Mainpage
 
         protected void Agregar_onClick(object sender, EventArgs e)
         {
-            int idIncidencia = int.Parse(Session["ID"].ToString());
+            int idIncidencia = 0;
+            if (Session["ID"] != null)
+            {
+                idIncidencia = int.Parse(Session["ID"].ToString());
+            }
             int idEmpleado = int.Parse(DDLEmpleado.SelectedValue);
             try
             {

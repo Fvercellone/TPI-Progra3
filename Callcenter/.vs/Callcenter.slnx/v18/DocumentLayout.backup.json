@@ -11,16 +11,16 @@
       "RelativeMoniker": "D:0:0:{DAD9667A-7AC3-4E27-9884-E03703AF382A}|Conexion\\Conexion.csproj|solutionrelative:conexion\\manejadorincidencias.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{D0EABD23-FD6B-44DE-A2E6-F50C45123187}|Mainpage\\Mainpage.csproj|c:\\users\\angel\\onedrive\\documentos\\github\\tpi-progra3\\callcenter\\mainpage\\formularioincidencias.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
-      "RelativeMoniker": "D:0:0:{D0EABD23-FD6B-44DE-A2E6-F50C45123187}|Mainpage\\Mainpage.csproj|solutionrelative:mainpage\\formularioincidencias.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}"
+      "AbsoluteMoniker": "D:0:0:{D0EABD23-FD6B-44DE-A2E6-F50C45123187}|Mainpage\\Mainpage.csproj|C:\\Users\\angel\\OneDrive\\Documentos\\GitHub\\TPI-Progra3\\Callcenter\\mainpage\\vistaincidencia.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
+      "RelativeMoniker": "D:0:0:{D0EABD23-FD6B-44DE-A2E6-F50C45123187}|Mainpage\\Mainpage.csproj|solutionrelative:mainpage\\vistaincidencia.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{D0EABD23-FD6B-44DE-A2E6-F50C45123187}|Mainpage\\Mainpage.csproj|c:\\users\\angel\\onedrive\\documentos\\github\\tpi-progra3\\callcenter\\mainpage\\formularioincidencias.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{D0EABD23-FD6B-44DE-A2E6-F50C45123187}|Mainpage\\Mainpage.csproj|C:\\Users\\angel\\OneDrive\\Documentos\\GitHub\\TPI-Progra3\\Callcenter\\mainpage\\formularioincidencias.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{D0EABD23-FD6B-44DE-A2E6-F50C45123187}|Mainpage\\Mainpage.csproj|solutionrelative:mainpage\\formularioincidencias.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{D0EABD23-FD6B-44DE-A2E6-F50C45123187}|Mainpage\\Mainpage.csproj|c:\\users\\angel\\onedrive\\documentos\\github\\tpi-progra3\\callcenter\\mainpage\\vistaincidencia.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
-      "RelativeMoniker": "D:0:0:{D0EABD23-FD6B-44DE-A2E6-F50C45123187}|Mainpage\\Mainpage.csproj|solutionrelative:mainpage\\vistaincidencia.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}"
+      "AbsoluteMoniker": "D:0:0:{D0EABD23-FD6B-44DE-A2E6-F50C45123187}|Mainpage\\Mainpage.csproj|c:\\users\\angel\\onedrive\\documentos\\github\\tpi-progra3\\callcenter\\mainpage\\incidencias.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
+      "RelativeMoniker": "D:0:0:{D0EABD23-FD6B-44DE-A2E6-F50C45123187}|Mainpage\\Mainpage.csproj|solutionrelative:mainpage\\incidencias.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}"
     }
   ],
   "DocumentGroupContainers": [
@@ -44,9 +44,22 @@
               "RelativeDocumentMoniker": "Conexion\\manejadorincidencias.cs",
               "ToolTip": "C:\\Users\\angel\\OneDrive\\Documentos\\GitHub\\TPI-Progra3\\Callcenter\\Conexion\\manejadorincidencias.cs",
               "RelativeToolTip": "Conexion\\manejadorincidencias.cs",
-              "ViewState": "AgIAABYAAAAAAAAAAAAmwDQAAAAUAAAAAAAAAA==",
+              "ViewState": "AgIAAE0AAAAAAAAAAAAhwGQAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-06-26T16:26:40.566Z",
+              "WhenOpened": "2026-06-26T19:58:13.474Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "incidencias.aspx",
+              "DocumentMoniker": "C:\\Users\\angel\\OneDrive\\Documentos\\GitHub\\TPI-Progra3\\Callcenter\\Mainpage\\incidencias.aspx",
+              "RelativeDocumentMoniker": "Mainpage\\incidencias.aspx",
+              "ToolTip": "C:\\Users\\angel\\OneDrive\\Documentos\\GitHub\\TPI-Progra3\\Callcenter\\Mainpage\\incidencias.aspx",
+              "RelativeToolTip": "Mainpage\\incidencias.aspx",
+              "LogicalView": "7651a703-06e5-11d1-8ebd-00a0c90f26ea",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000195|",
+              "WhenOpened": "2026-06-26T19:15:02.741Z",
               "EditorCaption": ""
             },
             {
@@ -57,22 +70,9 @@
               "RelativeDocumentMoniker": "Mainpage\\formularioIncidencias.aspx.cs",
               "ToolTip": "C:\\Users\\angel\\OneDrive\\Documentos\\GitHub\\TPI-Progra3\\Callcenter\\Mainpage\\formularioIncidencias.aspx.cs",
               "RelativeToolTip": "Mainpage\\formularioIncidencias.aspx.cs",
-              "ViewState": "AgIAALwAAAAAAAAAAAAAAN0AAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAHEAAAAAAAAAAAAAAIoAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-06-26T16:13:07.287Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "formularioIncidencias.aspx",
-              "DocumentMoniker": "C:\\Users\\angel\\OneDrive\\Documentos\\GitHub\\TPI-Progra3\\Callcenter\\Mainpage\\formularioIncidencias.aspx",
-              "RelativeDocumentMoniker": "Mainpage\\formularioIncidencias.aspx",
-              "ToolTip": "C:\\Users\\angel\\OneDrive\\Documentos\\GitHub\\TPI-Progra3\\Callcenter\\Mainpage\\formularioIncidencias.aspx",
-              "RelativeToolTip": "Mainpage\\formularioIncidencias.aspx",
-              "LogicalView": "7651a703-06e5-11d1-8ebd-00a0c90f26ea",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000195|",
-              "WhenOpened": "2026-06-26T15:53:54.592Z",
               "EditorCaption": ""
             },
             {
@@ -81,16 +81,16 @@
               "Title": "vistaIncidencia.aspx.cs",
               "DocumentMoniker": "C:\\Users\\angel\\OneDrive\\Documentos\\GitHub\\TPI-Progra3\\Callcenter\\Mainpage\\vistaIncidencia.aspx.cs",
               "RelativeDocumentMoniker": "Mainpage\\vistaIncidencia.aspx.cs",
-              "ToolTip": "C:\\Users\\angel\\OneDrive\\Documentos\\GitHub\\TPI-Progra3\\Callcenter\\Mainpage\\vistaIncidencia.aspx.cs",
-              "RelativeToolTip": "Mainpage\\vistaIncidencia.aspx.cs",
-              "ViewState": "AgIAACoAAAAAAAAAAAAuwEYAAABPAAAAAAAAAA==",
+              "ToolTip": "C:\\Users\\angel\\OneDrive\\Documentos\\GitHub\\TPI-Progra3\\Callcenter\\Mainpage\\vistaIncidencia.aspx.cs*",
+              "RelativeToolTip": "Mainpage\\vistaIncidencia.aspx.cs*",
+              "ViewState": "AgIAACUBAAAAAAAAAAAAwDcBAAAyAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-06-26T15:13:28.026Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 2,
               "Title": "vistaIncidencia.aspx",
               "DocumentMoniker": "C:\\Users\\angel\\OneDrive\\Documentos\\GitHub\\TPI-Progra3\\Callcenter\\Mainpage\\vistaIncidencia.aspx",
               "RelativeDocumentMoniker": "Mainpage\\vistaIncidencia.aspx",
