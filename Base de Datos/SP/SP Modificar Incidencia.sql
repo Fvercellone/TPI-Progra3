@@ -1,4 +1,4 @@
-CREATE PROCEDURE sp_ModificarIncidencia
+ALTER PROCEDURE sp_ModificarIncidencia
 (
     @ID INT,
     @Titulo VARCHAR(150),
@@ -13,19 +13,14 @@ BEGIN
     BEGIN TRY
         BEGIN TRANSACTION;
 
-        -- Verificar que la incidencia exista
-        IF NOT EXISTS (SELECT 1 FROM Incidencias WHERE ID = @ID)
+        IF NOT EXISTS (
+            SELECT 1 
+            FROM Incidencias 
+            WHERE ID = @ID
+        )
         BEGIN
             RAISERROR('La incidencia no existe.',16,1);
-            ROLLBACK TRANSACTION;
-            RETURN;
         END
-
-        DECLARE @IDEstadoAnalisis INT;
-
-        SELECT @IDEstadoAnalisis = ID
-        FROM Estados
-        WHERE Nombre = 'En Análisis';
 
         UPDATE Incidencias
         SET
@@ -35,21 +30,16 @@ BEGIN
             IDEmpleado = @IDEmpleado,
             IDCategoria = @IDCategoria,
             IDPrioridad = @IDPrioridad,
-            IDEstado = @IDEstadoAnalisis,
             FechaModificacion = GETDATE()
         WHERE ID = @ID;
 
         COMMIT TRANSACTION;
-
     END TRY
-
     BEGIN CATCH
-
         IF @@TRANCOUNT > 0
             ROLLBACK TRANSACTION;
 
         THROW;
-
     END CATCH
-END
+END;
 GO

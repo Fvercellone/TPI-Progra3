@@ -69,7 +69,7 @@ namespace Mainpage
         }
         protected void Cancelar_onClick(object sender, EventArgs e)
         {
-            Response.Redirect("usuarios.aspx");
+            Response.Redirect("usuario.aspx");
         }
     }
 }

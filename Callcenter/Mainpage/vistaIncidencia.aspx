@@ -222,4 +222,71 @@
 
 </div>
 
+    <div>
+        <asp:Button Text="Cancelar" runat="server" OnClick="Agregar_onClick" ID="btnAceptar" ControlToValidate="Nombre" ErrorMessage="Debe ingresar el nombre." Display="Dynamic" Visible="false"/>
+        <asp:Button Text="Cancelar" runat="server" OnClick="Cancelar_onClick" ID="btnCancelar" ControlToValidate="Nombre" Display="Dynamic" Visible="false"/> 
+    </div>
+
+    <div>
+        <asp:Button Text="Salir" runat="server" OnClick="Salir_onClick" ID="btnSalir" ControlToValidate="Nombre"  Display="Dynamic"/>
+    </div>
+
+    <div>   
+
+       <asp:LinkButton HeaderText="Modificar" 
+            runat="server" 
+            ID="BTModificarFila" 
+            Text="Modificar"
+            CssClass="btn btn-warning btn-sm"
+            CommandName="Modificar"
+            CommandArgument='<%# Eval("ID") %>'
+           OnClick="Modificar_onclick">
+        </asp:LinkButton>
+
+       <asp:LinkButton HeaderText="Reasignar" 
+            runat="server" 
+            ID="BTReasignarFila" 
+            Text="Reasignar"
+            CssClass="btn btn-info btn-sm"
+            CommandName="Reasignar"
+            CommandArgument='<%# Eval("ID") %>'
+           OnClick="Reasignar_onclick">
+        </asp:LinkButton>
+
+       <asp:LinkButton HeaderText="Resolver" 
+            runat="server" 
+            ID="BTResolverFila" 
+            Text="Resolver"
+            CssClass="btn btn-success btn-sm"
+            CommandName="Resolver"
+            CommandArgument='<%# Eval("ID") %>'
+           OnClick="Resolver_onclick">
+
+        </asp:LinkButton>
+
+       <asp:LinkButton HeaderText="Cerrar" 
+            runat="server" 
+            ID="BTCerrarFila" 
+            Text="Cerrar"
+            CssClass="btn btn-danger btn-sm"
+            CommandName="Cerrar"
+            CommandArgument='<%# Eval("ID") %>'
+            OnClick="cerrar_onclick">
+        </asp:LinkButton>
+
+       <asp:LinkButton HeaderText="Re-abrir" 
+            runat="server" 
+            ID="BTReabrirFila" 
+            Text="Re-abrir"
+            CssClass="btn btn-info btn-sm"
+            CommandName="Reabrir"
+            CommandArgument='<%# Eval("ID") %>'
+           OnClick="Reabrir_onclick">
+        </asp:LinkButton>
+
+
+    </div>
+
+
 </asp:Content>
+

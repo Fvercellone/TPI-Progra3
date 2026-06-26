@@ -12,17 +12,15 @@ namespace Mainpage
     public partial class incidencias : System.Web.UI.Page
     {
         public List<incidencia> ListaDeIncidencias { get; set; }
+        ManejadorIncidencias conexion = new ManejadorIncidencias();
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            ManejadorIncidencias conexionlista = new ManejadorIncidencias();
-            ListaDeIncidencias = conexionlista.Listar();
+            ListaDeIncidencias = conexion.Listar();
 
             if (!IsPostBack)
             {
                 Session.Clear();
-                //DGVIncidencias.DataSource = ListaDeIncidencias;
-                //DGVIncidencias.DataBind();
                 RptIncidencias.DataSource = ListaDeIncidencias;
                 RptIncidencias.DataBind();
 
@@ -78,10 +76,24 @@ namespace Mainpage
 
         protected void RptIncidencias_ItemCommand(object source, RepeaterCommandEventArgs e)
         {
-            if (e.CommandName == "AbrirIncidencia")
+            try
             {
-                Session["ID"] = e.CommandArgument.ToString();
-                Response.Redirect("vistaIncidencia.aspx");
+                    int id = int.Parse(e.CommandArgument.ToString());
+
+                    if (e.CommandName == "AbrirIncidencia")
+                    {
+                        Session["ID"] = e.CommandArgument.ToString();
+                        Session["Accion"] = "";
+                        Response.Redirect("vistaIncidencia.aspx");
+                    }
+
+
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+
             }
         }
     }

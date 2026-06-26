@@ -1,4 +1,4 @@
-CREATE PROCEDURE sp_CerrarIncidencia
+Alter PROCEDURE sp_CerrarIncidencia
 (
     @ID INT
 )
@@ -11,8 +11,8 @@ BEGIN
             SELECT 1
             FROM Incidencias
             WHERE ID = @ID
-            AND Comentario IS NOT NULL
-            AND LTRIM(RTRIM(Comentario)) <> ''
+            AND ComentarioCierre IS NOT NULL
+            AND LTRIM(RTRIM(ComentarioCierre)) <> ''
         )
         BEGIN
             RAISERROR('No se puede cerrar una incidencia sin comentario de resolución.', 16, 1);

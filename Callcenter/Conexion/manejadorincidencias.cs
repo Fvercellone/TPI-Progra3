@@ -50,7 +50,7 @@ namespace Conexion
                     aux.Estado = conexion._lector["Estado"].ToString();
 
                     //aux.comentario = conexion._lector["Comentario"] == DBNull.Value ? "" : conexion._lector["Comentario"].ToString();
-                    //aux.comentarioCierre = conexion._lector["ComentarioCierre"] == DBNull.Value ? "" : conexion._lector["ComentarioCierre"].ToString();
+                    aux.comentarioCierre = conexion._lector["ComentarioCierre"] == DBNull.Value ? "" : conexion._lector["ComentarioCierre"].ToString();
 
                     aux.alta = (DateTime)conexion._lector["FechaAlta"];
 
