@@ -31,7 +31,7 @@ namespace Mainpage
                     //DDLEstado.DataValueField = "ID";
                     //DDLEstado.DataBind();
 
-                    LBEstado.Text = "";
+                   
 
                     List<Prioridad> lista2 = conexion.ListarPrioridades();
 
@@ -67,6 +67,7 @@ namespace Mainpage
                         incidencia seleccionada = conexion3.Listar(id)[0];
 
 
+                        DDLEmpleado.Enabled = false;
                         Titulo.Text = seleccionada.titulo;
                         Descripcion.Text = seleccionada.descripcion;
 
@@ -134,6 +135,8 @@ namespace Mainpage
 
         protected void Agregar_onClick(object sender, EventArgs e)
         {
+            int idIncidencia = int.Parse(Session["ID"].ToString());
+            int idEmpleado = int.Parse(DDLEmpleado.SelectedValue);
             try
             {
                 if (Session["Accion"] != null && Session["Accion"].ToString() == "Resolver")
@@ -148,10 +151,13 @@ namespace Mainpage
                     LBComentarioResolucion.Visible = true;
                     TBComentarioResolucion.Visible = true;
 
+                     conexion3.Resolver(idIncidencia, TBComentarioResolucion.Text);
+
                     btnAceptar.Text = "Resolver";
                     Session.Clear();
-                    Response.Redirect("Incidencias.aspx");
+                    Response.Redirect("Incidencias.aspx", false);
                     return;
+
                 }
 
                 if (Session["Accion"] != null && Session["Accion"].ToString() == "Cerrar")
@@ -163,21 +169,21 @@ namespace Mainpage
                     DDLCategoria.Enabled = false;
                     DDLPrioridad.Enabled = false;
 
+                    conexion3.Cerrar(idIncidencia);
+
                     btnAceptar.Text = "Cerrar";
                     Session.Clear();
-                    Response.Redirect("Incidencias.aspx");
+                    Response.Redirect("Incidencias.aspx", false);
                     return;
+
                 }
 
                 if (Session["Accion"] != null && Session["Accion"].ToString() == "Reasignar")
                 {
-                    int idIncidencia = int.Parse(Session["ID"].ToString());
-                    int idEmpleado = int.Parse(DDLEmpleado.SelectedValue);
-
                     conexion3.Reasignar(idIncidencia, idEmpleado);
 
-                    Session.Clear();
-                    Response.Redirect("Incidencias.aspx");
+                    //Session.Clear();
+                    Response.Redirect("Incidencias.aspx", false);
                     return;
                 }
 
@@ -192,17 +198,18 @@ namespace Mainpage
 
                 if (Session["Accion"] != null && Session["Accion"].ToString() == "Modificar")
                 {
+
                     incidencia.id = int.Parse(Session["ID"].ToString());
                     conexion3.Modificar(incidencia);
                     Session.Clear();
-                    Response.Redirect("Incidencias.aspx");
+                    Response.Redirect("Incidencias.aspx", false);
                     return;
                 }
                 else
                 {
                     conexion3.agregar(incidencia);
                     Session.Clear();
-                    Response.Redirect("Incidencias.aspx");
+                    Response.Redirect("Incidencias.aspx", false);
                     return;
                 }
 

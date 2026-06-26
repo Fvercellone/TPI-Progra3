@@ -49,8 +49,8 @@ namespace Conexion
                     aux.IDEstado = (int)conexion._lector["IDEstado"];
                     aux.Estado = conexion._lector["Estado"].ToString();
 
-                    aux.comentario = conexion._lector["Comentario"] == DBNull.Value ? "" : conexion._lector["Comentario"].ToString();
-                    aux.comentarioCierre = conexion._lector["ComentarioCierre"] == DBNull.Value ? "" : conexion._lector["ComentarioCierre"].ToString();
+                    //aux.comentario = conexion._lector["Comentario"] == DBNull.Value ? "" : conexion._lector["Comentario"].ToString();
+                    //aux.comentarioCierre = conexion._lector["ComentarioCierre"] == DBNull.Value ? "" : conexion._lector["ComentarioCierre"].ToString();
 
                     aux.alta = (DateTime)conexion._lector["FechaAlta"];
 
@@ -108,43 +108,6 @@ namespace Conexion
                 conexion.cerrarConexion();
             }
         }
-
-        //public void Eliminar(int ID)
-        //{
-        //    ConexionDB conexion = new ConexionDB();
-        //    try
-        //    {
-        //        conexion.settearConsulta("EXEC sp_BajaLogicaincidenciaPorID @ID");
-        //        conexion.agregarParametro("@ID", ID);
-        //        conexion.ejecutarAccion();
-        //    }
-        //    catch (Exception ex)
-        //    {
-        //        throw ex;
-        //    }
-        //    finally
-        //    {
-        //        conexion.cerrarConexion();
-        //    }
-        //}
-        //public void Activar(int ID)
-        //{
-        //    ConexionDB conexion = new ConexionDB();
-        //    try
-        //    {
-        //        conexion.settearConsulta("EXEC sp_AltaLogicaincidenciaPorID @ID");
-        //        conexion.agregarParametro("@ID", ID);
-        //        conexion.ejecutarAccion();
-        //    }
-        //    catch (Exception)
-        //    {
-        //        throw;
-        //    }
-        //    finally
-        //    {
-        //        conexion.cerrarConexion();
-        //    }
-        //}
 
         public void Modificar(incidencia nuevo)
         {
@@ -212,6 +175,24 @@ namespace Conexion
             {
                 conexion.settearConsulta("EXEC sp_CerrarIncidencia @ID");
                 conexion.agregarParametro("@ID", id);
+                conexion.ejecutarAccion();
+            }
+            finally
+            {
+                conexion.cerrarConexion();
+            }
+        }
+
+        public void Reabrir(int idIncidencia)
+        {
+            ConexionDB conexion = new ConexionDB();
+
+            try
+            {
+                conexion.settearConsulta("EXEC sp_ReabrirIncidencia @IDIncidencia");
+
+                conexion.agregarParametro("@IDIncidencia", idIncidencia);
+
                 conexion.ejecutarAccion();
             }
             finally

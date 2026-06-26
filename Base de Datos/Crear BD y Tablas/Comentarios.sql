@@ -1,0 +1,11 @@
+CREATE TABLE ComentariosIncidencia (
+    ID INT IDENTITY(1,1) PRIMARY KEY,
+    IDIncidencia INT NOT NULL,
+    IDUsuario INT NOT NULL,
+    Mensaje VARCHAR(1000) NOT NULL,
+    Fecha DATETIME NOT NULL DEFAULT GETDATE(),
+    Activo BIT NOT NULL DEFAULT 1,
+
+    FOREIGN KEY (IDIncidencia) REFERENCES Incidencias(ID),
+    FOREIGN KEY (IDUsuario) REFERENCES Usuarios(ID)
+);

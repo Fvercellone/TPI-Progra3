@@ -15,13 +15,13 @@ namespace Mainpage
     {
 
         /// <summary>
-        /// Control DGVIncidencias.
+        /// Control RptIncidencias.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView DGVIncidencias;
+        protected global::System.Web.UI.WebControls.Repeater RptIncidencias;
 
         /// <summary>
         /// Control LBMensaje.

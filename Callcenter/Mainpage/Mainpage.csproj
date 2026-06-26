@@ -100,6 +100,7 @@
     <Content Include="Scripts\bootstrap.esm.min.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="vistaIncidencia.aspx" />
     <Content Include="Web.config" />
     <Content Include="WebForm1.aspx" />
   </ItemGroup>
@@ -186,6 +187,13 @@
       <DependentUpon>Main.Master</DependentUpon>
     </Compile>
     <Compile Include="validar.cs" />
+    <Compile Include="vistaIncidencia.aspx.cs">
+      <DependentUpon>vistaIncidencia.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="vistaIncidencia.aspx.designer.cs">
+      <DependentUpon>vistaIncidencia.aspx</DependentUpon>
+    </Compile>
     <Compile Include="WebForm1.aspx.cs">
       <DependentUpon>WebForm1.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>

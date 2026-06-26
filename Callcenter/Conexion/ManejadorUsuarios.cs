@@ -108,7 +108,7 @@ namespace Conexion
             try
             {
                 conexion.settearConsulta("EXEC sp_CrearUsuarioPorDNI @DNI, @IDRol, @Usuario, @Contrasenia, @Activo");
-               // conexion.agregarParametro("@DNI", nuevo.ID);
+                conexion.agregarParametro("@DNI", nuevo.DNI);
                 //conexion.agregarParametro("@DNI", nuevo.IDPersona);
                 conexion.agregarParametro("@IDRol", nuevo.IDRol);
                 conexion.agregarParametro("@Usuario", nuevo.Usuario);

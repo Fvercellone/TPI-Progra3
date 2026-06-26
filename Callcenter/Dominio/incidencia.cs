@@ -28,8 +28,6 @@ namespace Dominio
 
         public int IDEstado { get; set; }
         public string Estado { get; set; }
-
-        public string comentario { get; set; }
         public string comentarioCierre { get; set; }
 
         public DateTime alta { get; set; }

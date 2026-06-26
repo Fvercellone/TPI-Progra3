@@ -53,6 +53,7 @@
       <SubType>Designer</SubType>
     </Page>
     <Compile Include="categoria.cs" />
+    <Compile Include="ComentarioIncidencia.cs" />
     <Compile Include="estado.cs" />
     <Compile Include="incidencia.cs" />
     <Compile Include="Prioridad.cs" />
