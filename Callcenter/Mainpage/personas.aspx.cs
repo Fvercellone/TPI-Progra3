@@ -15,12 +15,13 @@ namespace Mainpage
         public List<Personas> ListaDePersonas { get; set; }
         protected void Page_Load(object sender, EventArgs e)
         {
+            Session["Pagina"] = "Personas";
             ManejadorPersonas conexionlista = new ManejadorPersonas();
             ListaDePersonas = conexionlista.Listar();
             
             if(!IsPostBack)
             {
-                Session.Clear();
+                
                 DGVPersonas.DataSource = ListaDePersonas;
                 DGVPersonas.DataBind();
 
@@ -81,6 +82,14 @@ namespace Mainpage
                 LBMensaje.Text = ex.Message;
                 LBMensaje.CssClass = "alert alert-danger d-block";
             }
+        }
+
+        protected void Agregar_onclick(object sender, EventArgs e)
+        {
+            
+            Session.Remove("DNI");
+
+            Response.Redirect("formularioPersonas.aspx");
         }
 
 

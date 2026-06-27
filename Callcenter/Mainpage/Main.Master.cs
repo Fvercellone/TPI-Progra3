@@ -4,6 +4,9 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using Dominio;
+using Conexion;
+using negocio;
 
 namespace Mainpage
 {
@@ -13,7 +16,15 @@ namespace Mainpage
         public string user { get; set; }
         protected void Page_Load(object sender, EventArgs e)
         {
-            user = Session["Usuario"] != null ? Session["Usuario"].ToString() : "Logueate";
+            if(!(Page is Login))
+            {
+                
+                if (Seguridad.sesionActiva(Session["usuario"]) == false)
+                {
+                    Response.Redirect("Login.aspx", false);
+                }
+            }
+            user = Session["usuario"] != null ? Session["usuario"].ToString() : "Logueate";
             lblTitulo.Text = user;
         }
         protected void btnCerrarSesion_Click(object sender, EventArgs e)

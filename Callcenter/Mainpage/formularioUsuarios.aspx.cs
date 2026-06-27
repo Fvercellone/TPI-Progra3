@@ -20,7 +20,7 @@ namespace Mainpage
             string ID = Session["ID"] != null ? Session["ID"].ToString() : "";
             if (ID != "" && !IsPostBack)
             {
-                Session.Clear();
+                Session.Remove("ID");
                 ManejadorUsuarios conexion = new ManejadorUsuarios();
 
               Usuarios seleccionada = (conexion.Listar(ID)[0]);
@@ -69,6 +69,7 @@ namespace Mainpage
         }
         protected void Cancelar_onClick(object sender, EventArgs e)
         {
+            Session.Remove("ID");
             Response.Redirect("usuario.aspx");
         }
     }

@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Main.Master" AutoEventWireup="true" CodeBehind="formularioIncidencias.aspx.cs" Inherits="Mainpage.formularioIncidencias" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Main.Master" AutoEventWireup="true" CodeBehind="formularioPersonas.aspx.cs" Inherits="Mainpage.formularioPersonas" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
@@ -34,7 +34,7 @@
 
     <div>
         <asp:Button Text="aceptar" runat="server" OnClick="Agregar_onClick" ID="btnAceptar" ControlToValidate="Nombre" ErrorMessage="Debe ingresar el nombre." Display="Dynamic" />
-        <a  class="btn btn-primary" role="button" href="Personas.aspx" >cancelar</a>  
+        <asp:Button Text="cancelar" runat="server" OnClick="Cancelar_onClick" ID="Button2" />
     </div>
 
 </asp:Content>

@@ -3,28 +3,44 @@
   "WorkspaceRootPath": "C:\\Users\\franc\\OneDrive\\Escritorio\\Integrador progra 3\\TPI-Progra3-main\\Callcenter\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{DAD9667A-7AC3-4E27-9884-E03703AF382A}|Conexion\\Conexion.csproj|c:\\users\\franc\\onedrive\\escritorio\\integrador progra 3\\tpi-progra3-main\\callcenter\\conexion\\manejadorincidencias.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{DAD9667A-7AC3-4E27-9884-E03703AF382A}|Conexion\\Conexion.csproj|solutionrelative:conexion\\manejadorincidencias.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{D0EABD23-FD6B-44DE-A2E6-F50C45123187}|Mainpage\\Mainpage.csproj|c:\\users\\franc\\onedrive\\escritorio\\integrador progra 3\\tpi-progra3-main\\callcenter\\mainpage\\clientes.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D0EABD23-FD6B-44DE-A2E6-F50C45123187}|Mainpage\\Mainpage.csproj|solutionrelative:mainpage\\clientes.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{DAD9667A-7AC3-4E27-9884-E03703AF382A}|Conexion\\Conexion.csproj|c:\\users\\franc\\onedrive\\escritorio\\integrador progra 3\\tpi-progra3-main\\callcenter\\conexion\\conexiondb.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{DAD9667A-7AC3-4E27-9884-E03703AF382A}|Conexion\\Conexion.csproj|solutionrelative:conexion\\conexiondb.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{D0EABD23-FD6B-44DE-A2E6-F50C45123187}|Mainpage\\Mainpage.csproj|c:\\users\\franc\\onedrive\\escritorio\\integrador progra 3\\tpi-progra3-main\\callcenter\\mainpage\\clientes.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
+      "RelativeMoniker": "D:0:0:{D0EABD23-FD6B-44DE-A2E6-F50C45123187}|Mainpage\\Mainpage.csproj|solutionrelative:mainpage\\clientes.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{D0EABD23-FD6B-44DE-A2E6-F50C45123187}|Mainpage\\Mainpage.csproj|c:\\users\\franc\\onedrive\\escritorio\\integrador progra 3\\tpi-progra3-main\\callcenter\\mainpage\\incidencias.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{D0EABD23-FD6B-44DE-A2E6-F50C45123187}|Mainpage\\Mainpage.csproj|solutionrelative:mainpage\\incidencias.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{D0EABD23-FD6B-44DE-A2E6-F50C45123187}|Mainpage\\Mainpage.csproj|c:\\users\\franc\\onedrive\\escritorio\\integrador progra 3\\tpi-progra3-main\\callcenter\\mainpage\\personas.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D0EABD23-FD6B-44DE-A2E6-F50C45123187}|Mainpage\\Mainpage.csproj|solutionrelative:mainpage\\personas.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{D0EABD23-FD6B-44DE-A2E6-F50C45123187}|Mainpage\\Mainpage.csproj|C:\\Users\\franc\\OneDrive\\Escritorio\\Integrador progra 3\\TPI-Progra3-main\\Callcenter\\mainpage\\incidencias.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
-      "RelativeMoniker": "D:0:0:{D0EABD23-FD6B-44DE-A2E6-F50C45123187}|Mainpage\\Mainpage.csproj|solutionrelative:mainpage\\incidencias.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}"
+      "AbsoluteMoniker": "D:0:0:{D0EABD23-FD6B-44DE-A2E6-F50C45123187}|Mainpage\\Mainpage.csproj|c:\\users\\franc\\onedrive\\escritorio\\integrador progra 3\\tpi-progra3-main\\callcenter\\mainpage\\personas.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
+      "RelativeMoniker": "D:0:0:{D0EABD23-FD6B-44DE-A2E6-F50C45123187}|Mainpage\\Mainpage.csproj|solutionrelative:mainpage\\personas.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D0EABD23-FD6B-44DE-A2E6-F50C45123187}|Mainpage\\Mainpage.csproj|c:\\users\\franc\\onedrive\\escritorio\\integrador progra 3\\tpi-progra3-main\\callcenter\\mainpage\\formulariopersonas.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D0EABD23-FD6B-44DE-A2E6-F50C45123187}|Mainpage\\Mainpage.csproj|solutionrelative:mainpage\\formulariopersonas.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D0EABD23-FD6B-44DE-A2E6-F50C45123187}|Mainpage\\Mainpage.csproj|c:\\users\\franc\\onedrive\\escritorio\\integrador progra 3\\tpi-progra3-main\\callcenter\\mainpage\\formulariopersonas.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
+      "RelativeMoniker": "D:0:0:{D0EABD23-FD6B-44DE-A2E6-F50C45123187}|Mainpage\\Mainpage.csproj|solutionrelative:mainpage\\formulariopersonas.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D0EABD23-FD6B-44DE-A2E6-F50C45123187}|Mainpage\\Mainpage.csproj|c:\\users\\franc\\onedrive\\escritorio\\integrador progra 3\\tpi-progra3-main\\callcenter\\mainpage\\usuario.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D0EABD23-FD6B-44DE-A2E6-F50C45123187}|Mainpage\\Mainpage.csproj|solutionrelative:mainpage\\usuario.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{D0EABD23-FD6B-44DE-A2E6-F50C45123187}|Mainpage\\Mainpage.csproj|c:\\users\\franc\\onedrive\\escritorio\\integrador progra 3\\tpi-progra3-main\\callcenter\\mainpage\\vistaincidencia.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{D0EABD23-FD6B-44DE-A2E6-F50C45123187}|Mainpage\\Mainpage.csproj|solutionrelative:mainpage\\vistaincidencia.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{D0EABD23-FD6B-44DE-A2E6-F50C45123187}|Mainpage\\Mainpage.csproj|C:\\Users\\franc\\OneDrive\\Escritorio\\Integrador progra 3\\TPI-Progra3-main\\Callcenter\\mainpage\\formularioincidencias.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{D0EABD23-FD6B-44DE-A2E6-F50C45123187}|Mainpage\\Mainpage.csproj|solutionrelative:mainpage\\formularioincidencias.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{D0EABD23-FD6B-44DE-A2E6-F50C45123187}|Mainpage\\Mainpage.csproj|c:\\users\\franc\\onedrive\\escritorio\\integrador progra 3\\tpi-progra3-main\\callcenter\\mainpage\\incidencias.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D0EABD23-FD6B-44DE-A2E6-F50C45123187}|Mainpage\\Mainpage.csproj|solutionrelative:mainpage\\incidencias.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D0EABD23-FD6B-44DE-A2E6-F50C45123187}|Mainpage\\Mainpage.csproj|c:\\users\\franc\\onedrive\\escritorio\\integrador progra 3\\tpi-progra3-main\\callcenter\\mainpage\\login.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D0EABD23-FD6B-44DE-A2E6-F50C45123187}|Mainpage\\Mainpage.csproj|solutionrelative:mainpage\\login.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -34,7 +50,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 3,
+          "SelectedChildIndex": 5,
           "Children": [
             {
               "$type": "Bookmark",
@@ -42,80 +58,132 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "incidencias.aspx.cs",
-              "DocumentMoniker": "C:\\Users\\franc\\OneDrive\\Escritorio\\Integrador progra 3\\TPI-Progra3-main\\Callcenter\\Mainpage\\incidencias.aspx.cs",
-              "RelativeDocumentMoniker": "Mainpage\\incidencias.aspx.cs",
-              "ToolTip": "C:\\Users\\franc\\OneDrive\\Escritorio\\Integrador progra 3\\TPI-Progra3-main\\Callcenter\\Mainpage\\incidencias.aspx.cs",
-              "RelativeToolTip": "Mainpage\\incidencias.aspx.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABYAAAAgAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-06-26T22:12:47.566Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "ConexionDB.cs",
-              "DocumentMoniker": "C:\\Users\\franc\\OneDrive\\Escritorio\\Integrador progra 3\\TPI-Progra3-main\\Callcenter\\Conexion\\ConexionDB.cs",
-              "RelativeDocumentMoniker": "Conexion\\ConexionDB.cs",
-              "ToolTip": "C:\\Users\\franc\\OneDrive\\Escritorio\\Integrador progra 3\\TPI-Progra3-main\\Callcenter\\Conexion\\ConexionDB.cs",
-              "RelativeToolTip": "Conexion\\ConexionDB.cs",
-              "ViewState": "AgIAABgAAAAAAAAAAAAowEoAAAAbAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-06-26T22:01:00.439Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "manejadorincidencias.cs",
-              "DocumentMoniker": "C:\\Users\\franc\\OneDrive\\Escritorio\\Integrador progra 3\\TPI-Progra3-main\\Callcenter\\Conexion\\manejadorincidencias.cs",
-              "RelativeDocumentMoniker": "Conexion\\manejadorincidencias.cs",
-              "ToolTip": "C:\\Users\\franc\\OneDrive\\Escritorio\\Integrador progra 3\\TPI-Progra3-main\\Callcenter\\Conexion\\manejadorincidencias.cs",
-              "RelativeToolTip": "Conexion\\manejadorincidencias.cs",
-              "ViewState": "AgIAAEkAAAAAAAAAAAAgwFoAAABDAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-06-26T21:54:57.769Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 3,
-              "Title": "incidencias.aspx",
-              "DocumentMoniker": "C:\\Users\\franc\\OneDrive\\Escritorio\\Integrador progra 3\\TPI-Progra3-main\\Callcenter\\Mainpage\\incidencias.aspx",
-              "RelativeDocumentMoniker": "Mainpage\\incidencias.aspx",
-              "ToolTip": "C:\\Users\\franc\\OneDrive\\Escritorio\\Integrador progra 3\\TPI-Progra3-main\\Callcenter\\Mainpage\\incidencias.aspx",
-              "RelativeToolTip": "Mainpage\\incidencias.aspx",
+              "Title": "personas.aspx",
+              "DocumentMoniker": "C:\\Users\\franc\\OneDrive\\Escritorio\\Integrador progra 3\\TPI-Progra3-main\\Callcenter\\Mainpage\\personas.aspx",
+              "RelativeDocumentMoniker": "Mainpage\\personas.aspx",
+              "ToolTip": "C:\\Users\\franc\\OneDrive\\Escritorio\\Integrador progra 3\\TPI-Progra3-main\\Callcenter\\Mainpage\\personas.aspx",
+              "RelativeToolTip": "Mainpage\\personas.aspx",
               "LogicalView": "7651a703-06e5-11d1-8ebd-00a0c90f26ea",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000195|",
-              "WhenOpened": "2026-06-26T21:37:34.321Z",
+              "WhenOpened": "2026-06-27T18:15:23.769Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 5,
-              "Title": "formularioIncidencias.aspx.cs",
-              "DocumentMoniker": "C:\\Users\\franc\\OneDrive\\Escritorio\\Integrador progra 3\\TPI-Progra3-main\\Callcenter\\Mainpage\\formularioIncidencias.aspx.cs",
-              "RelativeDocumentMoniker": "Mainpage\\formularioIncidencias.aspx.cs",
-              "ToolTip": "C:\\Users\\franc\\OneDrive\\Escritorio\\Integrador progra 3\\TPI-Progra3-main\\Callcenter\\Mainpage\\formularioIncidencias.aspx.cs",
-              "RelativeToolTip": "Mainpage\\formularioIncidencias.aspx.cs",
-              "ViewState": "AgIAAMEAAAAAAAAAAAAgwNcAAAA/AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-06-26T21:37:34.327Z",
+              "Title": "formularioPersonas.aspx",
+              "DocumentMoniker": "C:\\Users\\franc\\OneDrive\\Escritorio\\Integrador progra 3\\TPI-Progra3-main\\Callcenter\\Mainpage\\formularioPersonas.aspx",
+              "RelativeDocumentMoniker": "Mainpage\\formularioPersonas.aspx",
+              "ToolTip": "C:\\Users\\franc\\OneDrive\\Escritorio\\Integrador progra 3\\TPI-Progra3-main\\Callcenter\\Mainpage\\formularioPersonas.aspx",
+              "RelativeToolTip": "Mainpage\\formularioPersonas.aspx",
+              "LogicalView": "7651a703-06e5-11d1-8ebd-00a0c90f26ea",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000195|",
+              "WhenOpened": "2026-06-27T18:12:08.058Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 4,
+              "Title": "formularioPersonas.aspx.cs",
+              "DocumentMoniker": "C:\\Users\\franc\\OneDrive\\Escritorio\\Integrador progra 3\\TPI-Progra3-main\\Callcenter\\Mainpage\\formularioPersonas.aspx.cs",
+              "RelativeDocumentMoniker": "Mainpage\\formularioPersonas.aspx.cs",
+              "ToolTip": "C:\\Users\\franc\\OneDrive\\Escritorio\\Integrador progra 3\\TPI-Progra3-main\\Callcenter\\Mainpage\\formularioPersonas.aspx.cs",
+              "RelativeToolTip": "Mainpage\\formularioPersonas.aspx.cs",
+              "ViewState": "AgIAAE4AAAAAAAAAAAAowF4AAAANAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-06-27T17:43:00.219Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Clientes.aspx",
+              "DocumentMoniker": "C:\\Users\\franc\\OneDrive\\Escritorio\\Integrador progra 3\\TPI-Progra3-main\\Callcenter\\Mainpage\\Clientes.aspx",
+              "RelativeDocumentMoniker": "Mainpage\\Clientes.aspx",
+              "ToolTip": "C:\\Users\\franc\\OneDrive\\Escritorio\\Integrador progra 3\\TPI-Progra3-main\\Callcenter\\Mainpage\\Clientes.aspx",
+              "RelativeToolTip": "Mainpage\\Clientes.aspx",
+              "LogicalView": "7651a703-06e5-11d1-8ebd-00a0c90f26ea",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000195|",
+              "WhenOpened": "2026-06-27T17:48:23.902Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Clientes.aspx.cs",
+              "DocumentMoniker": "C:\\Users\\franc\\OneDrive\\Escritorio\\Integrador progra 3\\TPI-Progra3-main\\Callcenter\\Mainpage\\Clientes.aspx.cs",
+              "RelativeDocumentMoniker": "Mainpage\\Clientes.aspx.cs",
+              "ToolTip": "C:\\Users\\franc\\OneDrive\\Escritorio\\Integrador progra 3\\TPI-Progra3-main\\Callcenter\\Mainpage\\Clientes.aspx.cs",
+              "RelativeToolTip": "Mainpage\\Clientes.aspx.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAArAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-06-27T17:47:10.86Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "Usuario.aspx.cs",
+              "DocumentMoniker": "C:\\Users\\franc\\OneDrive\\Escritorio\\Integrador progra 3\\TPI-Progra3-main\\Callcenter\\Mainpage\\Usuario.aspx.cs",
+              "RelativeDocumentMoniker": "Mainpage\\Usuario.aspx.cs",
+              "ToolTip": "C:\\Users\\franc\\OneDrive\\Escritorio\\Integrador progra 3\\TPI-Progra3-main\\Callcenter\\Mainpage\\Usuario.aspx.cs",
+              "RelativeToolTip": "Mainpage\\Usuario.aspx.cs",
+              "ViewState": "AgIAADsAAAAAAAAAAAAIwBYAAAAiAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-06-27T17:44:47.354Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "incidencias.aspx.cs",
+              "DocumentMoniker": "C:\\Users\\franc\\OneDrive\\Escritorio\\Integrador progra 3\\TPI-Progra3-main\\Callcenter\\Mainpage\\incidencias.aspx.cs",
+              "RelativeDocumentMoniker": "Mainpage\\incidencias.aspx.cs",
+              "ToolTip": "C:\\Users\\franc\\OneDrive\\Escritorio\\Integrador progra 3\\TPI-Progra3-main\\Callcenter\\Mainpage\\incidencias.aspx.cs",
+              "RelativeToolTip": "Mainpage\\incidencias.aspx.cs",
+              "ViewState": "AgIAAEsAAAAAAAAAAAAowFUAAAAYAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-06-27T17:42:19.285Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "Login.aspx.cs",
+              "DocumentMoniker": "C:\\Users\\franc\\OneDrive\\Escritorio\\Integrador progra 3\\TPI-Progra3-main\\Callcenter\\Mainpage\\Login.aspx.cs",
+              "RelativeDocumentMoniker": "Mainpage\\Login.aspx.cs",
+              "ToolTip": "C:\\Users\\franc\\OneDrive\\Escritorio\\Integrador progra 3\\TPI-Progra3-main\\Callcenter\\Mainpage\\Login.aspx.cs",
+              "RelativeToolTip": "Mainpage\\Login.aspx.cs",
+              "ViewState": "AgIAADMAAAAAAAAAAAAowAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-06-27T17:42:10.794Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "personas.aspx.cs",
+              "DocumentMoniker": "C:\\Users\\franc\\OneDrive\\Escritorio\\Integrador progra 3\\TPI-Progra3-main\\Callcenter\\Mainpage\\personas.aspx.cs",
+              "RelativeDocumentMoniker": "Mainpage\\personas.aspx.cs",
+              "ToolTip": "C:\\Users\\franc\\OneDrive\\Escritorio\\Integrador progra 3\\TPI-Progra3-main\\Callcenter\\Mainpage\\personas.aspx.cs",
+              "RelativeToolTip": "Mainpage\\personas.aspx.cs",
+              "ViewState": "AgIAAAkAAAAAAAAAAAAAABEAAAArAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-06-27T17:41:23.169Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
               "Title": "vistaIncidencia.aspx.cs",
               "DocumentMoniker": "C:\\Users\\franc\\OneDrive\\Escritorio\\Integrador progra 3\\TPI-Progra3-main\\Callcenter\\Mainpage\\vistaIncidencia.aspx.cs",
               "RelativeDocumentMoniker": "Mainpage\\vistaIncidencia.aspx.cs",
               "ToolTip": "C:\\Users\\franc\\OneDrive\\Escritorio\\Integrador progra 3\\TPI-Progra3-main\\Callcenter\\Mainpage\\vistaIncidencia.aspx.cs",
               "RelativeToolTip": "Mainpage\\vistaIncidencia.aspx.cs",
-              "ViewState": "AgIAACEBAAAAAAAAAAAYwDsBAAAUAAAAAAAAAA==",
+              "ViewState": "AgIAAC4AAAAAAAAAAAAkwBgAAAARAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-06-26T21:37:34.429Z",
+              "WhenOpened": "2026-06-27T17:36:24.511Z",
               "EditorCaption": ""
             }
           ]

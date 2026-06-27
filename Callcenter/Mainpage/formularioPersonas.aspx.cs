@@ -9,7 +9,7 @@ using Dominio;
 
 namespace Mainpage
 {
-    public partial class formulario : System.Web.UI.Page
+    public partial class formularioPersonas : System.Web.UI.Page
     {
 
         Personas persona = new Personas();
@@ -79,8 +79,20 @@ namespace Mainpage
         }
         protected void Cancelar_onClick(object sender, EventArgs e)
         {
-            Session.Clear();
-            Response.Redirect("personas.aspx");
+            string pagina = Session["Pagina"] != null ? Session["Pagina"].ToString() : "";
+
+            Session.Remove("DNI");
+
+            if (pagina == "Clientes")
+            {
+                Session.Remove("Pagina");
+                Response.Redirect("Clientes.aspx");
+            }
+            else if(pagina == "Personas")
+            {
+                Session.Remove("Pagina");
+                Response.Redirect("personas.aspx");
+            }
         }
     }
 }

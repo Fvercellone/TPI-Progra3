@@ -187,5 +187,39 @@ namespace Conexion
             }
         }
 
+        public bool Login(Usuarios usuario)
+        {
+            ConexionDB conexion = new ConexionDB();
+            try
+            {
+                conexion.settearConsulta("exec sp_LoginUsuario @usuario, @contraseña");
+                conexion.agregarParametro("@usuario", usuario.Usuario);
+                conexion.agregarParametro("@contraseña", usuario.Contrasenia);
+                conexion.ejecutarLectura();
+                if (conexion._lector.Read())
+                {
+                    usuario.ID = (int)conexion._lector["ID"];
+                    usuario.DNI = (string)conexion._lector["DNI"];
+                    usuario.IDRol = (int)conexion._lector["IDRol"];
+                    usuario.Usuario = (string)conexion._lector["Usuario"];
+                    usuario.Activo = (bool)conexion._lector["Activo"];
+
+                    //usuario.Contrasenia = (string)conexion._lector["Contrasenia"];
+                    //aux.IDPersona = (int)conexion._lector["IDPersona"];
+                    return true;
+                }
+                return false;
+
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                conexion.cerrarConexion();
+            }
+        }
+
     }
 }

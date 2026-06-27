@@ -85,7 +85,6 @@
     <Content Include="Content\bootstrap.rtl.min.css" />
     <Content Include="Default.aspx" />
     <Content Include="error.aspx" />
-    <Content Include="formularioIncidencias.aspx" />
     <Content Include="formularioUsuarios.aspx" />
     <Content Include="formularioPersonas.aspx" />
     <Content Include="Global.asax" />
@@ -118,13 +117,6 @@
     </Compile>
     <Compile Include="error.aspx.designer.cs">
       <DependentUpon>error.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="formularioIncidencias.aspx.cs">
-      <DependentUpon>formularioIncidencias.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="formularioIncidencias.aspx.designer.cs">
-      <DependentUpon>formularioIncidencias.aspx</DependentUpon>
     </Compile>
     <Compile Include="formularioUsuarios.aspx.cs">
       <DependentUpon>formularioUsuarios.aspx</DependentUpon>

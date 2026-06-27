@@ -65,6 +65,9 @@
 
         <div>
             <a href="formularioPersonas.aspx">agregar</a>
+                    <div id="Agregar">
+                        <asp:Button ID="BTAgregar" runat="server" Text="Agregar Registro" OnClick="Agregar_onclick" />
+                    </div>
         </div>
 
         <div>

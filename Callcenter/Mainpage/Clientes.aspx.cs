@@ -15,13 +15,14 @@ namespace Mainpage
         public List<Usuarios> ListarCliente { get; set; }
         protected void Page_Load(object sender, EventArgs e)
         {
+            Session["Pagina"] = "Clientes";
             ManejadorUsuarios conexionlista = new ManejadorUsuarios();
             ListarCliente = conexionlista.ListarCliente();
 
 
             if (!IsPostBack)
             {
-                Session.Clear();
+                
                 DGVCliente.DataSource = ListarCliente;
                 DGVCliente.DataBind();
 
@@ -38,6 +39,13 @@ namespace Mainpage
 
         }
 
+        protected void Agregar_onclick(object sender, EventArgs e)
+        {
+            Session.Remove("DNI");
+
+            Response.Redirect("formularioPersonas.aspx");
+        }
+
         //private void ocultarColumnas()
         //{
         //    DGVPersonas.Columns[0].Visible = false; // ID
@@ -46,7 +54,7 @@ namespace Mainpage
         //protected void DGVPersonas_RowCommand(object sender, GridViewCommandEventArgs e)
         //{
 
-            
+
         //    try
         //    {
         //        string dni = e.CommandArgument.ToString();

@@ -20,7 +20,7 @@ namespace Mainpage
 
             if (!IsPostBack)
             {
-                Session.Clear();
+                //Session.Clear();
                 RptIncidencias.DataSource = ListaDeIncidencias;
                 RptIncidencias.DataBind();
 

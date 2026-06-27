@@ -18,7 +18,7 @@ namespace Dominio
 
         public override string ToString()
         {
-            return ID + " " + Usuario + " " + Contrasenia;
+            return Usuario;
         }
     }
 }

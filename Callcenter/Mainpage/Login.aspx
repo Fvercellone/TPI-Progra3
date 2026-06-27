@@ -31,6 +31,9 @@
                 <asp:Button ID="btnVolver" Text="Enviar" CssClass="btn btn-primary" runat="server" OnClick="btnVolver_Click" />
               </div>
 
+        <div>
+            <asp:Label ID="LBMensaje" runat="server" CssClass="text-danger" />
+        </div>
 
 
         </div>
