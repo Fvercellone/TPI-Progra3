@@ -18,8 +18,8 @@ namespace Conexion
 
         public ConexionDB()
         {
-            //_Conexion = new SqlConnection("server=(localdb)\\MSSQLLocalDB; database=TPI_Progra3; integrated security=true");
-            _Conexion = new SqlConnection("server=.\\SQLEXPRESS; database=TPI_Progra3; integrated security=true");
+            _Conexion = new SqlConnection("server=(localdb)\\MSSQLLocalDB; database=TPI_Progra3; integrated security=true");
+            //_Conexion = new SqlConnection("server=.\\SQLEXPRESS; database=TPI_Progra3; integrated security=true");
             _Comando = new SqlCommand();
             _Comando.Connection = _Conexion;
         }
@@ -67,6 +67,12 @@ namespace Conexion
                 _Lector.Close();
             _Conexion.Close();
 
+        }
+
+        public object ejecutarScalar()
+        {
+            _Conexion.Open();
+            return _Comando.ExecuteScalar();
         }
     }
 }

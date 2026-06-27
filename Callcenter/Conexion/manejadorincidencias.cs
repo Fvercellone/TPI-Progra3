@@ -81,14 +81,14 @@ namespace Conexion
 
         /*AGREGAR, MODIFICAR, ELIMINAR*/
 
-        public void agregar(incidencia nuevo)
+        public int agregar(incidencia nuevo)
         {
             ConexionDB conexion = new ConexionDB();
 
 
             try
             {
-                conexion.settearConsulta("EXEC sp_AgregarIncidencia @Titulo, @Descripcion, @IDCliente, @IDEmpleado, @IDCategoria, @IDPrioridad");
+                conexion.settearConsulta("EXEC sp_AgregarIncidencia @Titulo, @Descripcion, @IDCliente, @IDEmpleado, @IDCategoria, @IDPrioridad, @IDEstado");
 
                 conexion.agregarParametro("@Titulo", nuevo.titulo);
                 conexion.agregarParametro("@Descripcion", nuevo.descripcion);
@@ -96,8 +96,10 @@ namespace Conexion
                 conexion.agregarParametro("@IDEmpleado", nuevo.IDEmpleado);
                 conexion.agregarParametro("@IDCategoria", nuevo.IDCategoria);
                 conexion.agregarParametro("@IDPrioridad", nuevo.IDPrioridad);
+                conexion.agregarParametro("@IDEstado", 1); 
 
-                conexion.ejecutarAccion();
+                //conexion.ejecutarAccion();
+                return Convert.ToInt32(conexion.ejecutarScalar());
 
 
             }
@@ -202,6 +204,8 @@ namespace Conexion
                 conexion.cerrarConexion();
             }
         }
+
+
 
     }
 }

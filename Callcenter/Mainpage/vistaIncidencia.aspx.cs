@@ -15,7 +15,7 @@ namespace Mainpage
         incidencia seleccionada = new incidencia(); 
 
 
-        public List<ComentarioIncidencia> ListaComentarios { get; set; } = new List<ComentarioIncidencia>();
+        public List<ComentarioIncidencia> ListaComentarios = new List<ComentarioIncidencia>();
 
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -221,6 +221,7 @@ namespace Mainpage
         {
             int id = int.Parse(Session["ID"].ToString());
             Session["Accion"] = "Re-abrir";
+            conexion3.Reabrir(id);
             Response.Redirect("vistaIncidencia.aspx");
         }
 
@@ -302,14 +303,25 @@ namespace Mainpage
                     Response.Redirect("vistaIncidencia.aspx", false);
                     return;
                 }
+                //else
+                //{
+                //    conexion3.agregar(incidencia);
+                //    //Session.Clear();
+                //    //Session["ID"] = int.Parse(Session["ID"].ToString());
+                //    //Session["Accion"] = "";
+                //    //Response.Redirect("vistaIncidencia.aspx", false);
+                //    Response.Redirect("incidencias.aspx", false);
+                //    return;
+                //}
                 else
                 {
-                    conexion3.agregar(incidencia);
-                    //Session.Clear();
-                    //Session["ID"] = int.Parse(Session["ID"].ToString());
-                    //Session["Accion"] = "";
-                    //Response.Redirect("vistaIncidencia.aspx", false);
-                    Response.Redirect("incidencias.aspx", false);
+                    int nuevoID = conexion3.agregar(incidencia);
+
+                    Session.Clear();
+                    Session["ID"] = nuevoID;
+                    Session["Accion"] = "";
+
+                    Response.Redirect("vistaIncidencia.aspx", false);
                     return;
                 }
 

@@ -63,3 +63,16 @@ C:\Users\franc\Downloads\TPI-Progra3-main\TPI-Progra3-main\Callcenter\Dominio\ob
 C:\Users\franc\Downloads\TPI-Progra3-main\TPI-Progra3-main\Callcenter\Dominio\obj\Debug\Dominio.csproj.CoreCompileInputs.cache
 C:\Users\franc\Downloads\TPI-Progra3-main\TPI-Progra3-main\Callcenter\Dominio\obj\Debug\Dominio.dll
 C:\Users\franc\Downloads\TPI-Progra3-main\TPI-Progra3-main\Callcenter\Dominio\obj\Debug\Dominio.pdb
+C:\Users\franc\OneDrive\Escritorio\Integrador progra 3\TPI-Progra3-main\Callcenter\Dominio\bin\Debug\Dominio.dll
+C:\Users\franc\OneDrive\Escritorio\Integrador progra 3\TPI-Progra3-main\Callcenter\Dominio\bin\Debug\Dominio.pdb
+C:\Users\franc\OneDrive\Escritorio\Integrador progra 3\TPI-Progra3-main\Callcenter\Dominio\obj\Debug\Dominio.csproj.AssemblyReference.cache
+C:\Users\franc\OneDrive\Escritorio\Integrador progra 3\TPI-Progra3-main\Callcenter\Dominio\obj\Debug\GeneratedInternalTypeHelper.g.cs
+C:\Users\franc\OneDrive\Escritorio\Integrador progra 3\TPI-Progra3-main\Callcenter\Dominio\obj\Debug\Dominio_MarkupCompile.cache
+C:\Users\franc\OneDrive\Escritorio\Integrador progra 3\TPI-Progra3-main\Callcenter\Dominio\obj\Debug\Dominio_MarkupCompile.lref
+C:\Users\franc\OneDrive\Escritorio\Integrador progra 3\TPI-Progra3-main\Callcenter\Dominio\obj\Debug\Themes\Generic.baml
+C:\Users\franc\OneDrive\Escritorio\Integrador progra 3\TPI-Progra3-main\Callcenter\Dominio\obj\Debug\Dominio.g.resources
+C:\Users\franc\OneDrive\Escritorio\Integrador progra 3\TPI-Progra3-main\Callcenter\Dominio\obj\Debug\Dominio.Properties.Resources.resources
+C:\Users\franc\OneDrive\Escritorio\Integrador progra 3\TPI-Progra3-main\Callcenter\Dominio\obj\Debug\Dominio.csproj.GenerateResource.cache
+C:\Users\franc\OneDrive\Escritorio\Integrador progra 3\TPI-Progra3-main\Callcenter\Dominio\obj\Debug\Dominio.csproj.CoreCompileInputs.cache
+C:\Users\franc\OneDrive\Escritorio\Integrador progra 3\TPI-Progra3-main\Callcenter\Dominio\obj\Debug\Dominio.dll
+C:\Users\franc\OneDrive\Escritorio\Integrador progra 3\TPI-Progra3-main\Callcenter\Dominio\obj\Debug\Dominio.pdb
