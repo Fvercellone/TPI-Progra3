@@ -86,7 +86,7 @@ namespace Mainpage
                     }
                     else
                     {
-                        // Modo agregar: limpiar lista de comentarios y dejar controles habilitados por defecto
+                        
                         ListaComentarios = new List<ComentarioIncidencia>();
                         DDLEmpleado.Enabled = true;
                         btnAceptar.Text = "Agregar";
@@ -109,7 +109,7 @@ namespace Mainpage
 
                     if (Session["Accion"] != null && Session["Accion"].ToString() == "Modificar")
                     {
-//                        id = int.Parse(Session["ID"].ToString());
+
                         seleccionada = conexion3.Listar(id)[0];
 
 
@@ -164,18 +164,6 @@ namespace Mainpage
                         btnCancelar.Visible = true;
                     }
 
-                    //if (Session["Accion"] != null && Session["Accion"].ToString() == "Cerrar")
-                    //{
-                    //    //Titulo.Enabled = false;
-                    //    //Descripcion.Enabled = false;
-                    //    //DDLCliente.Enabled = false;
-                    //    //DDLEmpleado.Enabled = false;
-                    //    //DDLCategoria.Enabled = false;
-                    //    //DDLPrioridad.Enabled = false;
-                    //    //TBComentarioResolucion.Enabled = false;
-
-                    //    btnAceptar.Text = "Cerrar";
-                    //}
                 }
             }
             catch (Exception)
@@ -215,7 +203,7 @@ namespace Mainpage
         protected void Reabrir_onclick(object sender, EventArgs e)
         {
             int id = int.Parse(Session["ID"].ToString());
-            Session["Accion"] = "Re-abrir";
+            Session["Accion"] = "";
             conexion3.Reabrir(id);
             Response.Redirect("vistaIncidencia.aspx");
         }
@@ -247,8 +235,7 @@ namespace Mainpage
                     conexion3.Resolver(idIncidencia, TBComentarioResolucion.Text);
 
                     btnAceptar.Text = "Resolver";
-                    Session.Remove("ID");
-                    Session.Remove("Accion");
+                    Session["Accion"] = "";
                     Response.Redirect("vistaIncidencia.aspx", false);
                     return;
 
@@ -266,8 +253,7 @@ namespace Mainpage
                     conexion3.Cerrar(idIncidencia);
 
                     btnAceptar.Text = "Cerrar";
-                    Session.Remove("ID");
-                    Session.Remove("Accion");
+                    Session["Accion"] = "";
                     Response.Redirect("vistaIncidencia.aspx", false);
                     return;
 
@@ -277,8 +263,7 @@ namespace Mainpage
                 {
                     conexion3.Reasignar(idIncidencia, idEmpleado);
 
-                    Session.Remove("ID");
-                    Session.Remove("Accion");
+                    Session["Accion"] = "";
                     Response.Redirect("vistaIncidencia.aspx", false);
                     return;
                 }
@@ -297,27 +282,15 @@ namespace Mainpage
 
                     incidencia.id = int.Parse(Session["ID"].ToString());
                     conexion3.Modificar(incidencia);
-                    Session.Remove("ID");
-                    Session.Remove("Accion");
+                    
+                    Session["Accion"] = "";
                     Response.Redirect("vistaIncidencia.aspx", false);
                     return;
                 }
-                //else
-                //{
-                //    conexion3.agregar(incidencia);
-                //    //Session.Clear();
-                //    //Session["ID"] = int.Parse(Session["ID"].ToString());
-                //    //Session["Accion"] = "";
-                //    //Response.Redirect("vistaIncidencia.aspx", false);
-                //    Response.Redirect("incidencias.aspx", false);
-                //    return;
-                //}
                 else
                 {
                     int nuevoID = conexion3.agregar(incidencia);
 
-                    Session.Remove("ID");
-                    Session.Remove("Accion");
                     Session["ID"] = nuevoID;
                     Session["Accion"] = "";
 
@@ -337,7 +310,6 @@ namespace Mainpage
             if (Session["ID"] != null)
             {
                 int id = int.Parse(Session["ID"].ToString());
-                // Resto del código
                 Session["Accion"] = "";
                 Response.Redirect("vistaIncidencia.aspx");
             }
