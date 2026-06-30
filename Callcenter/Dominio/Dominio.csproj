@@ -57,6 +57,7 @@
     <Compile Include="estado.cs" />
     <Compile Include="incidencia.cs" />
     <Compile Include="Prioridad.cs" />
+    <Compile Include="Roles.cs" />
     <Compile Include="Usuarios.cs" />
     <Compile Include="CustomControl1.cs">
       <SubType>Code</SubType>

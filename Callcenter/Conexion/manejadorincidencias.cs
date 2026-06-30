@@ -205,6 +205,54 @@ namespace Conexion
             }
         }
 
+        public List<incidencia> FiltrarIncidenciasPorUsuario(int idUsuario)
+        {
+            List<incidencia> lista = new List<incidencia>();
+            ConexionDB conexion = new ConexionDB();
+
+            try
+            {
+                conexion.settearConsulta("EXEC sp_FiltrarIncidenciasPorUsuario @IDUsuario");
+                conexion.agregarParametro("@IDUsuario", idUsuario);
+
+                conexion.ejecutarLectura();
+
+                while (conexion._lector.Read())
+                {
+                    incidencia aux = new incidencia();
+
+                    aux.id = (int)conexion._lector["ID"];
+                    aux.titulo = conexion._lector["Titulo"].ToString();
+                    aux.descripcion = conexion._lector["Descripcion"].ToString();
+
+                    aux.IDCliente = (int)conexion._lector["IDCliente"];
+                    aux.Cliente = conexion._lector["Cliente"].ToString();
+
+                    aux.IDEmpleado = (int)conexion._lector["IDEmpleado"];
+                    aux.Empleado = conexion._lector["Empleado"].ToString();
+
+                    aux.IDCategoria = (int)conexion._lector["IDCategoria"];
+                    aux.Categoria = conexion._lector["Categoria"].ToString();
+
+                    aux.IDPrioridad = (int)conexion._lector["IDPrioridad"];
+                    aux.Prioridad = conexion._lector["Prioridad"].ToString();
+
+                    aux.IDEstado = (int)conexion._lector["IDEstado"];
+                    aux.Estado = conexion._lector["Estado"].ToString();
+
+
+                    lista.Add(aux);
+                }
+
+                return lista;
+            }
+            finally
+            {
+                conexion.cerrarConexion();
+            }
+        }
+
+
 
 
     }

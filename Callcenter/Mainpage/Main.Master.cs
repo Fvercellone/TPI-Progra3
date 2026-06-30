@@ -16,8 +16,10 @@ namespace Mainpage
         public string user { get; set; }
         protected void Page_Load(object sender, EventArgs e)
         {
+
             if(!(Page is Login))
             {
+
                 
                 if (Seguridad.sesionActiva(Session["usuario"]) == false)
                 {
@@ -26,6 +28,7 @@ namespace Mainpage
             }
             user = Session["usuario"] != null ? Session["usuario"].ToString() : "Logueate";
             lblTitulo.Text = user;
+            
         }
         protected void btnCerrarSesion_Click(object sender, EventArgs e)
         {

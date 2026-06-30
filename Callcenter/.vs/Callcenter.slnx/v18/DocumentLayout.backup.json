@@ -1,7 +1,24 @@
 {
   "Version": 1,
   "WorkspaceRootPath": "C:\\Users\\angel\\OneDrive\\Documentos\\GitHub\\TPI-Progra3\\Callcenter\\",
-  "Documents": [],
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{D0EABD23-FD6B-44DE-A2E6-F50C45123187}|Mainpage\\Mainpage.csproj|c:\\users\\angel\\onedrive\\documentos\\github\\tpi-progra3\\callcenter\\mainpage\\login.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D0EABD23-FD6B-44DE-A2E6-F50C45123187}|Mainpage\\Mainpage.csproj|solutionrelative:mainpage\\login.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D0EABD23-FD6B-44DE-A2E6-F50C45123187}|Mainpage\\Mainpage.csproj|c:\\users\\angel\\onedrive\\documentos\\github\\tpi-progra3\\callcenter\\mainpage\\main.master||{B30AFBFF-D992-43B7-B62D-2642580A2883}",
+      "RelativeMoniker": "D:0:0:{D0EABD23-FD6B-44DE-A2E6-F50C45123187}|Mainpage\\Mainpage.csproj|solutionrelative:mainpage\\main.master||{B30AFBFF-D992-43B7-B62D-2642580A2883}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D0EABD23-FD6B-44DE-A2E6-F50C45123187}|Mainpage\\Mainpage.csproj|c:\\users\\angel\\onedrive\\documentos\\github\\tpi-progra3\\callcenter\\mainpage\\main.master.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D0EABD23-FD6B-44DE-A2E6-F50C45123187}|Mainpage\\Mainpage.csproj|solutionrelative:mainpage\\main.master.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CA04E517-0363-47E6-8191-B7FF55A1A189}|Dominio\\Dominio.csproj|c:\\users\\angel\\onedrive\\documentos\\github\\tpi-progra3\\callcenter\\dominio\\usuarios.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CA04E517-0363-47E6-8191-B7FF55A1A189}|Dominio\\Dominio.csproj|solutionrelative:dominio\\usuarios.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
@@ -9,11 +26,63 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": -1,
+          "SelectedChildIndex": 1,
           "Children": [
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Login.aspx.cs",
+              "DocumentMoniker": "C:\\Users\\angel\\OneDrive\\Documentos\\GitHub\\TPI-Progra3\\Callcenter\\Mainpage\\Login.aspx.cs",
+              "RelativeDocumentMoniker": "Mainpage\\Login.aspx.cs",
+              "ToolTip": "C:\\Users\\angel\\OneDrive\\Documentos\\GitHub\\TPI-Progra3\\Callcenter\\Mainpage\\Login.aspx.cs",
+              "RelativeToolTip": "Mainpage\\Login.aspx.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-06-29T23:40:49.725Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Usuarios.cs",
+              "DocumentMoniker": "C:\\Users\\angel\\OneDrive\\Documentos\\GitHub\\TPI-Progra3\\Callcenter\\Dominio\\Usuarios.cs",
+              "RelativeDocumentMoniker": "Dominio\\Usuarios.cs",
+              "ToolTip": "C:\\Users\\angel\\OneDrive\\Documentos\\GitHub\\TPI-Progra3\\Callcenter\\Dominio\\Usuarios.cs",
+              "RelativeToolTip": "Dominio\\Usuarios.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABoAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-06-29T23:37:10.979Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Main.Master.cs",
+              "DocumentMoniker": "C:\\Users\\angel\\OneDrive\\Documentos\\GitHub\\TPI-Progra3\\Callcenter\\Mainpage\\Main.Master.cs",
+              "RelativeDocumentMoniker": "Mainpage\\Main.Master.cs",
+              "ToolTip": "C:\\Users\\angel\\OneDrive\\Documentos\\GitHub\\TPI-Progra3\\Callcenter\\Mainpage\\Main.Master.cs",
+              "RelativeToolTip": "Mainpage\\Main.Master.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-06-29T23:34:04.838Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Main.Master",
+              "DocumentMoniker": "C:\\Users\\angel\\OneDrive\\Documentos\\GitHub\\TPI-Progra3\\Callcenter\\Mainpage\\Main.Master",
+              "RelativeDocumentMoniker": "Mainpage\\Main.Master",
+              "ToolTip": "C:\\Users\\angel\\OneDrive\\Documentos\\GitHub\\TPI-Progra3\\Callcenter\\Mainpage\\Main.Master",
+              "RelativeToolTip": "Mainpage\\Main.Master",
+              "LogicalView": "7651a703-06e5-11d1-8ebd-00a0c90f26ea",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000195|",
+              "WhenOpened": "2026-06-29T22:54:42.642Z",
+              "EditorCaption": ""
             }
           ]
         }

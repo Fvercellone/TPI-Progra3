@@ -33,13 +33,13 @@ namespace Mainpage
         protected global::System.Web.UI.WebControls.TextBox ContraseñaUsuario;
 
         /// <summary>
-        /// Control btnVolver.
+        /// Control BTNIngresar.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnVolver;
+        protected global::System.Web.UI.WebControls.Button BTNIngresar;
 
         /// <summary>
         /// Control LBMensaje.

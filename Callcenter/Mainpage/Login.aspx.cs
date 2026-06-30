@@ -16,8 +16,12 @@ namespace Mainpage
         Usuarios usuario = new Usuarios();
         protected void Page_Load(object sender, EventArgs e)
         {
+            // Comprobación segura de la sesión y del tipo antes de acceder a 'Rol'
+            if (Session["usuario"] is Usuarios sesUsuario && sesUsuario.Rol >= Dominio.roles.telefonista)
+            {
 
-            if (!IsPostBack)
+
+                if (!IsPostBack)
             {
 
                 if (Session["Mensaje"] != null)
@@ -29,32 +33,31 @@ namespace Mainpage
                     Session.Remove("ClaseMensaje");
                 }
             }
+            }
 
         }
 
-        protected void btnVolver_Click(object sender, EventArgs e)
+
+        protected void BTNIngresar_Click(object sender, EventArgs e)
         {
             try
             {
-               String Nombre = NombreUsuario.Text;
-               String Contraseña = ContraseñaUsuario.Text;
+                String Nombre = NombreUsuario.Text;
+                String Contraseña = ContraseñaUsuario.Text;
 
-                Session.Add("usuario", Nombre);
-                Session.Add("Constraseña", Contraseña);
 
-                //Response.Redirect("Default.aspx?Nombre=" + Nombre);
 
-                
                 usuario.Usuario = Nombre;
                 usuario.Contrasenia = Contraseña;
 
                 if (!Conexion.Login(usuario))
                 {
-                    // Manejar el caso de inicio de sesión fallido
+                    
                     Response.Redirect("Login.aspx", false);
                 }
                 else {
                     Session.Add("usuario", usuario);
+                    Session.Add("IDUsuario", usuario.ID);
                     Response.Redirect("Default.aspx", false);
                 }
 

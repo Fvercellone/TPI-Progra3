@@ -24,6 +24,15 @@ namespace Mainpage
         protected global::System.Web.UI.WebControls.Label LBEstado;
 
         /// <summary>
+        /// Control LBFechaAlta.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label LBFechaAlta;
+
+        /// <summary>
         /// Control Titulo.
         /// </summary>
         /// <remarks>
@@ -85,24 +94,6 @@ namespace Mainpage
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox TBComentarioResolucion;
-
-        /// <summary>
-        /// Control TXTComentario.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TXTComentario;
-
-        /// <summary>
-        /// Control BTNEnviarComentario.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button BTNEnviarComentario;
 
         /// <summary>
         /// Control btnAceptar.
@@ -175,5 +166,32 @@ namespace Mainpage
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.LinkButton BTReabrirFila;
+
+        /// <summary>
+        /// Control TXTComentario.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox TXTComentario;
+
+        /// <summary>
+        /// Control BTNEnviarComentario.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button BTNEnviarComentario;
+
+        /// <summary>
+        /// Control LBMensaje.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label LBMensaje;
     }
 }

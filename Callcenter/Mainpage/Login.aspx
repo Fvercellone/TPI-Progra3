@@ -28,7 +28,7 @@
               <div class="mb-3 form-check">
                 <input type="checkbox" class="form-check-input" id="exampleCheck1">
                 <label class="form-check-label flex accordion-button" for="exampleCheck1">Márcame</label>
-                <asp:Button ID="btnVolver" Text="Enviar" CssClass="btn btn-primary" runat="server" OnClick="btnVolver_Click" />
+                <asp:Button ID="BTNIngresar" Text="Enviar" CssClass="btn btn-primary" runat="server" OnClick="BTNIngresar_Click" />
               </div>
 
         <div>

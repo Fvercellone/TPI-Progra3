@@ -2,317 +2,343 @@
 using Dominio;
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Web;
 using System.Web.UI;
-using System.Web.UI.WebControls;
 
 namespace Mainpage
 {
     public partial class vistaIncidencia : System.Web.UI.Page
     {
-        ManejadorIncidencias conexion3 = new ManejadorIncidencias();
-        incidencia seleccionada = new incidencia(); 
+        private readonly ManejadorIncidencias manejadorIncidencias = new ManejadorIncidencias();
+        public List<incidencia> ListaIncidencias { get; set; } = new List<incidencia>();
 
-
-        public List<ComentarioIncidencia> ListaComentarios = new List<ComentarioIncidencia>();
+        public List<ComentarioIncidencia> ListaComentarios { get; set; } = new List<ComentarioIncidencia>();
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            try
+            
+            
+            if (!IsPostBack)
             {
-                if (!IsPostBack)
+                if (Session["IDUsuario"] == null)
                 {
-
-                    int id = -1;
-                    if (Session["ID"] != null && int.TryParse(Session["ID"].ToString(), out int parsedId))
-                    {
-                        id = parsedId;
-                    }
-                    else
-                    {
-                        TBComentarioResolucion.Enabled = false;
-                        BTNEnviarComentario.Enabled = false;
-                        TXTComentario.Enabled = false;
-                    }
-
-                    ManejadorDDL conexion = new ManejadorDDL();
-                    ManejadorUsuarios conexion2 = new ManejadorUsuarios();
-                    ManejadorComentarios conexion4 = new ManejadorComentarios();
-
-                    DDLPrioridad.DataSource = conexion.ListarPrioridades();
-                    DDLPrioridad.DataTextField = "Nombre";
-                    DDLPrioridad.DataValueField = "ID";
-                    DDLPrioridad.DataBind();
-
-                    DDLCategoria.DataSource = conexion.ListarCategorias();
-                    DDLCategoria.DataTextField = "Nombre";
-                    DDLCategoria.DataValueField = "ID";
-                    DDLCategoria.DataBind();
-
-                    DDLCliente.DataSource = conexion2.ListarCliente();
-                    DDLCliente.DataValueField = "ID";
-                    DDLCliente.DataTextField = "Usuario";
-                    DDLCliente.DataBind();
-
-                    DDLEmpleado.DataSource = conexion2.ListarEmpleados();
-                    DDLEmpleado.DataValueField = "ID";
-                    DDLEmpleado.DataTextField = "Usuario";
-                    DDLEmpleado.DataBind();
-                    
-
-                    if (id > 0)
-                    {
-                        var lista = conexion3.Listar(id);
-                        if (lista != null && lista.Count > 0)
-                        {
-                            seleccionada = lista[0];
-
-                            ListaComentarios = conexion4.Listar(id) ?? new List<ComentarioIncidencia>();
-
-                            DDLEmpleado.Enabled = false;
-
-                            Titulo.Text = seleccionada.titulo;
-                            Descripcion.Text = seleccionada.descripcion;
-                            TBComentarioResolucion.Text = seleccionada.comentarioCierre;
-
-                            DDLCliente.SelectedValue = seleccionada.IDCliente.ToString();
-                            DDLEmpleado.SelectedValue = seleccionada.IDEmpleado.ToString();
-                            DDLCategoria.SelectedValue = seleccionada.IDCategoria.ToString();
-                            DDLPrioridad.SelectedValue = seleccionada.IDPrioridad.ToString();
-
-                            LBEstado.Text = "Estado: " + seleccionada.Estado;
-                        }
-                    }
-                    else
-                    {
-                        
-                        ListaComentarios = new List<ComentarioIncidencia>();
-                        DDLEmpleado.Enabled = true;
-                        btnAceptar.Text = "Agregar";
-                        btnAceptar.Visible = true;
-                        btnCancelar.Visible = true;
-                    }
-
-                    if (Session["Accion"] != null && Session["Accion"].ToString() == "")
-                    {
-                        Titulo.Enabled = false;
-                        Descripcion.Enabled = false;
-                        DDLCliente.Enabled = false;
-                        DDLCategoria.Enabled = false;
-                        DDLPrioridad.Enabled = false;
-                        DDLEmpleado.Enabled = false;
-                        TBComentarioResolucion.Enabled = false;
-
-
-                    }
-
-                    if (Session["Accion"] != null && Session["Accion"].ToString() == "Modificar")
-                    {
-
-                        seleccionada = conexion3.Listar(id)[0];
-
-
-                        DDLEmpleado.Enabled = false;
-                        TBComentarioResolucion.Enabled = false;
-                        Titulo.Text = seleccionada.titulo;
-                        Descripcion.Text = seleccionada.descripcion;
-
-                        DDLCliente.SelectedValue = seleccionada.IDCliente.ToString();
-                        DDLEmpleado.SelectedValue = seleccionada.IDEmpleado.ToString();
-                        DDLCategoria.SelectedValue = seleccionada.IDCategoria.ToString();
-                        DDLPrioridad.SelectedValue = seleccionada.IDPrioridad.ToString();
-                        LBEstado.Text = "Estado: " + seleccionada.Estado;
-
-                        btnAceptar.Text = "Modificar";
-                        btnAceptar.Visible = true;
-                        btnCancelar.Visible = true;
-
-
-                    }
-
-                    if (Session["Accion"] != null && Session["Accion"].ToString() == "Reasignar")
-                    {
-                        Titulo.Enabled = false;
-                        Descripcion.Enabled = false;
-                        DDLCliente.Enabled = false;
-                        DDLCategoria.Enabled = false;
-                        DDLPrioridad.Enabled = false;
-                        TBComentarioResolucion.Enabled = false;
-
-                        DDLEmpleado.Enabled = true;
-
-                        btnAceptar.Text = "Reasignar";
-                        btnAceptar.Visible = true;
-                        btnCancelar.Visible = true;
-                    }
-
-                    if (Session["Accion"] != null && Session["Accion"].ToString() == "Resolver")
-                    {
-                        Titulo.Enabled = false;
-                        Descripcion.Enabled = false;
-                        DDLCliente.Enabled = false;
-                        DDLEmpleado.Enabled = false;
-                        DDLCategoria.Enabled = false;
-                        DDLPrioridad.Enabled = false;
-
-                        
-                        
-
-                        btnAceptar.Text = "Resolver";
-                        btnAceptar.Visible = true;
-                        btnCancelar.Visible = true;
-                    }
-
+                    LBMensaje.Visible = true;
+                    LBMensaje.Text = "No hay IDUsuario en Session. Revisar login.";
+                    return;
                 }
+                
+                CargarDropDowns();
+                CargarPantallaSegunModo();
             }
-            catch (Exception)
-            {
-                throw;
-            }
-            }
-        
-
-
-        protected void cerrar_onclick(object sender, EventArgs e)
-        {
-            int id = int.Parse(Session["ID"].ToString());
-            Session["Accion"] = "";
-            conexion3.Cerrar(id);
-
-            Response.Redirect("vistaIncidencia.aspx");
         }
+
+
+
+        private void CargarDropDowns()
+        {
+            ManejadorDDL manejadorDDL = new ManejadorDDL();
+            ManejadorUsuarios manejadorUsuarios = new ManejadorUsuarios();
+
+            DDLPrioridad.DataSource = manejadorDDL.ListarPrioridades();
+            DDLPrioridad.DataTextField = "Nombre";
+            DDLPrioridad.DataValueField = "ID";
+            DDLPrioridad.DataBind();
+
+            DDLCategoria.DataSource = manejadorDDL.ListarCategorias();
+            DDLCategoria.DataTextField = "Nombre";
+            DDLCategoria.DataValueField = "ID";
+            DDLCategoria.DataBind();
+
+            DDLCliente.DataSource = manejadorUsuarios.ListarCliente();
+            DDLCliente.DataTextField = "Usuario";
+            DDLCliente.DataValueField = "ID";
+            DDLCliente.DataBind();
+
+            DDLEmpleado.DataSource = manejadorUsuarios.ListarEmpleados();
+            DDLEmpleado.DataTextField = "Usuario";
+            DDLEmpleado.DataValueField = "ID";
+            DDLEmpleado.DataBind();
+        }
+
+        private void CargarPantallaSegunModo()
+        {
+            string accion = Session["Accion"] != null ? Session["Accion"].ToString() : "";
+            int idIncidencia = ObtenerIDIncidencia();
+
+            if (idIncidencia <= 0)
+            {
+                PrepararAlta();
+                return;
+            }
+
+            CargarIncidencia(idIncidencia);
+
+            switch (accion)
+            {
+                case "Modificar":
+                    PrepararModificar();
+                    break;
+
+                case "Reasignar":
+                    PrepararReasignar();
+                    break;
+
+                case "Resolver":
+                    PrepararResolver();
+                    break;
+
+                default:
+                    PrepararVista();
+                    break;
+            }
+        }
+
+        private int ObtenerIDIncidencia()
+        {
+            if (Session["ID"] != null && int.TryParse(Session["ID"].ToString(), out int id))
+                return id;
+
+            return -1;
+        }
+
+        private void CargarIncidencia(int id)
+        {
+            ManejadorComentarios manejadorComentarios = new ManejadorComentarios();
+
+            List<incidencia> lista = manejadorIncidencias.Listar(id);
+
+            if (lista == null || lista.Count == 0)
+                throw new Exception("No se encontró la incidencia solicitada.");
+
+            incidencia seleccionada = lista[0];
+
+            ListaComentarios = manejadorComentarios.Listar(id) ?? new List<ComentarioIncidencia>();
+
+            Titulo.Text = seleccionada.titulo;
+            Descripcion.Text = seleccionada.descripcion;
+            TBComentarioResolucion.Text = seleccionada.comentarioCierre;
+
+            DDLCliente.SelectedValue = seleccionada.IDCliente.ToString();
+            DDLEmpleado.SelectedValue = seleccionada.IDEmpleado.ToString();
+            DDLCategoria.SelectedValue = seleccionada.IDCategoria.ToString();
+            DDLPrioridad.SelectedValue = seleccionada.IDPrioridad.ToString();
+
+            LBEstado.Text = "Estado: " + seleccionada.Estado;
+            LBFechaAlta.Text = "Fecha Alta: " + seleccionada.alta;
+
+        }
+
+        private void PrepararAlta()
+        {
+            Titulo.Text = "";
+            Descripcion.Text = "";
+            TBComentarioResolucion.Text = "";
+
+            TBComentarioResolucion.Enabled = false;
+            TXTComentario.Enabled = false;
+            BTNEnviarComentario.Enabled = false;
+
+            DDLEmpleado.Enabled = true;
+
+            btnAceptar.Text = "Agregar";
+            btnAceptar.Visible = true;
+            btnCancelar.Visible = true;
+
+            LBEstado.Text = "Estado: Nueva incidencia";
+        }
+
+        private void PrepararVista()
+        {
+            Titulo.Enabled = false;
+            Descripcion.Enabled = false;
+            DDLCliente.Enabled = false;
+            DDLCategoria.Enabled = false;
+            DDLPrioridad.Enabled = false;
+            DDLEmpleado.Enabled = false;
+            TBComentarioResolucion.Enabled = false;
+
+            btnAceptar.Visible = false;
+            btnCancelar.Visible = false;
+        }
+
+        private void PrepararModificar()
+        {
+            Titulo.Enabled = true;
+            Descripcion.Enabled = true;
+            DDLCliente.Enabled = true;
+            DDLCategoria.Enabled = true;
+            DDLPrioridad.Enabled = true;
+
+            DDLEmpleado.Enabled = false;
+            TBComentarioResolucion.Enabled = false;
+
+            btnAceptar.Text = "Modificar";
+            btnAceptar.Visible = true;
+            btnCancelar.Visible = true;
+        }
+
+        private void PrepararReasignar()
+        {
+            Titulo.Enabled = false;
+            Descripcion.Enabled = false;
+            DDLCliente.Enabled = false;
+            DDLCategoria.Enabled = false;
+            DDLPrioridad.Enabled = false;
+            TBComentarioResolucion.Enabled = false;
+
+            DDLEmpleado.Enabled = true;
+
+            btnAceptar.Text = "Reasignar";
+            btnAceptar.Visible = true;
+            btnCancelar.Visible = true;
+        }
+
+        private void PrepararResolver()
+        {
+            Titulo.Enabled = false;
+            Descripcion.Enabled = false;
+            DDLCliente.Enabled = false;
+            DDLEmpleado.Enabled = false;
+            DDLCategoria.Enabled = false;
+            DDLPrioridad.Enabled = false;
+
+            TBComentarioResolucion.Enabled = true;
+
+            btnAceptar.Text = "Resolver";
+            btnAceptar.Visible = true;
+            btnCancelar.Visible = true;
+        }
+
         protected void Modificar_onclick(object sender, EventArgs e)
         {
-            int id = int.Parse(Session["ID"].ToString());
             Session["Accion"] = "Modificar";
             Response.Redirect("vistaIncidencia.aspx");
         }
+
         protected void Reasignar_onclick(object sender, EventArgs e)
         {
-            int id = int.Parse(Session["ID"].ToString());
             Session["Accion"] = "Reasignar";
             Response.Redirect("vistaIncidencia.aspx");
         }
+
         protected void Resolver_onclick(object sender, EventArgs e)
         {
-            int id = int.Parse(Session["ID"].ToString());
             Session["Accion"] = "Resolver";
             Response.Redirect("vistaIncidencia.aspx");
         }
-        protected void Reabrir_onclick(object sender, EventArgs e)
+
+        protected void cerrar_onclick(object sender, EventArgs e)
         {
-            int id = int.Parse(Session["ID"].ToString());
+            int id = Convert.ToInt32(Session["ID"]);
+            manejadorIncidencias.Cerrar(id);
+
             Session["Accion"] = "";
-            conexion3.Reabrir(id);
             Response.Redirect("vistaIncidencia.aspx");
         }
 
-        
+        protected void Reabrir_onclick(object sender, EventArgs e)
+        {
+            int id = Convert.ToInt32(Session["ID"]);
+            manejadorIncidencias.Reabrir(id);
+
+            Session["Accion"] = "";
+            Response.Redirect("vistaIncidencia.aspx");
+        }
 
         protected void Agregar_onClick(object sender, EventArgs e)
         {
-            int idIncidencia = 0;
-            if (Session["ID"] != null)
+            string accion = Session["Accion"] != null ? Session["Accion"].ToString() : "";
+            int idIncidencia = ObtenerIDIncidencia();
+
+            if (accion == "Resolver")
             {
-                idIncidencia = int.Parse(Session["ID"].ToString());
+                manejadorIncidencias.Resolver(idIncidencia, TBComentarioResolucion.Text);
+                Session["Accion"] = "";
+                Response.Redirect("vistaIncidencia.aspx", false);
+                return;
             }
-            int idEmpleado = int.Parse(DDLEmpleado.SelectedValue);
+
+            if (accion == "Reasignar")
+            {
+                int idEmpleado = Convert.ToInt32(DDLEmpleado.SelectedValue);
+                manejadorIncidencias.Reasignar(idIncidencia, idEmpleado);
+
+                Session["Accion"] = "";
+                Response.Redirect("vistaIncidencia.aspx", false);
+                return;
+            }
+
+            incidencia nueva = new incidencia
+            {
+                titulo = Titulo.Text,
+                descripcion = Descripcion.Text,
+                IDCliente = Convert.ToInt32(DDLCliente.SelectedValue),
+                IDEmpleado = Convert.ToInt32(DDLEmpleado.SelectedValue),
+                IDCategoria = Convert.ToInt32(DDLCategoria.SelectedValue),
+                IDPrioridad = Convert.ToInt32(DDLPrioridad.SelectedValue)
+            };
+
+            if (accion == "Modificar")
+            {
+                nueva.id = idIncidencia;
+                manejadorIncidencias.Modificar(nueva);
+
+                Session["Accion"] = "";
+                Response.Redirect("vistaIncidencia.aspx", false);
+                return;
+            }
+
+            int nuevoID = manejadorIncidencias.agregar(nueva);
+
+            Session["ID"] = nuevoID;
+            Session["Accion"] = "";
+
+            Response.Redirect("vistaIncidencia.aspx", false);
+        }
+
+
+        protected void EnviarComentario_onclick(object sender, EventArgs e)
+        {
             try
             {
-                if (Session["Accion"] != null && Session["Accion"].ToString() == "Resolver")
-                {
-                    Titulo.Enabled = false;
-                    Descripcion.Enabled = false;
-                    DDLCliente.Enabled = false;
-                    DDLEmpleado.Enabled = false;
-                    DDLCategoria.Enabled = false;
-                    DDLPrioridad.Enabled = false;
+                if (Session["ID"] == null)
+                    throw new Exception("Primero debe seleccionar una incidencia.");
 
-                    
-                    TBComentarioResolucion.Enabled = true;
+                if (Session["IDUsuario"] == null)
+                    throw new Exception("No se encontró el usuario logueado.");
 
-                    conexion3.Resolver(idIncidencia, TBComentarioResolucion.Text);
+                if (string.IsNullOrWhiteSpace(TXTComentario.Text))
+                    throw new Exception("Debe ingresar un comentario.");
 
-                    btnAceptar.Text = "Resolver";
-                    Session["Accion"] = "";
-                    Response.Redirect("vistaIncidencia.aspx", false);
-                    return;
+                ComentarioIncidencia comentario = new ComentarioIncidencia();
 
-                }
+                comentario.IDIncidencia = Convert.ToInt32(Session["ID"]);
+                comentario.IDUsuario = Convert.ToInt32(Session["IDUsuario"]);
+                comentario.Comentario = TXTComentario.Text;
 
-                if (Session["Accion"] != null && Session["Accion"].ToString() == "Cerrar")
-                {
-                    Titulo.Enabled = false;
-                    Descripcion.Enabled = false;
-                    DDLCliente.Enabled = false;
-                    DDLEmpleado.Enabled = false;
-                    DDLCategoria.Enabled = false;
-                    DDLPrioridad.Enabled = false;
+                ManejadorComentarios manejadorComentarios = new ManejadorComentarios();
 
-                    conexion3.Cerrar(idIncidencia);
+                manejadorComentarios.Agregar(comentario);
 
-                    btnAceptar.Text = "Cerrar";
-                    Session["Accion"] = "";
-                    Response.Redirect("vistaIncidencia.aspx", false);
-                    return;
+                TXTComentario.Text = "";
 
-                }
-
-                if (Session["Accion"] != null && Session["Accion"].ToString() == "Reasignar")
-                {
-                    conexion3.Reasignar(idIncidencia, idEmpleado);
-
-                    Session["Accion"] = "";
-                    Response.Redirect("vistaIncidencia.aspx", false);
-                    return;
-                }
-
-                incidencia incidencia = new incidencia();
-
-                incidencia.titulo = Titulo.Text;
-                incidencia.descripcion = Descripcion.Text;
-                incidencia.IDCliente = int.Parse(DDLCliente.SelectedValue);
-                incidencia.IDEmpleado = int.Parse(DDLEmpleado.SelectedValue);
-                incidencia.IDCategoria = int.Parse(DDLCategoria.SelectedValue);
-                incidencia.IDPrioridad = int.Parse(DDLPrioridad.SelectedValue);
-
-                if (Session["Accion"] != null && Session["Accion"].ToString() == "Modificar")
-                {
-
-                    incidencia.id = int.Parse(Session["ID"].ToString());
-                    conexion3.Modificar(incidencia);
-                    
-                    Session["Accion"] = "";
-                    Response.Redirect("vistaIncidencia.aspx", false);
-                    return;
-                }
-                else
-                {
-                    int nuevoID = conexion3.agregar(incidencia);
-
-                    Session["ID"] = nuevoID;
-                    Session["Accion"] = "";
-
-                    Response.Redirect("vistaIncidencia.aspx", false);
-                    return;
-                }
-
+                Response.Redirect("vistaIncidencia.aspx", false);
             }
             catch (Exception)
             {
                 throw;
             }
         }
+
+
         protected void Cancelar_onClick(object sender, EventArgs e)
         {
-            
             if (Session["ID"] != null)
             {
-                int id = int.Parse(Session["ID"].ToString());
                 Session["Accion"] = "";
                 Response.Redirect("vistaIncidencia.aspx");
+                return;
             }
+
             Session.Remove("ID");
             Session.Remove("Accion");
             Response.Redirect("Incidencias.aspx");
@@ -324,6 +350,5 @@ namespace Mainpage
             Session.Remove("Accion");
             Response.Redirect("Incidencias.aspx");
         }
-
     }
 }
