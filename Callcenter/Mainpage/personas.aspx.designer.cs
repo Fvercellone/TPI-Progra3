@@ -15,22 +15,22 @@ namespace Mainpage
     {
 
         /// <summary>
-        /// Control DGVPersonas.
+        /// Control BTNAgregarPersona.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView DGVPersonas;
+        protected global::System.Web.UI.WebControls.Button BTNAgregarPersona;
 
         /// <summary>
-        /// Control BTAgregar.
+        /// Control BTNActualizar.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button BTAgregar;
+        protected global::System.Web.UI.WebControls.Button BTNActualizar;
 
         /// <summary>
         /// Control LBMensaje.
@@ -40,5 +40,14 @@ namespace Mainpage
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label LBMensaje;
+
+        /// <summary>
+        /// Control RptPersonas.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Repeater RptPersonas;
     }
 }

@@ -94,7 +94,7 @@ namespace Mainpage
 
         private int ObtenerIDIncidencia()
         {
-            if (Session["ID"] != null && int.TryParse(Session["ID"].ToString(), out int id))
+            if (Session["IDincidencia"] != null && int.TryParse(Session["IDincidencia"].ToString(), out int id))
                 return id;
 
             return -1;
@@ -228,7 +228,7 @@ namespace Mainpage
 
         protected void cerrar_onclick(object sender, EventArgs e)
         {
-            int id = Convert.ToInt32(Session["ID"]);
+            int id = Convert.ToInt32(Session["IDincidencia"]);
             manejadorIncidencias.Cerrar(id);
 
             Session["Accion"] = "";
@@ -237,7 +237,7 @@ namespace Mainpage
 
         protected void Reabrir_onclick(object sender, EventArgs e)
         {
-            int id = Convert.ToInt32(Session["ID"]);
+            int id = Convert.ToInt32(Session["IDincidencia"]);
             manejadorIncidencias.Reabrir(id);
 
             Session["Accion"] = "";

@@ -1,4 +1,4 @@
-﻿//------------------------------------------------------------------------------
+//------------------------------------------------------------------------------
 // <generado automáticamente>
 //     Este código fue generado por una herramienta.
 //
@@ -11,7 +11,7 @@ namespace Mainpage
 {
 
 
-    public partial class Clientes
+    public partial class Empleado
     {
 
         /// <summary>
@@ -42,21 +42,21 @@ namespace Mainpage
         protected global::System.Web.UI.WebControls.Label Label1;
 
         /// <summary>
-        /// Control RptUsuarios.
+        /// Control RptEmpleados.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Repeater RptUsuarios;
+        protected global::System.Web.UI.WebControls.Repeater RptEmpleados;
 
         /// <summary>
-        /// Control LBMensaje.
+        /// Control LBMensaje1.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label LBMensaje;
+        protected global::System.Web.UI.WebControls.Label LBMensaje1;
     }
 }

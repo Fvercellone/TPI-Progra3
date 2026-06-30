@@ -9,6 +9,11 @@
     <asp:ContentPlaceHolder ID="head" runat="server">
     </asp:ContentPlaceHolder>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+     <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+          integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+          crossorigin="anonymous"
+          referrerpolicy="no-referrer" />
 </head>
 
 
@@ -35,26 +40,30 @@
                 <li class="nav-Page">
                     <a class="nav-link" href="Default.aspx">Menu Inicial</a>
                 </li>
-               <% if (Session["usuario"] != null && ((Dominio.Usuarios)Session["usuario"]).Rol >= Dominio.roles.telefonista) { %>
+               <% if ((Conexion.Validaciones.TienePermiso((Dominio.Usuarios)Session["usuario"], 2))) { %>
 
-                <li class="nav-Page">
-                    <a class="nav-link" href="personas.aspx">Personas</a>
-                </li>
-
-                <li class="nav-Page">
-                    <a class="nav-link" href="Usuario.aspx">Usuarios</a>
-                </li>
 
                 <li class="nav-Page">
                     <a class="nav-link" href="Clientes.aspx">Clientes</a>
                 </li>
-                <% } %>
+                <% if ((Conexion.Validaciones.TienePermiso((Dominio.Usuarios)Session["usuario"], 3)))
+                    { %>
+    
                 <li class="nav-Page">
-                    <a class="nav-link" href="incidencias.aspx">Incidencias</a>
+                    <a class="nav-link" href="Usuario.aspx">Usuarios</a>
+                </li>
+                <li class="nav-Page">
+                    <a class="nav-link" href="personas.aspx">Personas</a>
+                </li>
+                <li class="nav-Page">
+                    <a class="nav-link" href="Empleado.aspx">Empleados</a>
                 </li>
 
+
+                <%}
+                    } %>
                 <li class="nav-Page">
-                    <a class="nav-link" href="vistaIncidencia.aspx">Incidencias vista test</a>
+                    <a class="nav-link" href="incidencias.aspx">Incidencias</a>
                 </li>
 
 

@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Main.Master" AutoEventWireup="true" CodeBehind="Clientes.aspx.cs" Inherits="Mainpage.Clientes" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Main.Master" AutoEventWireup="true" CodeBehind="Empleado.aspx.cs" Inherits="Mainpage.Empleado" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
     
     <style>
@@ -24,7 +24,7 @@
                 <div class="card shadow-sm">
 
                     <div class="card-header d-flex justify-content-between align-items-center">
-                        <h4 class="mb-0">Usuarios / Clientes</h4>
+                        <h4 class="mb-0">Usuarios / Empleados</h4>
 
                         <div>
                             <asp:Button
@@ -52,9 +52,9 @@
                         <div class="row mt-3">
 
                             <asp:Repeater
-                                ID="RptUsuarios"
+                                ID="RptEmpleados"
                                 runat="server"
-                                OnItemCommand="RptUsuarios_ItemCommand">
+                                OnItemCommand="RptEmpleados_ItemCommand">
 
                                 <ItemTemplate>
 
@@ -158,12 +158,13 @@
 
       
 
+
         <div>
             <a href="formularioUsuarios.aspx">agregar</a>
         </div>
 
         <div>
-            <asp:Label ID="LBMensaje" runat="server" CssClass="text-danger" />
+            <asp:Label ID="LBMensaje1" runat="server" CssClass="text-danger" />
         </div>
 
     </div>

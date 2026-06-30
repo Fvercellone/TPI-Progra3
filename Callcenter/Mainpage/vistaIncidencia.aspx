@@ -233,6 +233,8 @@
             </div>
 
             <!-- ACCIONES -->
+            <% if ((Conexion.Validaciones.TienePermiso((Dominio.Usuarios)Session["usuario"], 2)))
+                { %>
             <div class="card shadow mt-3">
 
                 <div class="card-header">
@@ -248,13 +250,17 @@
                         CssClass="btn btn-warning btn-sm"
                         OnClick="Modificar_onclick" />
 
+                    <% if (( Conexion.Validaciones.TienePermiso((Dominio.Usuarios)Session["usuario"], 4)))
+                        { %>
                     <asp:LinkButton
                         runat="server"
                         ID="BTReasignarFila"
                         Text="Reasignar"
                         CssClass="btn btn-info btn-sm"
                         OnClick="Reasignar_onclick" />
+                    <%} %>
 
+                    
                     <asp:LinkButton
                         runat="server"
                         ID="BTResolverFila"
@@ -262,23 +268,28 @@
                         CssClass="btn btn-success btn-sm"
                         OnClick="Resolver_onclick" />
 
+                    <%if (Conexion.Validaciones.PuedeCerrar(Convert.ToInt32(Session["IDincidencia"]))) {%>
                     <asp:LinkButton
                         runat="server"
                         ID="BTCerrarFila"
                         Text="Cerrar"
                         CssClass="btn btn-danger btn-sm"
                         OnClick="cerrar_onclick" />
+                    <%} %>
 
+                    <%if (Conexion.Validaciones.PuedeReabrir(Convert.ToInt32(Session["IDincidencia"]))) {%>
                     <asp:LinkButton
                         runat="server"
                         ID="BTReabrirFila"
                         Text="Re-abrir"
                         CssClass="btn btn-info btn-sm"
                         OnClick="Reabrir_onclick" />
+                    <%} %>
 
                 </div>
 
             </div>
+            <%} %>
 
         </div>
 

@@ -57,7 +57,7 @@ namespace Mainpage
 
                 if (e.CommandName == "AbrirIncidencia")
                 {
-                    Session["ID"] = id;
+                    Session["IDincidencia"] = id;
                     Session["Accion"] = "";
 
                     Response.Redirect("vistaIncidencia.aspx");

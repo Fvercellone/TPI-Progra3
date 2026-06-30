@@ -7,85 +7,90 @@ using System.Net;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
+
 namespace Mainpage
-{
-    public partial class usuarios : System.Web.UI.Page
     {
-
-        public List<Usuarios> ListaUsuarios { get; set; }
-        protected void Page_Load(object sender, EventArgs e)
+        public partial class usuarios : System.Web.UI.Page
         {
-            ManejadorUsuarios conexionlista = new ManejadorUsuarios();
-            ListaUsuarios = conexionlista.Listar();
-            
-            if(!IsPostBack)
+
+            public List<Usuarios> ListaDeUsuarios { get; set; } = new List<Usuarios>();
+
+            ManejadorUsuarios conexion = new ManejadorUsuarios();
+
+
+            protected void Page_Load(object sender, EventArgs e)
             {
-                Session.Remove("ID");
-                DGVUsuarios.DataSource = ListaUsuarios;
-                DGVUsuarios.DataBind();
-                //DGVUsuarios.Columns["ID"].Visible = false;
-
-                if (Session["Mensaje"] != null)
+                if (!IsPostBack)
                 {
-                    LBMensaje.Text = Session["Mensaje"].ToString();
-                    LBMensaje.CssClass = Session["ClaseMensaje"].ToString();
-
-                    Session.Remove("Mensaje");
-                    Session.Remove("ClaseMensaje");
+                    CargarUsuarios();
                 }
-               //ocultarColumnas();
+            }
+
+            private void CargarUsuarios()
+            {
+                try
+                {
+                    ListaDeUsuarios = conexion.Listar();
+
+                    RptUsuarios.DataSource = ListaDeUsuarios;
+                    RptUsuarios.DataBind();
+
+
+                }
+                catch (Exception ex)
+                {
+
+                    LBMensaje.Text = ex.Message;
+                    LBMensaje.CssClass = "alert alert-danger d-block";
+                }
+
+
 
             }
 
-        }
-
-        private void ocultarColumnas()
-        {
-            DGVUsuarios.Columns[4].Visible = false; // ID
-        }
-
-        protected void DGVUsuarios_RowCommand(object sender, GridViewCommandEventArgs e)
-        {
-
-            
-            try
+            protected void RptUsuarios_ItemCommand(object source, RepeaterCommandEventArgs e)
             {
                 string dni = e.CommandArgument.ToString();
 
-                ManejadorUsuarios conexion = new ManejadorUsuarios();
-
-                if (e.CommandName == "Eliminar")
+                if (e.CommandName == "Modificar")
                 {
-                    conexion.Eliminar(Convert.ToInt32(e.CommandArgument));
-
-                    Session["Mensaje"] = "Usuario dado de baja correctamente.";
-                    Session["ClaseMensaje"] = "alert alert-success d-block";
-
-                    Response.Redirect("Usuario.aspx");
+                    Session["ID"] = dni;
+                    Response.Redirect("formularioUsuarios.aspx");
+                }
+                else if (e.CommandName == "Ver")
+                {
+                    Session["ID"] = dni;
+                    Response.Redirect("formularioUsuarios.aspx");
+                }
+                else if (e.CommandName == "Eliminar")
+                {
+                    ManejadorPersonas conexion = new ManejadorPersonas();
+                    conexion.Eliminar(dni);
+                    Response.Redirect("Usuarios.aspx");
                 }
                 else if (e.CommandName == "Activar")
                 {
-                    conexion.Activar(Convert.ToInt32(e.CommandArgument));
-
-                    Session["Mensaje"] = "Usuario activado correctamente.";
-                    Session["ClaseMensaje"] = "alert alert-success d-block";
-
-                    Response.Redirect("Usuario.aspx");
-                }
-                else if (e.CommandName == "Modificar")
-                {
-                    Session.Add("ID", Convert.ToInt32(e.CommandArgument));
-                    Response.Redirect("formularioUsuarios.aspx");
+                    ManejadorPersonas conexion = new ManejadorPersonas();
+                    conexion.Activar(dni);
+                    Response.Redirect("Usuarios.aspx");
                 }
             }
-            catch (Exception ex)
+
+            protected void Agregar_onclick(object sender, EventArgs e)
             {
-                LBMensaje.Text = ex.Message;
-                LBMensaje.CssClass = "alert alert-danger d-block";
+
+                Session.Remove("ID");
+
+                Response.Redirect("formularioUsuarios.aspx");
             }
+
+
+
         }
-
-
-
     }
-}
+
+
+
+
+
+

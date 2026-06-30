@@ -12,13 +12,14 @@
 
         <div class="card-header d-flex justify-content-between align-items-center">
             <h4 class="mb-0">Incidencias</h4>
-
+            <% if ((Conexion.Validaciones.TienePermiso((Dominio.Usuarios)Session["usuario"], 2))) { %>
             <asp:Button
                 ID="BTNAgregarIncidencia"
                 runat="server"
                 Text="Nueva incidencia"
                 CssClass="btn btn-primary"
                 OnClick="BTNAgregarIncidencia_Click" />
+            <%} %>
         </div>
 
         <div class="card-body">
@@ -31,7 +32,10 @@
 
                         <div class="col-12 col-md-6 col-lg-3 mb-4">
 
+                            
+
                             <asp:LinkButton
+                                ID="LBAbrirIncidencia"
                                 runat="server"
                                 CssClass="text-decoration-none text-dark d-block h-100"
                                 CommandName="AbrirIncidencia"

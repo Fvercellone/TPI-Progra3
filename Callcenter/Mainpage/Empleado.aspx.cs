@@ -9,7 +9,7 @@ using System.Web.UI.WebControls;
 
 namespace Mainpage
 {
-    public partial class Clientes : System.Web.UI.Page
+    public partial class Empleado : System.Web.UI.Page
     {
 
         public List<Usuarios> ListaDeUsuarios { get; set; } = new List<Usuarios>();
@@ -21,34 +21,36 @@ namespace Mainpage
         {
             if (!IsPostBack)
             {
-                Session["Pagina"] = "Clientes";
-                CargarClientes();
+                Session["Pagina"] = "Empleados";
+                CargarEmpleados();
             }
         }
 
-        private void CargarClientes()
+        private void CargarEmpleados()
         {
             try
             {
-                ListaDeUsuarios = conexion.ListarCliente();
+                ListaDeUsuarios = conexion.ListarEmpleados();
 
-                RptUsuarios.DataSource = ListaDeUsuarios;
-                RptUsuarios.DataBind();
+                //RptEmpleados.DataSource = ListaDeUsuarios;
+                //RptEmpleados.DataBind();
+                RptEmpleados.DataSource = ListaDeUsuarios;
+                RptEmpleados.DataBind();
 
 
             }
             catch (Exception ex)
             {
 
-                LBMensaje.Text = ex.Message;
-                LBMensaje.CssClass = "alert alert-danger d-block";
+                LBMensaje1.Text = ex.Message;
+                LBMensaje1.CssClass = "alert alert-danger d-block";
             }
 
 
 
         }
 
-        protected void RptUsuarios_ItemCommand(object source, RepeaterCommandEventArgs e)
+        protected void RptEmpleados_ItemCommand(object source, RepeaterCommandEventArgs e)
         {
             string dni = e.CommandArgument.ToString();
 

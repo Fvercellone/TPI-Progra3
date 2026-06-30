@@ -17,7 +17,7 @@ namespace Mainpage
         protected void Page_Load(object sender, EventArgs e)
         {
             // Comprobación segura de la sesión y del tipo antes de acceder a 'Rol'
-            if (Session["usuario"] is Usuarios sesUsuario && sesUsuario.Rol >= Dominio.roles.telefonista)
+            if (Session["usuario"] is Usuarios sesUsuario && sesUsuario.IDRol >= 2)
             {
 
 

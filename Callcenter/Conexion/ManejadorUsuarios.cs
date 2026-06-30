@@ -16,11 +16,11 @@ namespace Conexion
             ConexionDB conexion = new ConexionDB();
             try
             {
-                conexion.settearConsulta("select U.ID, U.IDPersona, P.DNI, U.IDRol, U.Usuario, U.Contrasenia, U.Activo from Usuarios as U INNER JOIN Personas P ON U.IDPersona = P.ID");
+                conexion.settearConsulta("select U.ID, U.IDPersona, P.DNI, U.IDRol, U.Usuario, U.Contrasenia, U.Activo, R.Nombre as Rol from Usuarios as U INNER JOIN Personas P ON U.IDPersona = P.ID INNER JOIN Roles R ON U.IDRol = R.ID");
                 if (DNI_ != "")
                 {
                     conexion.agregarParametro("@DNI_", DNI_);
-                    conexion.settearConsulta("select U.ID, U.IDPersona, P.DNI, U.IDRol, U.Usuario, U.Contrasenia, U.Activo from Usuarios as U INNER JOIN Personas P ON U.IDPersona = P.ID where U.ID = @DNI_");
+                    conexion.settearConsulta("select U.ID, U.IDPersona, P.DNI, U.IDRol, U.Usuario, U.Contrasenia, U.Activo, R.Rol from Usuarios as U INNER JOIN Personas P ON U.IDPersona = P.ID INNER JOIN Roles R ON U.IDRol = R.ID where U.ID = @DNI_");
 
                 }
 
@@ -31,6 +31,7 @@ namespace Conexion
                     aux.ID = (int)conexion._lector["ID"];
                     //aux.IDPersona = (int)conexion._lector["IDPersona"];
                     aux.DNI = (string)conexion._lector["DNI"];
+                    aux.Rol = (string)conexion._lector["Rol"];
                     aux.IDRol = (int)conexion._lector["IDRol"];
                     aux.Usuario = (string)conexion._lector["Usuario"];
                     aux.Contrasenia = (string)conexion._lector["Contrasenia"];
@@ -61,7 +62,13 @@ namespace Conexion
                 {
                     Usuarios aux = new Usuarios();
                     aux.ID = (int)conexion._lector["ID"];
-                    aux.Usuario = (string)conexion._lector["NombreCompleto"];
+                    //aux.IDPersona = (int)conexion._lector["IDPersona"];
+                    aux.DNI = (string)conexion._lector["DNI"];
+                    aux.Rol = (string)conexion._lector["Rol"];
+                    //aux.IDRol = (int)conexion._lector["IDRol"];
+                    aux.Usuario = (string)conexion._lector["Usuario"];
+                    //aux.Contrasenia = (string)conexion._lector["Contrasenia"];
+                    aux.Activo = (bool)conexion._lector["Activo"];
                     lista.Add(aux);
                 }
                 return lista;
@@ -87,7 +94,13 @@ namespace Conexion
                 {
                     Usuarios aux = new Usuarios();
                     aux.ID = (int)conexion._lector["ID"];
-                    aux.Usuario = (string)conexion._lector["NombreCompleto"];
+                    //aux.IDPersona = (int)conexion._lector["IDPersona"];
+                    aux.DNI = (string)conexion._lector["DNI"];
+                    aux.Rol = (string)conexion._lector["Rol"];
+                    //aux.IDRol = (int)conexion._lector["IDRol"];
+                    aux.Usuario = (string)conexion._lector["Usuario"];
+                    //aux.Contrasenia = (string)conexion._lector["Contrasenia"];
+                    aux.Activo = (bool)conexion._lector["Activo"];
                     lista.Add(aux);
                 }
                 return lista;
