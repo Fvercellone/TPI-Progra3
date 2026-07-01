@@ -16,6 +16,8 @@ namespace Mainpage
             public List<Usuarios> ListaDeUsuarios { get; set; } = new List<Usuarios>();
 
             ManejadorUsuarios conexion = new ManejadorUsuarios();
+            
+            public bool FiltroAvanzado { get; set; }
 
 
             protected void Page_Load(object sender, EventArgs e)
@@ -23,7 +25,8 @@ namespace Mainpage
                 if (!IsPostBack)
                 {
                     CargarUsuarios();
-                }
+
+            }
             }
 
             private void CargarUsuarios()
@@ -32,7 +35,8 @@ namespace Mainpage
                 {
                     ListaDeUsuarios = conexion.Listar();
 
-                    RptUsuarios.DataSource = ListaDeUsuarios;
+                    Session.Add("listaUsuarios", ListaDeUsuarios);
+                    RptUsuarios.DataSource = Session["listaUsuarios"];
                     RptUsuarios.DataBind();
 
 
@@ -86,7 +90,94 @@ namespace Mainpage
 
 
 
+            protected void filtro_TextChanged(object sender, EventArgs e)
+            {
+                List<Usuarios> lista = (List<Usuarios>)Session["listaUsuarios"];
+                List<Usuarios> listaFiltrada = lista.FindAll(x => x.Usuario.ToUpper().Contains(txtFiltro.Text.ToUpper()));
+                RptUsuarios.DataSource = listaFiltrada;
+                RptUsuarios.DataBind(); 
+            }
+
+        protected void filtroAvanzado_TextChanged(object sender, EventArgs e)
+        {
+            if (txtFiltroAvanzado.Text == "")
+            {
+                btnBuscar.Enabled = false;
+            }
+            else
+            {
+                btnBuscar.Enabled = true;
+            }
         }
+
+
+        protected void chkAvanzado_CheckedChanged(object sender, EventArgs e)
+            {
+                    FiltroAvanzado = chkAvanzado.Checked;
+                    txtFiltro.Enabled = !FiltroAvanzado;
+                if (chkAvanzado.Checked)
+                {
+
+                        ddlCriterio.Items.Add("Contiene");
+                        ddlCriterio.Items.Add("Comienza con");
+                        ddlCriterio.Items.Add("Termina con");
+
+                    btnBuscar.Enabled = false;
+                }
+                else
+                {
+                    ddlCriterio.Items.Clear();
+                    CargarUsuarios();
+                    
+                }
+        }
+
+        protected void ddlCampo_SelectedIndexChanged(object sender, EventArgs e)
+            {
+
+                
+                ddlCriterio.Items.Clear();
+                if (ddlCampo.SelectedItem.ToString() == "Usuario" || ddlCampo.SelectedItem.ToString() == "Rol")
+                {
+
+                    ddlCriterio.Items.Add("Contiene");
+                    ddlCriterio.Items.Add("Comienza con");
+                    ddlCriterio.Items.Add("Termina con");
+                    txtFiltroAvanzado.TextMode = TextBoxMode.SingleLine;
+            }
+                else
+                {
+                    txtFiltroAvanzado.Text = "";
+                    btnBuscar.Enabled = false;
+                    ddlCriterio.Items.Add("Contiene");
+                    ddlCriterio.Items.Add("Comienza con");
+                    ddlCriterio.Items.Add("Termina con");
+                    txtFiltroAvanzado.TextMode = TextBoxMode.Number;
+
+                }
+
+            }
+
+            protected void btnBuscar_Click(object sender, EventArgs e)
+            {
+                try
+                {
+
+                        RptUsuarios.DataSource = conexion.Listafiltrada(
+                                ddlCampo.SelectedItem.ToString(),
+                                ddlCriterio.SelectedItem.ToString(),
+                                txtFiltroAvanzado.Text,
+                                ddlEstado.SelectedItem.ToString());
+                        RptUsuarios.DataBind();
+                }
+                catch (Exception ex)
+                {
+                    Session.Add("error", ex);
+                    throw;
+                }
+            }
+
+    }
     }
 
 

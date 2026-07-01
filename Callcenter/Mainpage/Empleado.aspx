@@ -19,28 +19,84 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <div id="Cuerpo" >
 
-        <div class="container-fluid mt-4">
+               <div class="container-fluid mt-4">
 
-                <div class="card shadow-sm">
+    <div class="card shadow-sm">
 
-                    <div class="card-header d-flex justify-content-between align-items-center">
-                        <h4 class="mb-0">Usuarios / Empleados</h4>
+        <div class="card-header">
+            <div class="d-flex justify-content-between align-items-center">
+            <h4 class="mb-0">Usuarios / Empleados</h4>
 
-                        <div>
-                            <asp:Button
-                                ID="BTNAgregarUsuario"
-                                runat="server"
-                                Text="Agregar usuario"
-                                CssClass="btn btn-primary"
-                                OnClick="Agregar_onclick" />
+            <div>
+                <asp:Button
+                    ID="BTNAgregarUsuario"
+                    runat="server"
+                    Text="Agregar usuario"
+                    CssClass="btn btn-primary"
+                    OnClick="Agregar_onclick" />
 
-                            <asp:Button
-                                ID="BTNActualizar"
-                                runat="server"
-                                Text="Actualizar"
-                                CssClass="btn btn-secondary" />
-                        </div>
-                    </div>
+                <asp:Button
+                    ID="BTNActualizar"
+                    runat="server"
+                    Text="Actualizar"
+                    CssClass="btn btn-secondary" />
+            </div>
+                </div>
+                    <div class="mb-3">
+    <asp:Label Text="Filtrar Por Nombre de Usuario" runat="server" />
+    <asp:TextBox runat="server" ID="txtFiltro" CssClass="form-control" AutoPostBack="true" OnTextChanged="filtro_TextChanged" />
+
+    <asp:CheckBox Text="Filtro Avanzado" 
+    CssClass="" ID="chkAvanzado" runat="server" 
+    AutoPostBack="true"
+    OnCheckedChanged="chkAvanzado_CheckedChanged"/>
+</div>
+
+        <%if (chkAvanzado.Checked)
+            { %>
+        <div class="row">
+            <div class="col-3">
+                <div class="mb-3">
+                    <asp:Label Text="Campo" ID="lblCampo" runat="server" />
+                    <asp:DropDownList runat="server" AutoPostBack="true" CssClass="form-control" id="ddlCampo" OnSelectedIndexChanged="ddlCampo_SelectedIndexChanged">
+                        <asp:ListItem Text="DNI" />
+                        <asp:ListItem Text="Usuario" />
+                        <asp:ListItem Text="Rol" />
+                    </asp:DropDownList>
+                </div>
+            </div>
+            <div class="col-3">
+                <div class="mb-3">
+                    <asp:Label Text="Criterio" runat="server" />
+                    <asp:DropDownList runat="server" ID="ddlCriterio" CssClass="form-control"></asp:DropDownList>
+                </div>
+            </div>
+            <div class="col-3">
+                <div class="mb-3">
+                    <asp:Label Text="Filtro *" runat="server" />
+                    <asp:TextBox runat="server" ID="txtFiltroAvanzado" CssClass="form-control" AutoPostBack="true" OnTextChanged="filtroAvanzado_TextChanged" TextMode="Number" />
+                </div>
+            </div>
+            <div class="col-3">
+                <div class="mb-3">
+                    <asp:Label Text="Estado" runat="server" />
+                    <asp:DropDownList runat="server" ID="ddlEstado" CssClass="form-control">
+                        <asp:ListItem Text="Todos" />
+                        <asp:ListItem Text="Activo" />
+                        <asp:ListItem Text="Inactivo" />
+                    </asp:DropDownList>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-3">
+                <div class="mb-3">
+                    <asp:Button Text="Buscar" runat="server" CssClass="btn btn-primary" id="btnBuscar" OnClick="btnBuscar_Click"/>
+                </div>
+            </div>
+        </div>
+        <%} %>
+        </div>
 
                     <div class="card-body">
 

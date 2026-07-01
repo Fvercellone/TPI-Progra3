@@ -1,4 +1,4 @@
-CREATE VIEW vw_IncidenciasDetalle
+Alter VIEW vw_IncidenciasDetalle
 AS
 SELECT
     I.ID,
@@ -6,10 +6,10 @@ SELECT
     I.Descripcion,
 
     I.IDCliente,
-    PC.Nombre + ' ' + PC.Apellido AS Cliente,
+    UC.Usuario AS Cliente,
 
     I.IDEmpleado,
-    PE.Nombre + ' ' + PE.Apellido AS Empleado,
+    UE.Usuario AS Empleado,
 
     I.IDEstado,
     E.Nombre AS Estado,

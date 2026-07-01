@@ -29,7 +29,7 @@ namespace Conexion
                 {
                     Usuarios aux = new Usuarios();
                     aux.ID = (int)conexion._lector["ID"];
-                    //aux.IDPersona = (int)conexion._lector["IDPersona"];
+                    
                     aux.DNI = (string)conexion._lector["DNI"];
                     aux.Rol = (string)conexion._lector["Rol"];
                     aux.IDRol = (int)conexion._lector["IDRol"];
@@ -62,12 +62,12 @@ namespace Conexion
                 {
                     Usuarios aux = new Usuarios();
                     aux.ID = (int)conexion._lector["ID"];
-                    //aux.IDPersona = (int)conexion._lector["IDPersona"];
+                    
                     aux.DNI = (string)conexion._lector["DNI"];
                     aux.Rol = (string)conexion._lector["Rol"];
-                    //aux.IDRol = (int)conexion._lector["IDRol"];
+                    
                     aux.Usuario = (string)conexion._lector["Usuario"];
-                    //aux.Contrasenia = (string)conexion._lector["Contrasenia"];
+                    
                     aux.Activo = (bool)conexion._lector["Activo"];
                     lista.Add(aux);
                 }
@@ -94,12 +94,12 @@ namespace Conexion
                 {
                     Usuarios aux = new Usuarios();
                     aux.ID = (int)conexion._lector["ID"];
-                    //aux.IDPersona = (int)conexion._lector["IDPersona"];
+                    
                     aux.DNI = (string)conexion._lector["DNI"];
                     aux.Rol = (string)conexion._lector["Rol"];
-                    //aux.IDRol = (int)conexion._lector["IDRol"];
+                    
                     aux.Usuario = (string)conexion._lector["Usuario"];
-                    //aux.Contrasenia = (string)conexion._lector["Contrasenia"];
+                    
                     aux.Activo = (bool)conexion._lector["Activo"];
                     lista.Add(aux);
                 }
@@ -123,7 +123,7 @@ namespace Conexion
             {
                 conexion.settearConsulta("EXEC sp_CrearUsuarioPorDNI @DNI, @IDRol, @Usuario, @Contrasenia, @Activo");
                 conexion.agregarParametro("@DNI", nuevo.DNI);
-                //conexion.agregarParametro("@DNI", nuevo.IDPersona);
+                
                 conexion.agregarParametro("@IDRol", nuevo.IDRol);
                 conexion.agregarParametro("@Usuario", nuevo.Usuario);
                 conexion.agregarParametro("@Contrasenia", nuevo.Contrasenia);
@@ -218,8 +218,6 @@ namespace Conexion
                     usuario.Usuario = (string)conexion._lector["Usuario"];
                     usuario.Activo = (bool)conexion._lector["Activo"];
 
-                    //usuario.Contrasenia = (string)conexion._lector["Contrasenia"];
-                    //aux.IDPersona = (int)conexion._lector["IDPersona"];
                     return true;
                 }
                 return false;
@@ -266,95 +264,263 @@ namespace Conexion
 
 
 
-        //public List<Usuarios> filtrar(string campo = "%", string criterio = "%", string filtro = "%", string estado = "%")
-        //{
-        //    List<Usuarios> lista = new List<Usuarios>();
-        //    ConexionDB conexion = new ConexionDB();
-        //    try
-        //    {
-        //        string consulta = "Select Numero, Nombre, P.Descripcion, UrlImagen, E.Descripcion Tipo, D.Descripcion Debilidad, P.IdTipo, P.IdDebilidad, P.Id, P.Activo From POKEMONS P, ELEMENTOS E, ELEMENTOS D Where E.Id = P.IdTipo And D.Id = P.IdDebilidad And ";
-        //        if (campo == "Número")
-        //        {
-        //            switch (criterio)
-        //            {
-        //                case "Mayor a":
-        //                    consulta += "Numero > " + filtro;
-        //                    break;
-        //                case "Menor a":
-        //                    consulta += "Numero < " + filtro;
-        //                    break;
-        //                default:
-        //                    consulta += "Numero = " + filtro;
-        //                    break;
-        //            }
-        //        }
-        //        else if (campo == "Nombre")
-        //        {
-        //            switch (criterio)
-        //            {
-        //                case "Comienza con":
-        //                    consulta += "Nombre like '" + filtro + "%' ";
-        //                    break;
-        //                case "Termina con":
-        //                    consulta += "Nombre like '%" + filtro + "'";
-        //                    break;
-        //                default:
-        //                    consulta += "Nombre like '%" + filtro + "%'";
-        //                    break;
-        //            }
-        //        }
-        //        else
-        //        {
-        //            switch (criterio)
-        //            {
-        //                case "Comienza con":
-        //                    consulta += "E.Descripcion like '" + filtro + "%' ";
-        //                    break;
-        //                case "Termina con":
-        //                    consulta += "E.Descripcion like '%" + filtro + "'";
-        //                    break;
-        //                default:
-        //                    consulta += "E.Descripcion like '%" + filtro + "%'";
-        //                    break;
-        //            }
-        //        }
+        public List<Usuarios> Listafiltrada(string campo = "%", string criterio = "%", string filtro = "%", string estado = "%")
+        {
+            List<Usuarios> lista = new List<Usuarios>();
+            ConexionDB conexion = new ConexionDB();
+            try
+            {
 
-        //        if (estado == "Activo")
-        //            consulta += " and P.Activo = 1";
-        //        else if (estado == "Inactivo")
-        //            consulta += " and P.Activo = 0";
+                string consulta = "select U.ID as ID, P.DNI, U.Usuario As Usuario, U.Activo As Estado, R.Nombre as Rol from Usuarios as U INNER JOIN Personas P ON U.IDPersona = P.ID INNER JOIN Roles R ON U.IDRol = R.ID AND ";
+                if (campo == "DNI")
+                {
+                    switch (criterio)
+                    {
+                        case "Comienza con":
+                            consulta += "P.DNI like '" + filtro + "%' ";
+                            break;
+                        case "Termina con":
+                            consulta += "P.DNI like '%" + filtro + "'";
+                            break;
+                        default:
+                            consulta += "P.DNI like '%" + filtro + "%'";
+                            break;
+                    }
+                }
+                else if (campo == "Rol")
+                {
+                    switch (criterio)
+                    {
+                        case "Comienza con":
+                            consulta += "R.Nombre like '" + filtro + "%' ";
+                            break;
+                        case "Termina con":
+                            consulta += "R.Nombre like '%" + filtro + "'";
+                            break;
+                        default:
+                            consulta += "R.Nombre like '%" + filtro + "%'";
+                            break;
+                    }
+                }
+                else if (campo == "Usuario")
+                {
+                    switch (criterio)
+                    {
+                        case "Comienza con":
+                            consulta += "U.Usuario like '" + filtro + "%' ";
+                            break;
+                        case "Termina con":
+                            consulta += "U.Usuario like '%" + filtro + "'";
+                            break;
+                        default:
+                            consulta += "U.Usuario like '%" + filtro + "%'";
+                            break;
+                    }
+                }
 
-        //        conexion.settearConsulta(consulta);
-        //        conexion.ejecutarLectura();
-        //        while (conexion._lector.Read())
-        //        {
-        //            Usuarios aux = new Usuarios();
-        //            aux.ID = (int)conexion._lector["Id"];
-        //            aux.Numero = (int)conexion._lector["Numero"];
-        //            aux.Nombre = (string)conexion._lector["Nombre"];
-        //            aux.Descripcion = (string)conexion._lector["Descripcion"];
-        //            if (!(conexion._lector["UrlImagen"] is DBNull))
-        //                aux.UrlImagen = (string)conexion._lector["UrlImagen"];
+                if (estado == "Estado")
+                    consulta += " and P.Activo = 1";
+                else if (estado == "Inactivo")
+                    consulta += " and P.Activo = 0";
 
-        //            aux.Tipo = new Elemento();
-        //            aux.Tipo.Id = (int)conexion._lector["IdTipo"];
-        //            aux.Tipo.Descripcion = (string)conexion._lector["Tipo"];
-        //            aux.Debilidad = new Elemento();
-        //            aux.Debilidad.Id = (int)conexion._lector["IdDebilidad"];
-        //            aux.Debilidad.Descripcion = (string)conexion._lector["Debilidad"];
+                conexion.settearConsulta(consulta);
+                conexion.ejecutarLectura();
+                while (conexion._lector.Read())
+                {
+                    Usuarios aux = new Usuarios();
+                    aux.ID = (int)conexion._lector["ID"];
 
-        //            aux.Activo = bool.Parse(conexion._lector["Activo"].ToString());
+                    aux.DNI = (string)conexion._lector["DNI"];
+                    aux.Rol = (string)conexion._lector["Rol"];
+                    aux.Usuario = (string)conexion._lector["Usuario"];
+                    aux.Activo = bool.Parse(conexion._lector["Estado"].ToString());
+                    lista.Add(aux);
+                }
 
-        //            lista.Add(aux);
-        //        }
+                return lista;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                conexion.cerrarConexion();
+            }
+        }
 
-        //        return lista;
-        //    }
-        //    catch (Exception ex)
-        //    {
-        //        throw ex;
-        //    }
-        //}
+
+    
+        
+        public List<Usuarios> ListafiltradaClientes(string campo = "%", string criterio = "%", string filtro = "%", string estado = "%")
+        {
+            List<Usuarios> lista = new List<Usuarios>();
+            ConexionDB conexion = new ConexionDB();
+            try
+            {
+
+                string consulta = "select U.ID,  P.DNI, U.Usuario As Usuario, U.Activo As Estado, R.Nombre as Rol from Usuarios as U INNER JOIN Personas P ON U.IDPersona = P.ID INNER JOIN Roles R ON U.IDRol = R.ID where R.Nombre ='Cliente' AND ";
+                if (campo == "DNI")
+                {
+                    switch (criterio)
+                    {
+                        case "Comienza con":
+                            consulta += "P.DNI like '" + filtro + "%' ";
+                            break;
+                        case "Termina con":
+                            consulta += "P.DNI like '%" + filtro + "'";
+                            break;
+                        default:
+                            consulta += "P.DNI like '%" + filtro + "%'";
+                            break;
+                    }
+                }
+                else if (campo == "Rol")
+                {
+                    switch (criterio)
+                    {
+                        case "Comienza con":
+                            consulta += "R.Nombre like '" + filtro + "%' ";
+                            break;
+                        case "Termina con":
+                            consulta += "R.Nombre like '%" + filtro + "'";
+                            break;
+                        default:
+                            consulta += "R.Nombre like '%" + filtro + "%'";
+                            break;
+                    }
+                }
+                else if (campo == "Usuario")
+                {
+                    switch (criterio)
+                    {
+                        case "Comienza con":
+                            consulta += "U.Usuario like '" + filtro + "%' ";
+                            break;
+                        case "Termina con":
+                            consulta += "U.Usuario like '%" + filtro + "'";
+                            break;
+                        default:
+                            consulta += "U.Usuario like '%" + filtro + "%'";
+                            break;
+                    }
+                }
+
+                if (estado == "Estado")
+                    consulta += " and P.Activo = 1";
+                else if (estado == "Inactivo")
+                    consulta += " and P.Activo = 0";
+
+                conexion.settearConsulta(consulta);
+                conexion.ejecutarLectura();
+                while (conexion._lector.Read())
+                {
+                    Usuarios aux = new Usuarios();
+                    aux.ID = (int)conexion._lector["ID"];
+
+                    aux.DNI = (string)conexion._lector["DNI"];
+                    aux.Rol = (string)conexion._lector["Rol"];
+                    aux.Usuario = (string)conexion._lector["Usuario"];
+                    aux.Activo = bool.Parse(conexion._lector["Estado"].ToString());
+                    lista.Add(aux);
+                }
+
+                return lista;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                conexion.cerrarConexion();
+            }
+        }
+        public List<Usuarios> ListafiltradaEmpleados(string campo = "%", string criterio = "%", string filtro = "%", string estado = "%")
+        {
+            List<Usuarios> lista = new List<Usuarios>();
+            ConexionDB conexion = new ConexionDB();
+            try
+            {
+
+                string consulta = "select U.ID,  P.DNI, U.Usuario As Usuario, U.Activo As Estado, R.Nombre as Rol from Usuarios as U INNER JOIN Personas P ON U.IDPersona = P.ID INNER JOIN Roles R ON U.IDRol = R.ID and R.ID >= 2  and  ";
+
+                if (campo == "DNI")
+                {
+                    switch (criterio)
+                    {
+                        case "Comienza con":
+                            consulta += "P.DNI like '" + filtro + "%' ";
+                            break;
+                        case "Termina con":
+                            consulta += "P.DNI like '%" + filtro + "'";
+                            break;
+                        default:
+                            consulta += "P.DNI like '%" + filtro + "%'";
+                            break;
+                    }
+                }
+                else if (campo == "Rol")
+                {
+                    switch (criterio)
+                    {
+                        case "Comienza con":
+                            consulta += "R.Nombre like '" + filtro + "%' ";
+                            break;
+                        case "Termina con":
+                            consulta += "R.Nombre like '%" + filtro + "'";
+                            break;
+                        default:
+                            consulta += "R.Nombre like '%" + filtro + "%'";
+                            break;
+                    }
+                }
+                else if (campo == "Usuario")
+                {
+                    switch (criterio)
+                    {
+                        case "Comienza con":
+                            consulta += "U.Usuario like '" + filtro + "%' ";
+                            break;
+                        case "Termina con":
+                            consulta += "U.Usuario like '%" + filtro + "'";
+                            break;
+                        default:
+                            consulta += "U.Usuario like '%" + filtro + "%'";
+                            break;
+                    }
+                }
+
+                if (estado == "Estado")
+                    consulta += " and P.Activo = 1";
+                else if (estado == "Inactivo")
+                    consulta += " and P.Activo = 0";
+
+                conexion.settearConsulta(consulta);
+                conexion.ejecutarLectura();
+                while (conexion._lector.Read())
+                {
+                    Usuarios aux = new Usuarios();
+                    aux.ID = (int)conexion._lector["ID"];
+
+                    aux.DNI = (string)conexion._lector["DNI"];
+                    aux.Rol = (string)conexion._lector["Rol"];
+                    aux.Usuario = (string)conexion._lector["Usuario"];
+                    aux.Activo = bool.Parse(conexion._lector["Estado"].ToString());
+                    lista.Add(aux);
+                }
+
+                return lista;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                conexion.cerrarConexion();
+            }
+        }
 
 
     }

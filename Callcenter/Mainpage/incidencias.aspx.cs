@@ -15,6 +15,8 @@ namespace Mainpage
 
         ManejadorIncidencias conexion = new ManejadorIncidencias();
 
+        public bool FiltroAvanzado { get; set; }
+
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!IsPostBack)
@@ -77,5 +79,95 @@ namespace Mainpage
 
             Response.Redirect("vistaIncidencia.aspx");
         }
+
+        protected void filtro_TextChanged(object sender, EventArgs e)
+        {
+            List<incidencia> lista = (List<incidencia>)Session["listaIncidencias"];
+            List<incidencia> listaFiltradaIncidencias = lista.FindAll(x => x.titulo.ToUpper().Contains(txtFiltro.Text.ToUpper()));
+            RptIncidencias.DataSource = listaFiltradaIncidencias;
+            RptIncidencias.DataBind();
+        }
+
+        protected void filtroAvanzado_TextChanged(object sender, EventArgs e)
+        {
+            if (txtFiltroAvanzado.Text == "")
+            {
+                btnBuscar.Enabled = false;
+            }
+            else
+            {
+                btnBuscar.Enabled = true;
+            }
+        }
+
+
+        protected void chkAvanzado_CheckedChanged(object sender, EventArgs e)
+        {
+            FiltroAvanzado = chkAvanzado.Checked;
+            txtFiltro.Enabled = !FiltroAvanzado;
+            if (chkAvanzado.Checked)
+            {
+
+                ddlCriterio.Items.Add("Contiene");
+                ddlCriterio.Items.Add("Comienza con");
+                ddlCriterio.Items.Add("Termina con");
+
+                btnBuscar.Enabled = false;
+            }
+            else
+            {
+                ddlCriterio.Items.Clear();
+                CargarIncidencias();
+
+            }
+        }
+
+        protected void ddlCampo_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+
+            ddlCriterio.Items.Clear();
+            if (ddlCampo.SelectedItem.ToString() != "ID" )
+            {
+
+                ddlCriterio.Items.Add("Contiene");
+                ddlCriterio.Items.Add("Comienza con");
+                ddlCriterio.Items.Add("Termina con");
+                txtFiltroAvanzado.TextMode = TextBoxMode.SingleLine;
+            }
+            else
+            {
+                txtFiltroAvanzado.Text = "";
+                btnBuscar.Enabled = false;
+                ddlCriterio.Items.Add("Contiene");
+                ddlCriterio.Items.Add("Comienza con");
+                ddlCriterio.Items.Add("Termina con");
+                txtFiltroAvanzado.TextMode = TextBoxMode.Number;
+
+            }
+
+        }
+
+        protected void btnBuscar_Click(object sender, EventArgs e)
+        {
+            try
+            {
+
+                ListaDeIncidencias = conexion.ListarFiltrada(
+                    ddlCampo.SelectedValue,
+                    ddlCriterio.SelectedValue,
+                    txtFiltro.Text,
+                    ddlEstado.SelectedValue
+                );
+                RptIncidencias.DataSource = ListaDeIncidencias;
+                RptIncidencias.DataBind();
+            }
+            catch (Exception ex)
+            {
+                Session.Add("error", ex);
+                throw;
+            }
+        }
+
     }
 }

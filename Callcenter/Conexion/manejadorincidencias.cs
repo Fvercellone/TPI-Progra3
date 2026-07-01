@@ -252,7 +252,98 @@ namespace Conexion
             }
         }
 
+        public List<incidencia> ListarFiltrada( string campo = "", string criterio = "", string filtro = "", string estado = "")
+        {
+            List<incidencia> lista = new List<incidencia>();
+            ConexionDB conexion = new ConexionDB();
 
+            try
+            {
+                string consulta = @"SELECT * FROM vw_IncidenciasDetalle WHERE 1 = 1 ";
+
+                if (!string.IsNullOrWhiteSpace(filtro))
+                {
+                    string columna = "";
+
+                    if (campo == "Titulo")
+                        columna = "Titulo";
+                    else if (campo == "Cliente")
+                        columna = "Cliente";
+                    else if (campo == "Empleado")
+                        columna = "Empleado";
+                    else if (campo == "Categoria")
+                        columna = "Categoria";
+                    else if (campo == "PrioridadPrioridad")
+                        columna = "Prioridad";
+
+                    if (columna != "")
+                    {
+                        if (criterio == "Comienza con")
+                            consulta += $" AND {columna} LIKE @FiltroInicio";
+                        else if (criterio == "Termina con")
+                            consulta += $" AND {columna} LIKE @FiltroFin";
+                        else
+                            consulta += $" AND {columna} LIKE @FiltroContiene";
+                    }
+                }
+
+                if (!string.IsNullOrWhiteSpace(estado) && estado != "Todos")
+                {
+                    consulta += " AND Estado = @Estado";
+                }
+
+                conexion.settearConsulta(consulta);
+
+                if (!string.IsNullOrWhiteSpace(filtro))
+                {
+                    if (criterio == "Comienza con")
+                        conexion.agregarParametro("@FiltroInicio", filtro + "%");
+                    else if (criterio == "Termina con")
+                        conexion.agregarParametro("@FiltroFin", "%" + filtro);
+                    else
+                        conexion.agregarParametro("@FiltroContiene", "%" + filtro + "%");
+                }
+
+                if (estado == "Estado")
+                    consulta += " and P.Activo = 1";
+                else if (estado == "Inactivo")
+                    consulta += " and P.Activo = 0";
+
+                conexion.ejecutarLectura();
+
+                while (conexion._lector.Read())
+                {
+                    incidencia aux = new incidencia();
+
+                    aux.id = (int)conexion._lector["ID"];
+                    aux.titulo = conexion._lector["Titulo"].ToString();
+                    aux.descripcion = conexion._lector["Descripcion"].ToString();
+
+                    aux.IDCliente = (int)conexion._lector["IDCliente"];
+                    aux.Cliente = conexion._lector["Cliente"].ToString();
+
+                    aux.IDEmpleado = (int)conexion._lector["IDEmpleado"];
+                    aux.Empleado = conexion._lector["Empleado"].ToString();
+
+                    aux.IDEstado = (int)conexion._lector["IDEstado"];
+                    aux.Estado = conexion._lector["Estado"].ToString();
+
+                    aux.IDCategoria = (int)conexion._lector["IDCategoria"];
+                    aux.Categoria = conexion._lector["Categoria"].ToString();
+
+                    aux.IDPrioridad = (int)conexion._lector["IDPrioridad"];
+                    aux.Prioridad = conexion._lector["Prioridad"].ToString();
+
+                    lista.Add(aux);
+                }
+
+                return lista;
+            }
+            finally
+            {
+                conexion.cerrarConexion();
+            }
+        }
 
 
     }

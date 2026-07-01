@@ -16,6 +16,8 @@ namespace Mainpage
 
         ManejadorUsuarios conexion = new ManejadorUsuarios();
 
+        public bool FiltroAvanzado { get; set; }
+
 
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -32,8 +34,8 @@ namespace Mainpage
             {
                 ListaDeUsuarios = conexion.ListarEmpleados();
 
-                //RptEmpleados.DataSource = ListaDeUsuarios;
-                //RptEmpleados.DataBind();
+                RptEmpleados.DataSource = ListaDeUsuarios;
+                RptEmpleados.DataBind();
                 RptEmpleados.DataSource = ListaDeUsuarios;
                 RptEmpleados.DataBind();
 
@@ -86,7 +88,92 @@ namespace Mainpage
             Response.Redirect("formularioUsuarios.aspx");
         }
 
+        protected void filtro_TextChanged(object sender, EventArgs e)
+        {
+            List<Usuarios> lista = (List<Usuarios>)Session["listaUsuarios"];
+            List<Usuarios> listaFiltrada = lista.FindAll(x => x.Usuario.ToUpper().Contains(txtFiltro.Text.ToUpper()));
+            RptEmpleados.DataSource = listaFiltrada;
+            RptEmpleados.DataBind();
+        }
 
+        protected void filtroAvanzado_TextChanged(object sender, EventArgs e)
+        {
+            if (txtFiltroAvanzado.Text == "")
+            {
+                btnBuscar.Enabled = false;
+            }
+            else
+            {
+                btnBuscar.Enabled = true;
+            }
+        }
+
+
+        protected void chkAvanzado_CheckedChanged(object sender, EventArgs e)
+        {
+                FiltroAvanzado = chkAvanzado.Checked;
+                txtFiltro.Enabled = !FiltroAvanzado;
+            if (chkAvanzado.Checked)
+            {
+
+                ddlCriterio.Items.Add("Contiene");
+                ddlCriterio.Items.Add("Comienza con");
+                ddlCriterio.Items.Add("Termina con");
+
+                btnBuscar.Enabled = false;
+            }
+            else
+            {
+                ddlCriterio.Items.Clear();
+                CargarEmpleados();
+
+            }
+        }
+
+        protected void ddlCampo_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+
+            ddlCriterio.Items.Clear();
+            if (ddlCampo.SelectedItem.ToString() == "Usuario" || ddlCampo.SelectedItem.ToString() == "Rol")
+            {
+
+                ddlCriterio.Items.Add("Contiene");
+                ddlCriterio.Items.Add("Comienza con");
+                ddlCriterio.Items.Add("Termina con");
+                txtFiltroAvanzado.TextMode = TextBoxMode.SingleLine;
+            }
+            else
+            {
+                txtFiltroAvanzado.Text = "";
+                btnBuscar.Enabled = false;
+                ddlCriterio.Items.Add("Contiene");
+                ddlCriterio.Items.Add("Comienza con");
+                ddlCriterio.Items.Add("Termina con");
+                txtFiltroAvanzado.TextMode = TextBoxMode.Number;
+
+            }
+
+        }
+
+        protected void btnBuscar_Click(object sender, EventArgs e)
+        {
+            try
+            {
+
+                RptEmpleados.DataSource = conexion.ListafiltradaEmpleados(
+                        ddlCampo.SelectedItem.ToString(),
+                        ddlCriterio.SelectedItem.ToString(),
+                        txtFiltroAvanzado.Text,
+                        ddlEstado.SelectedItem.ToString());
+                RptEmpleados.DataBind();
+            }
+            catch (Exception ex)
+            {
+                Session.Add("error", ex);
+                throw;
+            }
+        }
 
     }
 }
