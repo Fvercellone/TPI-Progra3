@@ -23,7 +23,7 @@ namespace Mainpage
         {
             if (!IsPostBack)
             {
-                Session["Pagina"] = "Empleados";
+                Session["Pagina"] = "Empleado";
                 CargarEmpleados();
             }
         }

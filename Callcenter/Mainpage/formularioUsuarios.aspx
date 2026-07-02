@@ -18,12 +18,12 @@
 
 <div class="mb-3">
   <label for="GMAIL" class="form-label">Rol</label>
-  <asp:textbox runat="server" AutoCompleteType="email" class="form-control" id="Rol_" placeholder="Telefonista"/>
+  <asp:dropdownlist runat="server" class="form-select" id="DDLRol_"/>
 </div>
     
 <div class="mb-3">
   <label for="DNI" class="form-label">DNI</label>
-  <asp:textbox runat="server" type="number" class="form-control" id="DNIPersona" placeholder=""/>
+  <asp:dropdownlist runat="server" class="form-select" id="DDLDNI"/>
 </div>
 
     <div>

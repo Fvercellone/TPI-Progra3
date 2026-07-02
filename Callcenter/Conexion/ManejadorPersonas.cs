@@ -135,5 +135,123 @@ namespace Conexion
             }
         }
 
+
+        public List<Personas> Listafiltrada(string campo = "%", string criterio = "%", string filtro = "%", string estado = "%")
+        {
+            List<Personas> lista = new List<Personas>();
+            ConexionDB conexion = new ConexionDB();
+            try
+            {
+
+                string consulta = "select P.ID, P.Nombre as Nombre, P.Apellido as Apellido, P.Email as Email, P.Telefono as Telefono, P.DNI as DNI, P.Activo as Activo from Personas as P where ";
+                if (campo == "DNI")
+                {
+                    switch (criterio)
+                    {
+                        case "Comienza con":
+                            consulta += "P.DNI like '" + filtro + "%' ";
+                            break;
+                        case "Termina con":
+                            consulta += "P.DNI like '%" + filtro + "'";
+                            break;
+                        default:
+                            consulta += "P.DNI like '%" + filtro + "%'";
+                            break;
+                    }
+                }
+                else if (campo == "Nombre")
+                {
+                    switch (criterio)
+                    {
+                        case "Comienza con":
+                            consulta += "P.Nombre like '" + filtro + "%' ";
+                            break;
+                        case "Termina con":
+                            consulta += "P.Nombre like '%" + filtro + "'";
+                            break;
+                        default:
+                            consulta += "P.Nombre like '%" + filtro + "%'";
+                            break;
+                    }
+                }
+                else if (campo == "Apellido")
+                {
+                    switch (criterio)
+                    {
+                        case "Comienza con":
+                            consulta += "P.Apellido like '" + filtro + "%' ";
+                            break;
+                        case "Termina con":
+                            consulta += "P.Apellido like '%" + filtro + "'";
+                            break;
+                        default:
+                            consulta += "P.Apellido like '%" + filtro + "%'";
+                            break;
+                    }
+                }
+                else if (campo == "Email")
+                {
+                    switch (criterio)
+                    {
+                        case "Comienza con":
+                            consulta += "P.Email like '" + filtro + "%' ";
+                            break;
+                        case "Termina con":
+                            consulta += "P.Email like '%" + filtro + "'";
+                            break;
+                        default:
+                            consulta += "P.Email like '%" + filtro + "%'";
+                            break;
+                    }
+                }
+                else if (campo == "Telefono")
+                {
+                    switch (criterio)
+                    {
+                        case "Comienza con":
+                            consulta += "P.Telefono like '" + filtro + "%' ";
+                            break;
+                        case "Termina con":
+                            consulta += "P.Telefono like '%" + filtro + "'";
+                            break;
+                        default:
+                            consulta += "P.Telefono like '%" + filtro + "%'";
+                            break;
+                    }
+                }
+
+                if (estado == "Estado")
+                    consulta += " and P.Activo = 1";
+                else if (estado == "Inactivo")
+                    consulta += " and P.Activo = 0";
+
+                conexion.settearConsulta(consulta);
+                conexion.ejecutarLectura();
+                while (conexion._lector.Read())
+                {
+                    Personas aux = new Personas();
+                    aux.ID = (int)conexion._lector["ID"];
+                    aux.Nombre = (string)conexion._lector["Nombre"];
+                    aux.Apellido = (string)conexion._lector["Apellido"];
+                    aux.Mail = (string)conexion._lector["Email"];
+                    aux.Telefono = (string)conexion._lector["Telefono"];
+                    aux.DNI = (string)conexion._lector["DNI"];
+                    aux.Activo = (bool)conexion._lector["Activo"];
+                    lista.Add(aux);
+                }
+
+                return lista;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                conexion.cerrarConexion();
+            }
+        }
+
+
     }
 }

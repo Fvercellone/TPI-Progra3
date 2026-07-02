@@ -58,6 +58,7 @@ namespace Mainpage
                 else {
                     Session.Add("usuario", usuario);
                     Session.Add("IDUsuario", usuario.ID);
+                    Session.Add("IDRolUsuario", usuario.IDRol);
                     Response.Redirect("Default.aspx", false);
                 }
 

@@ -260,13 +260,15 @@
                         OnClick="Reasignar_onclick" />
                     <%} %>
 
-                    
+                    <%if (!Conexion.Validaciones.PuedeReabrir(Convert.ToInt32(Session["IDincidencia"])))
+                        {%>
                     <asp:LinkButton
                         runat="server"
                         ID="BTResolverFila"
                         Text="Resolver"
                         CssClass="btn btn-success btn-sm"
                         OnClick="Resolver_onclick" />
+                    <%} %>
 
                     <%if (Conexion.Validaciones.PuedeCerrar(Convert.ToInt32(Session["IDincidencia"]))) {%>
                     <asp:LinkButton

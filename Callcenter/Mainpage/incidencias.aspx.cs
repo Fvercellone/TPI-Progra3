@@ -13,12 +13,22 @@ namespace Mainpage
     {
         public List<incidencia> ListaDeIncidencias { get; set; } = new List<incidencia>();
 
+        public List<estado> listaEstado { get; set; } = new List<estado>();
+        public List<Prioridad> listaPrioridades { get; set; } = new List<Prioridad>();
+        public List<categoria> listaCategorias { get; set; } = new List<categoria>();
         ManejadorIncidencias conexion = new ManejadorIncidencias();
+        ManejadorDDL DLL = new ManejadorDDL();
 
         public bool FiltroAvanzado { get; set; }
 
         protected void Page_Load(object sender, EventArgs e)
         {
+
+            listaEstado = DLL.ListarEstados();
+            listaPrioridades = DLL.ListarPrioridades();
+            listaCategorias = DLL.ListarCategorias();
+
+
             if (!IsPostBack)
             {
                 CargarIncidencias();
@@ -105,7 +115,10 @@ namespace Mainpage
         {
             FiltroAvanzado = chkAvanzado.Checked;
             txtFiltro.Enabled = !FiltroAvanzado;
-            if (chkAvanzado.Checked)
+
+
+
+            if (chkAvanzado.Checked && ddlCampo.SelectedValue != "Categoria" && ddlCampo.SelectedValue != "Prioridad")
             {
 
                 ddlCriterio.Items.Add("Contiene");
@@ -113,9 +126,14 @@ namespace Mainpage
                 ddlCriterio.Items.Add("Termina con");
 
                 btnBuscar.Enabled = false;
+                ddlEstado.DataSource = listaEstado;
+                ddlEstado.DataTextField = "Nombre";
+                ddlEstado.DataValueField = "id";
+                ddlEstado.DataBind();
             }
             else
             {
+                btnBuscar.Enabled = true;
                 ddlCriterio.Items.Clear();
                 CargarIncidencias();
 
@@ -127,15 +145,7 @@ namespace Mainpage
 
 
             ddlCriterio.Items.Clear();
-            if (ddlCampo.SelectedItem.ToString() != "ID" )
-            {
-
-                ddlCriterio.Items.Add("Contiene");
-                ddlCriterio.Items.Add("Comienza con");
-                ddlCriterio.Items.Add("Termina con");
-                txtFiltroAvanzado.TextMode = TextBoxMode.SingleLine;
-            }
-            else
+            if (ddlCampo.SelectedItem.ToString() == "ID" )
             {
                 txtFiltroAvanzado.Text = "";
                 btnBuscar.Enabled = false;
@@ -144,6 +154,27 @@ namespace Mainpage
                 ddlCriterio.Items.Add("Termina con");
                 txtFiltroAvanzado.TextMode = TextBoxMode.Number;
 
+            }else if (ddlCampo.SelectedItem.ToString() == "Prioridad")
+            {
+                btnBuscar.Enabled = true;
+                ddlFiltro.DataSource = listaPrioridades;
+                ddlFiltro.DataTextField = "Nombre";
+                ddlFiltro.DataValueField = "id";
+                ddlFiltro.DataBind();
+            }else if (ddlCampo.SelectedItem.ToString() == "Categoria")
+            {
+                btnBuscar.Enabled = true;
+                ddlFiltro.DataSource = listaCategorias;
+                ddlFiltro.DataTextField = "Nombre";
+                ddlFiltro.DataValueField = "id";
+                ddlFiltro.DataBind();
+            }
+            else
+            {
+                ddlCriterio.Items.Add("Contiene");
+                ddlCriterio.Items.Add("Comienza con");
+                ddlCriterio.Items.Add("Termina con");
+                txtFiltroAvanzado.TextMode = TextBoxMode.SingleLine;
             }
 
         }
@@ -152,20 +183,35 @@ namespace Mainpage
         {
             try
             {
-
-                ListaDeIncidencias = conexion.ListarFiltrada(
+                Usuarios usuario = Session["usuario"] as Usuarios;
+                string filtro = (ddlCampo.SelectedValue == "Prioridad" || ddlCampo.SelectedValue == "Categoria") ? ddlFiltro.SelectedValue : txtFiltroAvanzado.Text;
+                ListaDeIncidencias = conexion.Listafiltrada(
                     ddlCampo.SelectedValue,
                     ddlCriterio.SelectedValue,
-                    txtFiltro.Text,
-                    ddlEstado.SelectedValue
+                    filtro,
+                    ddlEstado.SelectedValue,
+                    usuario.DNI,
+                    usuario.IDRol
                 );
+
                 RptIncidencias.DataSource = ListaDeIncidencias;
                 RptIncidencias.DataBind();
+
+                if (ListaDeIncidencias.Count == 0)
+                {
+                    LBMensaje.Text = "No se encontraron incidencias con esos filtros.";
+                    LBMensaje.CssClass = "alert alert-warning d-block";
+                }
+                else
+                {
+                    LBMensaje.Text = "";
+                    LBMensaje.CssClass = "";
+                }
             }
             catch (Exception ex)
             {
-                Session.Add("error", ex);
-                throw;
+                LBMensaje.Text = ex.Message;
+                LBMensaje.CssClass = "alert alert-danger d-block";
             }
         }
 

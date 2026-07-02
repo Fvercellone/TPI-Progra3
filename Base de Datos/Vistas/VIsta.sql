@@ -20,7 +20,6 @@ SELECT
     I.IDPrioridad,
     PR.Nombre AS Prioridad,
 
-    I.Comentario,
     I.ComentarioCierre,
     I.FechaAlta,
     I.FechaModificacion,

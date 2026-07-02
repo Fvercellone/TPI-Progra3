@@ -33,21 +33,21 @@ namespace Mainpage
         protected global::System.Web.UI.WebControls.TextBox Contraseña_;
 
         /// <summary>
-        /// Control Rol_.
+        /// Control DDLRol_.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox Rol_;
+        protected global::System.Web.UI.WebControls.DropDownList DDLRol_;
 
         /// <summary>
-        /// Control DNIPersona.
+        /// Control DDLDNI.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox DNIPersona;
+        protected global::System.Web.UI.WebControls.DropDownList DDLDNI;
     }
 }

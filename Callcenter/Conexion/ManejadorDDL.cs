@@ -97,6 +97,66 @@ namespace Conexion
                 conexion.cerrarConexion();
             }
         }
+        public List<Roles> ListarRoles()
+        {
+            List<Roles> lista = new List<Roles>();
+            ConexionDB conexion = new ConexionDB();
+            try
+            {
+                conexion.settearConsulta("select id, nombre from Roles ");
+
+
+                conexion.ejecutarLectura();
+                while (conexion._lector.Read())
+                {
+                    Roles aux = new Roles();
+                    aux.ID = (int)conexion._lector["id"];
+                    aux.Nombre = (string)conexion._lector["nombre"];
+
+                    lista.Add(aux);
+                }
+                return lista;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                conexion.cerrarConexion();
+            }
+        }
+        public List<Personas> ListarDNI()
+        {
+            List<Personas> lista = new List<Personas>();
+            ConexionDB conexion = new ConexionDB();
+            try
+            {
+                conexion.settearConsulta("SELECT P.ID, P.DNI FROM Personas P WHERE NOT EXISTS (SELECT 1  FROM Usuarios U  WHERE U.IDPersona = P.ID);");
+
+
+                conexion.ejecutarLectura();
+                while (conexion._lector.Read())
+                {
+                    Personas aux = new Personas();
+                    aux.ID = (int)conexion._lector["id"];
+                    aux.DNI = (string)conexion._lector["DNI"];
+
+                    lista.Add(aux);
+                }
+                return lista;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                conexion.cerrarConexion();
+            }
+        }
+
+
        
 
     }

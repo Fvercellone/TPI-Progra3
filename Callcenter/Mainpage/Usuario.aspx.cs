@@ -22,6 +22,7 @@ namespace Mainpage
 
             protected void Page_Load(object sender, EventArgs e)
             {
+                Session["Pagina"] = "Usuario";
                 if (!IsPostBack)
                 {
                     CargarUsuarios();

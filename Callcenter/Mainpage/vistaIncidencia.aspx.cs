@@ -289,7 +289,7 @@ namespace Mainpage
 
             int nuevoID = manejadorIncidencias.agregar(nueva);
 
-            Session["ID"] = nuevoID;
+            Session["IDincidencia"] = nuevoID;
             Session["Accion"] = "";
 
             Response.Redirect("vistaIncidencia.aspx", false);
@@ -300,7 +300,7 @@ namespace Mainpage
         {
             try
             {
-                if (Session["ID"] == null)
+                if (Session["IDincidencia"] == null)
                     throw new Exception("Primero debe seleccionar una incidencia.");
 
                 if (Session["IDUsuario"] == null)
@@ -311,7 +311,7 @@ namespace Mainpage
 
                 ComentarioIncidencia comentario = new ComentarioIncidencia();
 
-                comentario.IDIncidencia = Convert.ToInt32(Session["ID"]);
+                comentario.IDIncidencia = Convert.ToInt32(Session["IDincidencia"]);
                 comentario.IDUsuario = Convert.ToInt32(Session["IDUsuario"]);
                 comentario.Comentario = TXTComentario.Text;
 
@@ -332,21 +332,21 @@ namespace Mainpage
 
         protected void Cancelar_onClick(object sender, EventArgs e)
         {
-            if (Session["ID"] != null)
+            if (Session["IDincidencia"] != null)
             {
                 Session["Accion"] = "";
                 Response.Redirect("vistaIncidencia.aspx");
                 return;
             }
 
-            Session.Remove("ID");
+            Session.Remove("IDincidencia");
             Session.Remove("Accion");
             Response.Redirect("Incidencias.aspx");
         }
 
         protected void Salir_onClick(object sender, EventArgs e)
         {
-            Session.Remove("ID");
+            Session.Remove("IDincidencia");
             Session.Remove("Accion");
             Response.Redirect("Incidencias.aspx");
         }

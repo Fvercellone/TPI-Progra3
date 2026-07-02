@@ -14,7 +14,7 @@
 
                 <div class="card-header">
 
-                <div class="card-header d-flex justify-content-between align-items-center">
+                <div class="d-flex justify-content-between align-items-center">
                     <h4 class="mb-0">Incidencias</h4>
                     <% if ((Conexion.Validaciones.TienePermiso((Dominio.Usuarios)Session["usuario"], 2))) { %>
                     <asp:Button
@@ -47,31 +47,36 @@
                                 <asp:ListItem Text="Cliente" />
                                 <asp:ListItem Text="Empleado" />
                                 <asp:ListItem Text="Categoria" />
-                                <asp:ListItem Text="Categoria" />
                                 <asp:ListItem Text="Prioridad" />
                             </asp:DropDownList>
                         </div>
                     </div>
                     <div class="col-3">
                         <div class="mb-3">
+                            <%if (ddlCampo.SelectedItem.ToString() != "Categoria" && ddlCampo.SelectedItem.ToString() != "Prioridad")
+                                { %>
                             <asp:Label Text="Criterio" runat="server" />
-                            <asp:DropDownList runat="server" ID="ddlCriterio" CssClass="form-control"></asp:DropDownList>
+                            <asp:DropDownList runat="server" ID="ddlCriterio" CssClass="form-control"/>
+                            <%} %>
                         </div>
                     </div>
                     <div class="col-3">
                         <div class="mb-3">
                             <asp:Label Text="Filtro *" runat="server" />
+                            <%if (ddlCampo.SelectedItem.ToString() != "Categoria" && ddlCampo.SelectedItem.ToString() != "Prioridad")
+                                { %>
+
                             <asp:TextBox runat="server" ID="txtFiltroAvanzado" CssClass="form-control" AutoPostBack="true" OnTextChanged="filtroAvanzado_TextChanged" TextMode="Number" />
+                            <%}else { %>
+                                <asp:DropDownList runat="server" CssClass="form-control" id="ddlFiltro"/>
+                            <%} %>
                         </div>
                     </div>
                     <div class="col-3">
                         <div class="mb-3">
                             <asp:Label Text="Estado" runat="server" />
-                            <asp:DropDownList runat="server" ID="ddlEstado" CssClass="form-control">
-                                <asp:ListItem Text="Todos" />
-                                <asp:ListItem Text="Activo" />
-                                <asp:ListItem Text="Inactivo" />
-                            </asp:DropDownList>
+                            <asp:DropDownList runat="server" ID="ddlEstado" CssClass="form-control" />
+                                
                         </div>
                     </div>
                 </div>
@@ -84,7 +89,7 @@
                 </div>
                 <%} %>
                 </div>
-        </div>
+        
         <div class="card-body">
 
             <div class="row">
@@ -170,6 +175,7 @@
 
             </div>
 
+            </div>
         </div>
 
     </div>

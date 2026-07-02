@@ -28,14 +28,11 @@
                  style="width: 250px;">
 
                 <a href="Default.aspx" class="nav-link">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/5e/WhatsApp_icon.png/500px-WhatsApp_icon.png" width="50" height="50" alt="Menu Inicial" />
+                    <img src="https://i.imgur.com/Vymat1E.png" width="80" height="80" alt="Menu Inicial" />
                     Menu Inicial
                 </a>
 
             <ul class="nav flex-column">
-                <li class="nav-Page">
-                    <asp:TextBox runat="server" />
-                </li>
 
                 <li class="nav-Page">
                     <a class="nav-link" href="Default.aspx">Menu Inicial</a>

@@ -1,4 +1,4 @@
-ALTER PROCEDURE sp_ListarClientes
+alter PROCEDURE sp_ListarClientes
 AS
 BEGIN
     SELECT

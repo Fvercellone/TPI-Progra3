@@ -252,69 +252,100 @@ namespace Conexion
             }
         }
 
-        public List<incidencia> ListarFiltrada( string campo = "", string criterio = "", string filtro = "", string estado = "")
+        public List<incidencia> Listafiltrada(string campo = "%", string criterio = "%", string filtro = "%", string estado = "%", string DNI = "%",int Rol = 0)
         {
             List<incidencia> lista = new List<incidencia>();
             ConexionDB conexion = new ConexionDB();
-
             try
             {
-                string consulta = @"SELECT * FROM vw_IncidenciasDetalle WHERE 1 = 1 ";
 
-                if (!string.IsNullOrWhiteSpace(filtro))
+                string consulta = "SELECT I.ID, I.Titulo, I.Descripcion, I.IDCliente, UC.Usuario AS Cliente, I.IDEmpleado, UE.Usuario AS Empleado, I.IDEstado, E.Nombre AS Estado, I.IDCategoria, C.Nombre AS Categoria, I.IDPrioridad, PR.Nombre AS Prioridad, I.ComentarioCierre, I.FechaAlta, I.FechaModificacion, I.FechaResolucion, I.FechaCierre FROM Incidencias AS I INNER JOIN Usuarios AS UC ON I.IDCliente = UC.ID INNER JOIN Personas AS PC ON UC.IDPersona = PC.ID INNER JOIN Usuarios AS UE ON I.IDEmpleado = UE.ID INNER JOIN Personas AS PE ON UE.IDPersona = PE.ID INNER JOIN Estados AS E ON I.IDEstado = E.ID INNER JOIN Categorias AS C ON I.IDCategoria = C.ID INNER JOIN Prioridades AS PR ON I.IDPrioridad = PR.ID AND ";
+                if (Rol == 2)
                 {
-                    string columna = "";
-
-                    if (campo == "Titulo")
-                        columna = "Titulo";
-                    else if (campo == "Cliente")
-                        columna = "Cliente";
-                    else if (campo == "Empleado")
-                        columna = "Empleado";
-                    else if (campo == "Categoria")
-                        columna = "Categoria";
-                    else if (campo == "PrioridadPrioridad")
-                        columna = "Prioridad";
-
-                    if (columna != "")
+                    consulta += "PE.DNI = '" + DNI + "' AND ";
+                }
+                else if(Rol == 1)
+                {
+                    consulta += "PC.DNI = '" + DNI + "' AND ";
+                }
+                if (campo == "ID")
+                {
+                    switch (criterio)
                     {
-                        if (criterio == "Comienza con")
-                            consulta += $" AND {columna} LIKE @FiltroInicio";
-                        else if (criterio == "Termina con")
-                            consulta += $" AND {columna} LIKE @FiltroFin";
-                        else
-                            consulta += $" AND {columna} LIKE @FiltroContiene";
+                        case "Comienza con":
+                            consulta += "I.ID like '" + filtro + "%' ";
+                            break;
+                        case "Termina con":
+                            consulta += "I.ID like '%" + filtro + "'";
+                            break;
+                        default:
+                            consulta += "I.ID like '%" + filtro + "%'";
+                            break;
                     }
                 }
-
-                if (!string.IsNullOrWhiteSpace(estado) && estado != "Todos")
+                else if (campo == "Titulo")
                 {
-                    consulta += " AND Estado = @Estado";
+                    switch (criterio)
+                    {
+                        case "Comienza con":
+                            consulta += "I.Titulo like '" + filtro + "%' ";
+                            break;
+                        case "Termina con":
+                            consulta += "I.Titulo like '%" + filtro + "'";
+                            break;
+                        default:
+                            consulta += "I.Titulo like '%" + filtro + "%'";
+                            break;
+                    }
                 }
+                else if (campo == "Cliente")
+                {
+                    switch (criterio)
+                    {
+                        case "Comienza con":
+                            consulta += "UC.Usuario like '" + filtro + "%' ";
+                            break;
+                        case "Termina con":
+                            consulta += "UC.Usuario like '%" + filtro + "'";
+                            break;
+                        default:
+                            consulta += "UC.Usuario like '%" + filtro + "%'";
+                            break;
+                    }
+                }
+                else if (campo == "Empleado")
+                {
+                    switch (criterio)
+                    {
+                        case "Comienza con":
+                            consulta += "UE.Usuario like '" + filtro + "%' ";
+                            break;
+                        case "Termina con":
+                            consulta += "UE.Usuario like '%" + filtro + "'";
+                            break;
+                        default:
+                            consulta += "UE.Usuario like '%" + filtro + "%'";
+                            break;
+                    }
+                }
+                else if (campo == "Categoria")
+                {
+                    consulta += "C.ID = " + filtro;
+                }
+                else if (campo == "Prioridad")
+                {
+                    consulta += " PR.ID = " + filtro;
+                }
+                    consulta += " and E.ID = " + estado;
+
+ 
 
                 conexion.settearConsulta(consulta);
-
-                if (!string.IsNullOrWhiteSpace(filtro))
-                {
-                    if (criterio == "Comienza con")
-                        conexion.agregarParametro("@FiltroInicio", filtro + "%");
-                    else if (criterio == "Termina con")
-                        conexion.agregarParametro("@FiltroFin", "%" + filtro);
-                    else
-                        conexion.agregarParametro("@FiltroContiene", "%" + filtro + "%");
-                }
-
-                if (estado == "Estado")
-                    consulta += " and P.Activo = 1";
-                else if (estado == "Inactivo")
-                    consulta += " and P.Activo = 0";
-
                 conexion.ejecutarLectura();
-
                 while (conexion._lector.Read())
                 {
-                    incidencia aux = new incidencia();
-
+                    incidencia aux = new incidencia(); 
+                    
                     aux.id = (int)conexion._lector["ID"];
                     aux.titulo = conexion._lector["Titulo"].ToString();
                     aux.descripcion = conexion._lector["Descripcion"].ToString();
@@ -325,19 +356,37 @@ namespace Conexion
                     aux.IDEmpleado = (int)conexion._lector["IDEmpleado"];
                     aux.Empleado = conexion._lector["Empleado"].ToString();
 
-                    aux.IDEstado = (int)conexion._lector["IDEstado"];
-                    aux.Estado = conexion._lector["Estado"].ToString();
-
                     aux.IDCategoria = (int)conexion._lector["IDCategoria"];
                     aux.Categoria = conexion._lector["Categoria"].ToString();
 
                     aux.IDPrioridad = (int)conexion._lector["IDPrioridad"];
                     aux.Prioridad = conexion._lector["Prioridad"].ToString();
 
+                    aux.IDEstado = (int)conexion._lector["IDEstado"];
+                    aux.Estado = conexion._lector["Estado"].ToString();
+
+                    //aux.comentario = conexion._lector["Comentario"] == DBNull.Value ? "" : conexion._lector["Comentario"].ToString();
+                    aux.comentarioCierre = conexion._lector["ComentarioCierre"] == DBNull.Value ? "" : conexion._lector["ComentarioCierre"].ToString();
+
+                    aux.alta = (DateTime)conexion._lector["FechaAlta"];
+
+                    if (!(conexion._lector["FechaModificacion"] is DBNull))
+                        aux.modificacion = (DateTime)conexion._lector["FechaModificacion"];
+
+                    if (!(conexion._lector["FechaResolucion"] is DBNull))
+                        aux.resolucion = (DateTime)conexion._lector["FechaResolucion"];
+
+                    if (!(conexion._lector["FechaCierre"] is DBNull))
+                        aux.cierre = (DateTime)conexion._lector["FechaCierre"];
+
                     lista.Add(aux);
                 }
 
                 return lista;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
             }
             finally
             {

@@ -20,7 +20,7 @@ namespace Conexion
                 if (DNI_ != "")
                 {
                     conexion.agregarParametro("@DNI_", DNI_);
-                    conexion.settearConsulta("select U.ID, U.IDPersona, P.DNI, U.IDRol, U.Usuario, U.Contrasenia, U.Activo, R.Rol from Usuarios as U INNER JOIN Personas P ON U.IDPersona = P.ID INNER JOIN Roles R ON U.IDRol = R.ID where U.ID = @DNI_");
+                    conexion.settearConsulta("select U.ID, U.IDPersona, P.DNI, U.IDRol, U.Usuario, U.Contrasenia, U.Activo, R.Nombre as Rol from Usuarios as U INNER JOIN Personas P ON U.IDPersona = P.ID INNER JOIN Roles R ON U.IDRol = R.ID where U.ID = @DNI_");
 
                 }
 

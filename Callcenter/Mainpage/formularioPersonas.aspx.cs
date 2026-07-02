@@ -36,14 +36,14 @@ namespace Mainpage
             }
         }
 
+        
+
 
 
         protected void Agregar_onClick(object sender, EventArgs e)
         {
             try
             {
-
-
                 Personas persona = new Personas()
 
                 {
@@ -82,16 +82,19 @@ namespace Mainpage
             string pagina = Session["Pagina"] != null ? Session["Pagina"].ToString() : "";
 
             Session.Remove("DNI");
+            Response.Redirect("personas.aspx");
 
-            if (pagina == "Clientes")
+        }
+
+        protected void Vacio_TextChanged(object sender, EventArgs e)
+        {
+            if (String.IsNullOrEmpty(Nombre.Text) || String.IsNullOrEmpty(Apellido.Text) || String.IsNullOrEmpty(GMAIL.Text) || String.IsNullOrEmpty(Telefono.Text) || String.IsNullOrEmpty(DNI_.Text))
             {
-                Session.Remove("Pagina");
-                Response.Redirect("Clientes.aspx");
+                btnAceptar.Enabled = false;
             }
-            else if(pagina == "Personas")
+            else
             {
-                Session.Remove("Pagina");
-                Response.Redirect("personas.aspx");
+                btnAceptar.Enabled = true;
             }
         }
     }
